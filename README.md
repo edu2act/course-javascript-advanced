@@ -15,9 +15,7 @@
 | 章节 | 名称 | 内容 | 
 |:---:|:---|:---|
 | 第一章 | [JavaScript发展历程及语言特点]() | 1.	JavaScript 历史及简介<br/> 2.	JavaScript知识点回顾<br/> 3.	JavaScript 线上学习介绍（FreeCodeCamp）<br/>| 
-
 | 第二章 | [JavaScript数据类型、值与变量]() | 1.	JavaScript基础语法；<br/> 2.	JavaScript变量及内置数据类型 <br/>| 
-
 | 第三章 | [JavaScript语法、表达式及语句、运算符]() | 1.	JavaScript (ES5)语法、语句与表达式；<br/> 2.	JavaScript (ES5)逻辑运算符进阶 <br/>| 
 
 | 第四章 | [JavaScript函数进阶一]() | 1.	JavaScript (ES5)函数及函数进阶<br/> 2.	JavaScript (ES5)预解析 <br/>|  
