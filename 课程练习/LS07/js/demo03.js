@@ -20,7 +20,7 @@ console.log(obj.hasOwnProperty("z"));//false
 ///////////Part2 原型链属性操作////////////
 obj.z = 5;
 
-obj.hasOwnProperty("z");
+console.log(obj.hasOwnProperty("z"));
 console.log(obj.z);
 console.log(proObj.z);
 

@@ -16,7 +16,7 @@ console.log(obj.show());
 
 
 //通过Object工场方法创建JS对象,注：JS对象是通过原型链的方式实现的对象继承
-var newObj = Object.create(obj);
+var newObj = Object.create(obj);//newObj的原型是obj
 newObj.age = 23;
 console.log(newObj.num);
 console.log(newObj.str);
