@@ -33,7 +33,7 @@ function foo(){
 foo();//f_2
 
 
-// Part 33333333333333333
+// Part 33333333333333333 见下一页PPT 同时有var和function的情况一
 foo();
 var foo = function(){
     console.log("foo");
@@ -62,7 +62,7 @@ AA();
 function AA(){
     console.log("AA_1");
 }
-var AA;//在最顶端和在这等效
+var AA;
 
 AA();
 AA = function AA(){

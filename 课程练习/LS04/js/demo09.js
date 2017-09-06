@@ -6,11 +6,11 @@ var name = "Jack";
 function echo() {
     console.log(name);
 }
-function env() {
+function foo() {
     var name = "Bill";
     echo();
 }
-env();//Bill or Jack
+foo();//Bill or Jack
 
 
 

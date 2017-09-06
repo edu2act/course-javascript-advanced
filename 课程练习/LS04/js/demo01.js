@@ -13,18 +13,21 @@ var max = function (a,b){ //匿名函数
 };
 max(2,3);
 
-//非匿名函数便于调用栈追踪 测试使用匿名和非匿名函数的区别
+//函数定义 Function构造函数方式
+var max = new Function("a","b","return a>b?a:b");
+max(2,3);
+
+/*
+//略讲：非匿名函数便于调用栈追踪 测试使用匿名和非匿名函数的区别
 var foo = function max(a,b){
     console.trace();
     return console.log(a>b?a:b);
 };
 foo(2,3);
+
 foo = function min(a,b){
     console.trace();
     return console.log(a>b?b:a);
 };
 foo(2,3);
-
-//函数定义 Function构造函数方式
-var max = new Function("a","b","return a>b?a:b");
-max(2,3);
+*/

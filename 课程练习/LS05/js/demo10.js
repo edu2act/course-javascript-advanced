@@ -9,7 +9,7 @@ for (var i = 0; i < 3; i++) {
         console.log(new Date, i);
     }, 1000*i);
 }
-console.log("i：",i);
+//console.log("i：",i);
 */
 
 
