@@ -1,29 +1,44 @@
 /**
  * Created by qile on 2017/8/14.
  */
-/*
-console.log("i'm demo 01");
-*/
+//基本语法回顾
+var x;//变量声明 语句
+x = 23;//表达式作为语句时（赋值表达式语句）
 
-//demo01中定义，demo02中调用，尽量避免全局方法
-// function  max (a,b) {
-//     return a>b?a:b;
-// }
+//条件语句
+if(x>22){
+    x+=2;
+}else{
+    console.log("x 不大于 22");
+}
 
-/*
-//避免滥用全局变量,见demo2.js
-var x = 10;
-document.onclick = function () {
-    //console.log("x = ",x);
-    alert("x = "+x);
-};
-*/
+var xx = 234;
+if(234 == xx){ //为什么要反写？？？？？
+    console.log("相等");
+}
 
-//如何避免全局污染，使用IIFE函数立即执行表达式
-(function () {  // 开始
-    var x = 10;
-    document.onclick = function () {
-        //console.log("x = ",x);
-        alert("x = "+x);
-    };
-})();           // 结束
+//思考
+console.log(a);
+if(true){
+    var a = 2;
+}
+console.log(a);
+
+console.log(b);
+if(false){
+    var b = 3;
+}
+console.log(b);
+
+
+//循环语句
+for(var i=0;i<3;i++){
+    console.log("i:",i);
+}
+console.log(i);//是否会报错，若不报错的话此时i为多少？？？？？
+
+//函数定义及调用   提问：函数有几种定义方式？？？？？
+function max(x,y) {
+    return x>y?x:y;
+}
+console.log(max(2,3));
