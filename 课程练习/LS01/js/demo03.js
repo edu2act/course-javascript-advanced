@@ -13,7 +13,7 @@ console.log(a);
 // 8def
 
 //保留字回顾 认识多少?????
-//arguments break continue typeof instanceof等等
+//arguments break continue typeof instanceof delete等等
 
 console.log(typeof NaN);//什么类型
 console.log(typeof Infinity);
