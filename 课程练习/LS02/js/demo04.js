@@ -23,4 +23,10 @@ var a4 = new Number(200);
 var b4 = 200;
 console.log(a4 == b4);//思考：是b4转换了，还是a4转换了
 console.log(a4 === b4);
+
+//思考
+var a5 = {x:1,y:2};
+var b5 = {x:1,y:2};
+console.log(a5 === b5);
+console.log(a5.x === a5.x);//对象属性如果是基本类型内存分配在哪，比较时是值比较还是引用比较
 */
