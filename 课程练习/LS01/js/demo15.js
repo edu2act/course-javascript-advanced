@@ -9,6 +9,15 @@
 
 // console.log("max = "+ max(2,3));
 
+(function(){
+
+
 
 //避免滥用全局变量
 var x = 20;
+
+
+
+
+
+}());
