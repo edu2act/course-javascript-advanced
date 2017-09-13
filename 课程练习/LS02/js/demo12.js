@@ -34,6 +34,7 @@ Number();
 String();
 Object();
 
+123.456.toFixed(1);
 toString();
 toFixed();
 toPrecision();
