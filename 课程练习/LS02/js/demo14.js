@@ -2,6 +2,18 @@
  * Created by qile on 2017/8/14.
  */
 
+//Part 000000000
+//字符串比较
+console.log("A" > "a");
+console.log("B".localeCompare("A")); //考虑本地化的字符排序，返回0或非0
+console.log("A".localeCompare("A")); //考虑本地化的字符排序，返回0或非0
+console.log("A".localeCompare("B"));
+
+//字符串链接
+var a = "abc";
+var b = "def";
+var c = a+b;
+
 //Part 111111111 字符串提取
 //String.prototype.charAt(pos);
 //String.prototype.charCodeAt(pos);
@@ -9,11 +21,6 @@
 //String.prototype.substr(start,length?)
 //String.prototype.substring(start,end?);
 //String.prototype.split(separator?,limit?);
-
-//字符串链接
-var a = "abc";
-var b = "def";
-var c = a+b;
 
 //字符串常用方法，字符串的方法源于String.prototype
 
