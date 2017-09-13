@@ -6,7 +6,7 @@ var a = "abc";
 var b = "def";
 var c = a+b;
 
-//字符串常用方法，字符串的方法源于String.prototyp
+//字符串常用方法，字符串的方法源于String.prototype
 var str1 = "aaa".concat("bbb");//返回字符串
 var str2 = "abcdef".slice(2);
 var str3 = "abcdef".slice(2,5);
