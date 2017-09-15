@@ -27,3 +27,9 @@ function fee(o){
 console.trace("obj.x :",obj.x);
 fee(obj);// step 1111
 console.trace("obj.x :",obj.x);//step 4444  obj.x被改写为3
+
+//打开index.html 学习chrome的Sources调试
+document.onclick = function () {//测试Event Listener Breakpoints
+    alert("click");
+    //var body =  document.getElementsByName("body");
+};

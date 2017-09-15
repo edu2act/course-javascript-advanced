@@ -13,6 +13,8 @@ switch(i){
     //break;
     case 4:
         console.log("case 4");
+    default:
+        console.log("default");
 }
 
 

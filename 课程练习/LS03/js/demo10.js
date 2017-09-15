@@ -14,3 +14,4 @@ var obj = {x:10,y:20,z:"30"};
 for(var k in obj){
     console.log(k,obj[k],typeof obj[k]);
 }
+

@@ -1,7 +1,7 @@
 /**
  * Created by qile on 2017/8/14.
  */
-
+//Part 11111111111111111111
 //普通函数直接调用
 function test() {
     console.log("this is",this);
@@ -17,6 +17,7 @@ var obj = {
 };
 obj.test();//0
 
+//Part 22222222222222222
 //间接调用 实例一
 objA = {name:"AA"};
 objB = {name:"BB"};
