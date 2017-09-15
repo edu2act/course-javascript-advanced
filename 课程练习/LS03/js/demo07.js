@@ -11,6 +11,7 @@ sloppyFunc();
 
 function  strictFunc() {
     'use strict';
+    console.log(Object.getOwnPropertyDescriptor(str,"length"));
     str.length = 7;
     console.log(str.length);
 }
