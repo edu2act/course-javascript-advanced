@@ -9,6 +9,7 @@ console.log(strDescriptor);
 
 function  sloppyFunc() {
     str.length = 7;
+    //console.log(Object.getOwnPropertyDescriptor(str,"length"));
     console.log(str.length);//
 }
 sloppyFunc();

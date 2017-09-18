@@ -17,7 +17,8 @@ if(true){
 }
 console.log(a);
 
-//思考：下边的例子是否报错，输出什么，相关知识参考预解析部分
+// 思考：下边的例子是否报错，输出什么，相关知识参考预解析部分
+// 你是否能够区分undefined和undeclared
 if(false){
     var b = 30;
 }
