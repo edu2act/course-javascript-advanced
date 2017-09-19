@@ -4,6 +4,7 @@
 //实参数大于形参数
 function test() {
     console.log(arguments);//console.log(test.arguments);
+    console.log(Array.prototype.slice.call(arguments));
     var s = "";
     for (var i = 0; i < arguments.length; i++) {
         s += arguments[i];

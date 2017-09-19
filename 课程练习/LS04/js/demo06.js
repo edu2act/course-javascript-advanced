@@ -59,7 +59,7 @@ var obj = {
     foo1:function(){
         console.log(this.foo1.caller);
     },
-    foo2:function(){
+    foo2:function abc(){ //写函数名与不写函数名的区别
         this.foo1();
     }
 };

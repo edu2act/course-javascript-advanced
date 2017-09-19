@@ -8,14 +8,42 @@ function test() {
 }
 test();//window
 
+
+
+
+
 //对象方法调用
 var obj = {
-    x:0,
+    name:"obj",
+    x:23,
     test:function(){
-        console.log(this.x);
+        console.log(this.x,this);
     }
 };
-obj.test();//0
+obj.test();//调用对象的方法23
+
+//给obj动态添加方法
+var sayHi = function () {
+    console.log("Hi，i'm",this.name);
+};
+obj.sayHi = sayHi;//添加给对象添加方法
+obj.sayHi();
+
+//思考如下代码 深入理解函数及方法
+var fun1 = function () {
+    return function fun2() {
+        return this.x;//若改为 return this;
+    }
+};
+obj.fun3 = fun1;
+obj.fun4 = fun1();
+console.log(obj.fun3());//输出什么
+console.log(obj.fun3()());//输出什么
+console.log(obj.fun4());//输出什么
+
+
+
+
 
 //Part 22222222222222222
 //间接调用 实例一
@@ -50,6 +78,15 @@ bird.fly(5,6);
 fish.swim.call(me,3,4);
 bird.fly.call(me,7,8);
 //swim(1,2);与swim.call(null,1,2);相同
+
+
+//很多方法都可以通过间接调用的方式来调用，比如很多原型的方法
+function test() {
+    console.log(Array.prototype.slice.call(arguments));
+}
+test(1,2,3,"4",5);
+
+
 
 
 //构造函数
