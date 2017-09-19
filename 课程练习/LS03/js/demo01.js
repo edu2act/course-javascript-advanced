@@ -14,7 +14,6 @@ console.log(a,b);
 //Part2
 function foo(x) {
     x.push(4);
-    //.log(x);
     x = [5,6,7];
     x.push(8);
     //console.log(x);
