@@ -29,7 +29,8 @@ var sayHi = function () {
 obj.sayHi = sayHi;//添加给对象添加方法
 obj.sayHi();
 
-//思考如下代码 深入理解函数及方法
+/*
+//思考如下代码 详情参见高阶函数章节
 var fun1 = function () {
     return function fun2() {
         return this.x;//若改为 return this;
@@ -40,7 +41,7 @@ obj.fun4 = fun1();
 console.log(obj.fun3());//输出什么
 console.log(obj.fun3()());//输出什么
 console.log(obj.fun4());//输出什么
-
+*/
 
 
 
@@ -71,7 +72,7 @@ var bird = {
 };
 
 var me = {
-    name:"QL"
+    name:"ABC"
 };
 
 bird.fly(5,6);
