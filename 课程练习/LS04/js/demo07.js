@@ -23,7 +23,7 @@ var function_2=function(){console.log(this.word_2)};
 function_1(function_2);
 
 
-// 实例二 数组相关的高阶函数 map reduce filter 详情参见数组章节
+// 实例二 数组相关的高阶函数 map reduce filter sort详情参见数组章节
 function pow(x) {
     return x * x;
 }

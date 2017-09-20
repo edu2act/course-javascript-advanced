@@ -146,6 +146,7 @@ swim(1,2);
 swim.call(me,3,4);
 bird.fly(5,6);
 bird.fly.call(me,7,8);
+bird.fly.apply(me,[7,8]);
 //swim(1,2);与swim.call(null,1,2);相同同
 
 
