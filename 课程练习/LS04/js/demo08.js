@@ -13,6 +13,22 @@ console.log(a);
 a = 1;
 console.log(a);
 
+//思考如下代码输出什么 值类型
+console.log(a,b);//输出什么
+var b = 23;
+console.log(a,b);//输出什么
+var a = b;
+console.log(a,b);//输出什么
+
+//思考如下代码输出什么 引用类型
+console.log(obj1,obj2);//输出什么
+var obj1 = {x:23};
+console.log(obj1,obj2);//输出什么
+var obj2 = obj1;
+console.log(obj1,obj2);//输出什么
+obj2.x =25;
+console.log(obj1,obj2);//输出什么
+
 
 // Part 22222222222222222
 foo();//f_2

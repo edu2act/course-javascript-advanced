@@ -1,16 +1,32 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//闭包实例二
-function foo(x) {
-    var tmp = 3;
-    return function (y) {
-        x.memb = x.memb ? x.memb + 1 : 1;
-        console.log(x + y + tmp,x.memb);
+//闭包实例 Part 1111111111111111
+function counter() {
+    var n = 0;
+    return {
+        count:function () {return ++n;},
+        reset:function () {n = 0;return n;}
     }
 }
-var age = new Number(2);
-var bar = foo(age); // bar 现在是一个引用了age的闭包
-bar(10); //15 1
-bar(10); //15 2
-bar(10); //15 3
+var c = counter();
+var d = counter();
+console.log(c.count());
+console.log(d.count());
+console.log(c.reset());
+console.log(c.count());
+console.log(d.count());
+
+
+//闭包实例 Part 2222222222222222
+//闭包、函数作为参数(高阶函数的一种）、静态词法作用域、IIFE
+var max = 10;
+var fn = function (x) {
+    if(x > max){
+        console.log(x);
+    }
+};
+(function (f) {
+    var max = 100;
+    f(15);
+})(fn);
