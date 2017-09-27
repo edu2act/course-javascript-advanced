@@ -10,9 +10,9 @@ function foo(x) {
     }
 }
 var fee = foo(2); // fee 形成了一个闭包
-fee(10);//16
-fee(10);//17
-fee(10);//18
+fee(10);//
+fee(10);//
+fee(10);//
 
 //Part 2222222222222//////////////////
 function foo(x) {
