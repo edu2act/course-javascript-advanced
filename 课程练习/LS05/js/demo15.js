@@ -3,8 +3,7 @@
  */
 
 // 比如说我现在的需求是这样的，在网页中有时候会需要遮罩层，调用的时候我就创建一个，
-// 但是你不可能每次调用创建，所以如果存在就用以前的，如果不存在就创建新的，
-// 但同时有可能我永远都不需要这个遮罩层，所以我也有可能一直都不需要创建
+// 但是你不可能每次调用创建，所以如果存在就用以前的，如果不存在就创建新的
 function fn() {
     var a;
     return function() {
@@ -14,7 +13,7 @@ function fn() {
 var f = fn();
 f();
 
-//////////应用案例
+//////////定时与节点 闭包应用案例 0.5秒后执行，由于闭包所以objID此时还存在
 function closureExample(objID, text, timedelay) {
     setTimeout(function() {
         //document.getElementById(objID).innerHTML = text;
@@ -23,7 +22,7 @@ function closureExample(objID, text, timedelay) {
 }
 closureExample("myDiv","Closure is Create", 500);
 
-//////////应用案例
+//////////闭包 应用案例
 var db = (function() {
 // 创建一个隐藏的object, 这个object持有一些数据
 // 从外部是不能访问这个object的
