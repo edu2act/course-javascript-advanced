@@ -43,31 +43,6 @@ db('x'); // 返回 1
 // 我们不能直接访问data这个object本身
 // 但是我们可以设置它的成员
 
-////////闭包 应用案例 实现数据的封装 私有属性
-function Person(){
-    var name = "default";
-    return {
-        getName : function(){
-            return name;
-        },
-        setName : function(newName){
-            name = newName;
-        }
-    }
-};
-var john = Person();
-console.log(john.getName());
-john.setName("john");
-console.log(john.getName());
-
-var jack = Person();
-print(jack.getName());
-jack.setName("jack");
-print(jack.getName());
-
-
-
-
 
 //////////////其他实例///////
 // 实例一

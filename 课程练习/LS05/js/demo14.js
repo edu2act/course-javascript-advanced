@@ -31,3 +31,26 @@ var result=f1();
 result(); // 输出多少？
 nAdd();
 result(); // 输出多少？
+
+
+////////闭包 应用案例 实现数据的封装 私有属性
+function Person(){
+    var name = "default";
+    return {
+        getName : function(){
+            return name;
+        },
+        setName : function(newName){
+            name = newName;
+        }
+    }
+};
+var john = Person();
+console.log(john.getName());
+john.setName("john");
+console.log(john.getName());
+
+var jack = Person();
+console.log(jack.getName());
+jack.setName("jack");
+console.log(jack.getName());
