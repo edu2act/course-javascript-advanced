@@ -10,11 +10,14 @@ document.onclick = function () {
 };
 
 //一长串代码后，假如看不见上述代码了
-var a=2,b=3;
-if(a<b){
-    var userId = 234;
-}
+(function () {
+    var a=2,b=3;
+    if(a<b){
+        var userId = 234;
+    }
+}());
 */
+
 
 
 //如何避免文件之间的全局污染，使用IIFE函数立即执行表达式 查看JS文件demo07_2中的代码

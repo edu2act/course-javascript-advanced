@@ -54,3 +54,35 @@ var jack = Person();
 console.log(jack.getName());
 jack.setName("jack");
 console.log(jack.getName());
+
+/////
+var m = 10;
+function f1(){
+    nAdd=function(){++m;};
+    function f2(){
+        console.log(m);
+    }
+    return f2;
+}
+var result1=f1();
+var result2=f1();
+document.onclick = result1; // 输出多少？
+nAdd();
+result2(); // 输出多少
+
+
+//////
+var m = 10;
+function f1(){
+    nAdd=function(){++m;};
+    function f2(){
+        console.log(m);
+    }
+    return f2;
+}
+var result1=f1();
+var result2=f1();
+result1(); // 输出多少？
+nAdd();
+result2(); // 输出多少
+result1();
