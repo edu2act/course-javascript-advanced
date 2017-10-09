@@ -26,6 +26,29 @@ console.log(newObj.age);//自有属性
 console.log(newObj.__proto__);
 console.log(newObj.__proto__ === obj);
 
+//Object.create的第二个参数，参见属性特性章节
+/*
+o = {};
+// 以字面量方式创建的空对象就相当于:
+o = Object.create(Object.prototype);
+o = Object.create(Object.prototype, {
+    // foo会成为所创建对象的数据属性
+    foo: {
+        writable:true,
+        configurable:true,
+        value: "hello"
+    },
+    // bar会成为所创建对象的访问器属性
+    bar: {
+        configurable: false,
+        get: function() { return 10 },
+        set: function(value) {
+            console.log("Setting `o.bar` to", value);
+        }
+    }
+});
+*/
+
 //构造函数的方式创建JS对象  此处略讲，详情参照后续面向对象编程 注：JS对象是通过原型链的方式实现的对象继承
 function Person(name,age){
     this.name = name;
@@ -34,7 +57,6 @@ function Person(name,age){
 Person.prototype.sayName = function(){
     console.log("hello,i'm",this.name,this.age,"years old");
 };
-
 var person1 = new Person("Mike",21);
 person1.sayName();
 

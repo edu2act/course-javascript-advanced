@@ -1,6 +1,7 @@
 /**
  * Created by qile on 2017/8/14.
  */
+//Part 1
 var i = new String("str");          // String Object
 var h = new Number(1);              // Number Object
 var g = new Boolean(true);          // Boolean Object
@@ -21,6 +22,7 @@ console.log(typeof Boolean);
 console.log(typeof Math);//和上边一样么？为什么
 console.log(typeof JSON);
 
+// Part 2
 // instanceof
 console.log(Object instanceof Function);
 console.log(Object instanceof Object);

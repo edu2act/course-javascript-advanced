@@ -1,28 +1,12 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//属性特性 关于普通属性 只读的继承特点
-var o1 = {};
-Object.defineProperty(o1,"x",{value:12});
-o1.x = 34;
-console.log(o1.x);
-
-var o2 = Object.create(o1);
-o2.x = 56;
-console.log(o2.x);
-
-//全局变量的属性特性是如何的呢？
-//{value: 23, writable: true, enumerable: true, configurable: false}
-var a = 23;
-console.log(Object.getOwnPropertyDescriptor(window,"a"));
-delete a;//等效delete window.a;
-
 // 属性特性
 var o3 = {};
 o3.y = "yyy";
 Object.defineProperty(o3,"x",
     {configurable:true,enumerable:false,writable:true,value:"xxx"}
- );
+);
 
 console.log(o3.hasOwnProperty("x"));
 console.log(o3.propertyIsEnumerable("a"));
@@ -31,6 +15,7 @@ for(var k in o3){ //遍历不到x属性
 }
 console.log("x" in o3,"y" in o3);// in 和 for...in 的区别 关于可枚举属性特性
 console.log(o3.hasOwnProperty("x"),o3.hasOwnProperty("y"));//是否关心可枚举
+
 
 //遍历属性的综合实例
 var o4 = {};
@@ -49,14 +34,13 @@ for(var k in o5){
     }
 }
 console.log(o5.propertyIsEnumerable("a"),
-            o5.propertyIsEnumerable("b"),
-            o5.propertyIsEnumerable("c"),
-            o5.propertyIsEnumerable("d")
+    o5.propertyIsEnumerable("b"),
+    o5.propertyIsEnumerable("c"),
+    o5.propertyIsEnumerable("d")
 );//多少个true 多少个false
 console.log("a" in o5,"b" in o5,"c" in o5,"d" in o5);//多少个true 多少个false
 console.log(Object.keys(o5));//只显示自身可枚举的属性
 console.log(Object.getOwnPropertyNames(o5));//返回一个数组，包含自身所有属性，包括不可枚举的属性
-
 
 // in  for...in  hasOwnProperty propertyIsEnumerable
 // Object.keys Object.getOwnPropertyNames

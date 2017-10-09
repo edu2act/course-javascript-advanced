@@ -1,7 +1,7 @@
 /**
  * Created by qile on 2017/8/14.
  */
-
+//Part 111111111111111
 var obj = {
     x:1,
     y:2
@@ -12,9 +12,8 @@ for(var k in obj){
     console.log(k,obj[k]);
 }
 
+//Part 2222222222222222
 
-
-/*
 var obj = {
     x:1,
     y:2
@@ -29,6 +28,6 @@ for(var k in obj){
     console.log(k,obj[k]);
 }
 //console.log(obj.w);//有w，但上边for...in遍历不到
-*/
+
 
 //通过属性特性描述符来查看某一对象属性的特性
