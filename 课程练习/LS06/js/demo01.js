@@ -12,3 +12,5 @@ var obj = {
 console.log(obj.num);//10
 console.log(obj.str);//Hi
 obj.show();			 //Hi
+
+//练习：写一个JS对象，包括自己的姓名、年龄，和一个方法，调用这个方法
