@@ -23,8 +23,6 @@ console.log(newObj.str);
 console.log(newObj.show());
 console.log(newObj.age);//自有属性
 
-
-
 //构造函数的方式创建JS对象  此处略讲，详情参照后续面向对象编程 注：JS对象是通过原型链的方式实现的对象继承
 function Person(name,age){
     this.name = name;

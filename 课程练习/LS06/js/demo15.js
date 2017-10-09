@@ -7,6 +7,8 @@ o3.y = "yyy";
 Object.defineProperty(o3,"x",
     {configurable:true,enumerable:false,writable:true,value:"xxx"}
 );
+console.log(Object.keys(o3));
+console.log(Object.getOwnPropertyNames(o3));
 
 console.log(o3.hasOwnProperty("x"));
 console.log(o3.propertyIsEnumerable("a"));
@@ -41,6 +43,8 @@ console.log(o5.propertyIsEnumerable("a"),
 console.log("a" in o5,"b" in o5,"c" in o5,"d" in o5);//多少个true 多少个false
 console.log(Object.keys(o5));//只显示自身可枚举的属性
 console.log(Object.getOwnPropertyNames(o5));//返回一个数组，包含自身所有属性，包括不可枚举的属性
+
+console.log(o4.isPrototypeOf(o5));
 
 // in  for...in  hasOwnProperty propertyIsEnumerable
 // Object.keys Object.getOwnPropertyNames

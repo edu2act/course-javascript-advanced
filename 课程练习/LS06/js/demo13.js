@@ -52,9 +52,10 @@ Object.defineProperties(book,{
 book.year=2006;
 
 
-//关于Object.create的第二个属性
+//关于Object.create的第二个属性，思考x是empty自身属性还是obj2的自身属性？
 var empty = {};
 var obj2 = Object.create(empty,{
    x:{value:1}, y:{value:2,enumerable:true}
 });
 console.log(obj2);
+console.log(obj2.hasOwnProperty("x"));
