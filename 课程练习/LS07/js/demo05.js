@@ -3,8 +3,8 @@
  */
 function Person(name) {
     this.name = name;
+    this.age = 21;
 }
-Person.prototype.age = 21;
 Person.prototype.sayHi = function () {
     console.log("Hi,i'm ",this.name,this.age,"years old!");
 };
