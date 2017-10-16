@@ -1,7 +1,7 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//constructor属性的应用
+//Part 1 constructor属性的应用
 
 // 1 确定对象的构造函数名
 function Foo() {}
@@ -36,7 +36,7 @@ console.log(Father.prototype.constructor); //function father()
 var one = new Father(25);
 
 
-//公有属性、私有属性、特权方法
+//Part2 公有属性、私有属性、特权方法
 function A(id) {
     this.publicId = id;
     var privateId = 456;

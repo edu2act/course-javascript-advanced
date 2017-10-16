@@ -13,6 +13,7 @@ Person.prototype.showName = function(){console.log(this.name);};
 function Student(id){
     this.id = id;
 }
+//var p1 = new Person("Mike");Student.prototype = p1;
 Student.prototype = new Person("Mike");
 var s1 = new Student(2017001);
 var s2 = new Student(2017002);
@@ -30,7 +31,6 @@ s1.name = "Bill";
 s1.age = 22;
 s2.name = "Colin";
 s2.age = 23;
-
 
 
 /*

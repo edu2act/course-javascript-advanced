@@ -4,7 +4,7 @@
 //创建数组的不同方式
 var arr1 = [1,2,3,"4"];
 
-var arr2 = new Array(5);//一个参数 思考var arr2 = new Array("5");
+var arr2 = new Array(5);//思考var arr2 = new Array("5");
 console.log(arr2);
 for(var i=0;i<arr2.length;i++){arr2[i] = i;}
 
@@ -17,8 +17,16 @@ var table = [base,base+1,base+2,base+3];
 //也可包含对象直接量或其他数组直接量
 var b = [[1,{y:2}],[2,{x:3}]];
 
+//回顾数据类型思考：
+var a1 = [1,2,3];
+var a2 = a1;
+a2.length = 0;
+console.log(a1,a2);
 
-
+var a3 = [1,2,3];
+var a4 = a3;
+a4 = [];
+console.log(a3,a4);
 
 
 //Error
