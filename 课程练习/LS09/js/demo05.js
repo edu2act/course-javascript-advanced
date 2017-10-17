@@ -7,8 +7,8 @@ console.log(Array.isArray(arr1));
 
 function foo(){
     console.log(Array.isArray(arguments));
-    //console.log(arguments.sort());//这样是否能调用？数组与类数组对象
-    console.log(Array.prototype.sort.call(arguments));
+    //console.log(arguments.pop());//这样是否能调用？数组与类数组对象
+    console.log(Array.prototype.pop.call(arguments));
 }
 foo(3,2,5);
 

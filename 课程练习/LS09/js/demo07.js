@@ -46,11 +46,28 @@ console.log(newArray,arr2);
 
 
 //Part3333333 数组原型方法（迭代-非破坏性-归约方法）
-// Array.prototype.reduce(element,initialValue?)
+// Array.prototype.reduce(element,initialValue?) //从左向右迭代
+// 对reduce的解读 ((((x1 op x2) op x3) op x4)...xn)
 function add(prev,cur) {
     return prev+cur;
 }
 var arr3 = [10,3,1];
 console.log(arr3.reduce(add));
 
-// Array.prototype.reduceRight(callback,initialValue?)
+// Array.prototype.reduceRight(callback,initialValue?) //从右向左迭代
+function add(prev,cur) {
+    return prev+cur;
+}
+var arr3 = [10,3,1];
+console.log(arr3.reduceRight(add));
+
+//综合实例
+function printArgs(prev,cur,i) {
+    console.log("prev",prev,",cur:",cur,",i:",i);
+    return prev+cur;
+}
+var arr4 = ["a","b","c","d"];
+console.log(arr4.reduce(printArgs));
+console.log(arr4.reduce(printArgs,"x"));
+console.log(arr4.reduceRight(printArgs));
+console.log(arr4.reduceRight(printArgs,"x"));
