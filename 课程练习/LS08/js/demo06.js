@@ -14,7 +14,7 @@ var point = {
         function moveToY() {
             this.y = y;//this绑定到了哪里？
         }
-        moveToX();
+        moveToX();//moveToX.call(this);通过间接调用来解决
         moveToY();
     }
 };
@@ -44,3 +44,19 @@ var point = {
 point.moveTo(2,2);
 console.log(point);
 //console.log(window.x,window.y);
+
+//通过call和apply来解决
+var point = {
+    x:0,y:0,
+    moveTo:function (x,y) {
+        function moveToX() {
+            this.x = x;//this绑定到了哪里？
+        }
+        function moveToY() {
+            this.y = y;//this绑定到了哪里？
+        }
+        moveToX.call(this);//->this.moveToX()->point.MoveToX()
+        moveToY();
+    }
+};
+point.moveTo(2,2);console.log(point);//2,0
