@@ -1,7 +1,7 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//Part1111111 数组原型方法（迭代-非破坏性-检测方法）
+//Part1111111 数组原型方法（迭代-非破坏性-检测方法）thisValue可以指定callback中的this
 // Array.prototype.forEach(callback,thisValue?) //注意并不返回新的数组
 var arr1= [2,5,8];
 arr1.forEach(function (a) {
@@ -28,7 +28,6 @@ var returnValue = arr2.some(function (a) {//判断数组元素是否都是偶数
 console.log(returnValue);
 
 
-
 //Part2222222 数组原型方法（迭代-非破坏性-转换方法）
 // Array.prototype.map(callback,thisValue?) //Map映射 返回新的数组
 var arr2= [1,3,5,7,9];
@@ -48,6 +47,7 @@ console.log(newArray,arr2);
 //Part3333333 数组原型方法（迭代-非破坏性-归约方法）
 // Array.prototype.reduce(element,initialValue?) //从左向右迭代
 // 对reduce的解读 ((((x1 op x2) op x3) op x4)...xn)
+// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 function add(prev,cur) {
     return prev+cur;
 }
@@ -71,3 +71,25 @@ console.log(arr4.reduce(printArgs));
 console.log(arr4.reduce(printArgs,"x"));
 console.log(arr4.reduceRight(printArgs));
 console.log(arr4.reduceRight(printArgs,"x"));
+
+//思考案例：
+var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+    return a.concat(b);
+});
+console.log(flattened);
+
+
+//思考案例：计算数组中每个元素出现的次数
+var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+var countedNames = names.reduce(function (allNames, name) {
+    if (name in allNames) {
+        allNames[name]++;
+    }
+    else {
+        allNames[name] = 1;
+    }
+    return allNames;
+}, {});
+// countedNames is:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }

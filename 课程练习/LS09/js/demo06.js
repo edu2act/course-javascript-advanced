@@ -18,7 +18,8 @@ arr3.sort();
 console.log(arr3);//结果是否是预计结果,如何解决
 
 //sort传递的函数对象
-arr3.sort(function (a,b) {return a-b;});//大于0则交换，冒泡排序
+arr3.sort(function (a,b) {return a-b;});//对于数字类型，大于0则交换，冒泡排序
+//arr3.sort(function (a,b) {return a>b;});//对于布尔类型，true则交换，冒泡排序
 /*
 //避免数字溢出的写法
 arr3.sort(function (a,b) {

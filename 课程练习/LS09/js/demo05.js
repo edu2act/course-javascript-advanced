@@ -1,7 +1,18 @@
 /**
  * Created by qile on 2017/8/14.
  */
+//数组方法参考链接：
+// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 //Part1  数组的静态方法
+const bar = ["a", "b", "c"];
+Array.from(bar);// ["a", "b", "c"]
+Array.from('foo');// ["f", "o", "o"]
+
+Array.of(7);       // [7]
+Array.of(1, 2, 3); // [1, 2, 3]
+Array(7);          // [ , , , , , , ]
+Array(1, 2, 3);    // [1, 2, 3]
+
 var arr1 = [1,3,4];
 console.log(Array.isArray(arr1));
 
