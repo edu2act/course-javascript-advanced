@@ -1,78 +1,24 @@
 /**
- * Created by qile on 2017/8/14.
+ * Created by qile on 2017/10/20.
  */
-/*
- * 创建 ZipCode 示例.
- *
- * 可被接受的邮政编码格式:
- *    12345
- *    12345-6789
- *    123456789
- *    12345 6789
- *
- * 如果构造函数参数传入的格式不符合以上任何一个格式，将会抛出异常。
- */
+//贪婪模式和非贪婪模式
+"12345678".replace(/\d{3,6}/,'X');//默认为贪婪模式  X78
 
-function ZipCode(zip) {
-    zip = new String(zip);
-    pattern = /[0-9]{5}([- ]?[0-9]{4})?/;
-    if (pattern.test(zip)) {
-        // zip code value will be the first match in the string
-        this.value = zip.match(pattern)[0];
-        this.valueOf = function() {
-            return this.value
-        };
-        this.toString = function() {
-            return String(this.value)
-        };
-    } else {
-        throw new ZipCodeFormatException(zip);
-    }
-}
+"12345678".replace(/\d{3,6}?/,'X');//设置为非贪婪模式 在量词后加？X45678
 
-function ZipCodeFormatException(value) {
-    this.value = value;
-    this.message = "不是正确的邮政编码";
-    this.toString = function() {
-        return this.value + this.message
-    };
-}
+"12345678".replace(/\d{3,6}?/g,'X');//返回什么？
 
-/*
- * 这可能是一个验证美国地区中的脚本
- */
+//正则表达式的分组
+console.log("NameNameName_11111".replace(/Name{3}/,"X"));
+console.log("NameNameName_11111".replace(/(Name){3}/,"X"));
 
-const ZIPCODE_INVALID = -1;
-const ZIPCODE_UNKNOWN_ERROR = -2;
+console.log("a1b2c3d4e5".replace(/[a-z]\d{3}/,"X"));
+console.log("a1b2c3d4e5".replace(/([a-z]\d){3}/,"X"));
+console.log("a1b2c3d4e5".replace(/([a-z]\d){3,4}/,"X"));
+console.log("a1b2c3d4e5".replace(/([a-z]\d){3,4}?/,"X"));
 
-function verifyZipCode(z) {
-    try {
-        z = new ZipCode(z);
-    } catch (e) {
-        if (e instanceof ZipCodeFormatException) {
-            return ZIPCODE_INVALID;
-        } else {
-            return ZIPCODE_UNKNOWN_ERROR;
-        }
-    }
-    return z;
-}
-
-a = verifyZipCode(95060);         // 返回 95060
-b = verifyZipCode(9560);          // 返回 -1
-c = verifyZipCode("a");           // 返回 -1
-d = verifyZipCode("95060");       // 返回 95060
-e = verifyZipCode("95060 1234");  // 返回 95060 1234
+// 与分组相关的 或
+"abcdefghijk".replace(/abcde|fghijk/g,"X");
+"abcdefghijk_abcdehijk_abcfghijk".replace(/abc(de|fg)hijk/g,"X");
 
 
-//222222222222222重新抛出异常
-try {
-    throw n; // 抛出一个数值异常
-} catch (e) {
-    if (e <= 50) {
-        // 异常在 1-50 之间时，直接处理
-    } else {
-        // 异常无法处理，重新抛出
-        throw e;
-    }
-}
