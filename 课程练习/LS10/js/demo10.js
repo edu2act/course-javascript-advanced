@@ -2,16 +2,11 @@
  * Created by qile on 2017/8/14.
  */
 
-
-
-
-
 //注意转义字符 第一个相当于做了分组
 console.log(/^(ab)$/.test("(ab)"));
 console.log(/^\(ab\)$/.test("(ab)"));
 
 // RegExp.prototyp.exec方法
-
 //如果只判断有没有，可以使用非全局模式
 var reg1 = /\d(\w)\d/;
 var ts1 = "1a2b3c4d5e";
@@ -41,3 +36,4 @@ while (ret3 = reg2.exec(ts2)){
     console.log(reg2.lastIndex,"__",ret3);
 }
 */
+

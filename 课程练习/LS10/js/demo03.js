@@ -60,8 +60,6 @@ console.log("moo".match(/\Boo\B/));//null
 例如, /\W/ 或者 /[^A-Za-z0-9_]/ 匹配 "50%." 中的 '%'。
  */
 
-
-
 //
 console.log(/ruby/.test("ruby"));//true
 console.log(/[abc]/.test("a"));//true
@@ -77,8 +75,6 @@ var expression = /and/gi;
 // var expression = /and/i;
 // var expression = /and/;
 var andCount = testString.match(expression).length;
-
-
 
 
 //

@@ -1,8 +1,6 @@
 /**
  * Created by qile on 2017/10/20.
  */
-
-
 //String.prototype.search 注意search忽略 全局g
 console.log("a1b2c3d4".search(/1/));//返回index 1
 console.log("a1b2c3d4".search(/f/));//返回index -1 没找到

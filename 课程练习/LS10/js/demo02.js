@@ -2,21 +2,22 @@
  * Created by qile on 2017/10/23.
  */
 
-//在控制台上测试，去除到g或i修饰符后，看结果如何变化
-//g全局、i大小写、m换行
-var regExp = /a?b/gi;
+//在控制台上测试，了解两点
+// 一、g全局、i大小写、m换行 修饰符的作用
+// 二、正则对象的两种基本使用方式 1.字符串.字符串方法（正则对象） 2.正则对象.正则方法（字符串）
+var regExp = /ab/i;
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 
-var regExp = /a?b/gi;
+var regExp = /ab/gi;
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 
-var regExp = /a*b/gi;
+var regExp = /a*b/gi; //注意*和.的区别 ，参见在线分析工具 https://regexper.com
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 
-var regExp = /a.b/gi;
+var regExp = /a.b/gi;//注意*和.的区别 ，参见在线分析工具 https://regexper.com
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 
@@ -24,8 +25,7 @@ var regExp = /\d/;
 var str = "123\n456";
 console.log(str.replace(regExp,"X"));//只换了一行
 
-
-//test 和 exec
+//test初步了解
 var regExp = /a/i;
 console.log(regExp.test("ab"));
 console.log(regExp.test("ab"));
