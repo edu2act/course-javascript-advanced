@@ -1,88 +1,40 @@
 /**
  * Created by qile on 2017/8/14.
  */
-
-//嵌套 try-blocks
-//11111111111111
+//Error相关
+var e1 = new Error("e1 Error Msg");
 try {
-    try {
-        throw new Error("oops");
-    }
-    finally {
-        console.log("finally");
-    }
-}
-catch (ex) {
-    console.error("outer", ex.message);
+    throw  e1;//throw new Error("Whoops!");
+} catch (e) {
+    console.log(e.name + ": " + e.message);
 }
 
-// Output:
-// "finally"
-// "outer" "oops"
+////基于Error的子类，可以创建自定义错误对象，并添加若干自有属性
+function MyError(message) {
+    this.name = 'MyError';
+    this.message = message || 'Default Message';
+}
+MyError.prototype.__proto__ = Error.prototype;
+//MyError.prototype = Object.create(Error.prototype);
+//MyError.prototype.constructor = MyError;
 
-
-//222222222222222222222
 try {
-    try {
-        throw new Error("oops");
-    }
-    catch (ex) {
-        console.error("inner", ex.message);
-    }
-    finally {
-        console.log("finally");
-    }
-}
-catch (ex) {
-    console.error("outer", ex.message);
+    throw new MyError();
+} catch (e) {
+    console.log(e.name);     // 'MyError'
+    console.log(e.message);  // 'Default Message'
 }
 
-// Output:
-// "inner" "oops"
-// "finally"
-
-
-//3333333333
 try {
-    try {
-        throw new Error("oops");
-    }
-    catch (ex) {
-        console.error("inner", ex.message);
-        throw ex;
-    }
-    finally {
-        console.log("finally");
-    }
-}
-catch (ex) {
-    console.error("outer", ex.message);
+    throw new MyError('custom message');
+} catch (e) {
+    console.log(e.name);     // 'MyError'
+    console.log(e.message);  // 'custom message'
 }
 
-// Output:
-// "inner" "oops"
-// "finally"
-// "outer" "oops"
 
-
-
-//44444444
-try {
-    try {
-        throw new Error("oops");
-    }
-    catch (ex) {
-        console.warn("inner", ex.message);
-        throw ex;
-    }
-    finally {
-        console.log("finally");
-    }
-}
-catch (ex) {
-    console.warn("outer", ex.message);
-}
-
-// Output:
-// "inner" "oops"
-// "finally"
+/////////////////
+console.log(Error.prototype);//{name: "Error", message: "", constructor: function, toString: function}
+var myError = new Error("NewMessage");
+console.log(myError.name,myError.message,myError);
+console.log(myError.hasOwnProperty("name"),myError.hasOwnProperty("message"));

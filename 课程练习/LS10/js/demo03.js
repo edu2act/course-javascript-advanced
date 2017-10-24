@@ -76,7 +76,6 @@ var expression = /and/gi;
 // var expression = /and/;
 var andCount = testString.match(expression).length;
 
-
 //
 var str = "test22314234244dgfqeqe232qe13ed";
 var newStr = str.search(/\dqe/);

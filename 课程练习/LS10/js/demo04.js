@@ -68,6 +68,5 @@ console.log("AaBbAb_AaaBbbAbaAaaaaaaAaaAaaa".replace(/Aa{2,4}/g,0));
 
 //注意：0到n次的写法{0,n}而不是{,n}
 
-
 //思考：
 var reg = /d{20}\w\d?\w+\d*\w{3,5}\d{3,}/;

@@ -7,7 +7,6 @@ console.log("a1b2c3d4".search(/f/));//返回index -1 没找到
 console.log("a1b2c3d4".search(/\d/g));//返回index 1 忽略全局
 console.log("a1b2c3d4".search(/\d\w/g));//返回index 1 忽略全局
 
-
 //String.prototype.match 如果匹配不到返回null 匹配到了返回数组
 // 包含的信息有index 原始字符串 有没有g影响很大
 console.log("a1b2c3d4".match(/1/));//[ '1', index: 1, input: 'a1b2c3d4' ]
@@ -23,8 +22,6 @@ console.log("a2b3c4d".replace(/[2-3]/g,"X"));
 //String.prototype.split
 console.log("a,b,c,d".split(","));
 console.log("a2b3c4d".split(/\d/));
-
-
 
 "abcdef21313sfsflsf1223jlnsa".match(/[a-h]/);
 "abcdef21313sfsflsf1223jlnsa".match(/[a-h]/g);
