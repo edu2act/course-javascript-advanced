@@ -46,6 +46,10 @@ console.log("This is a Boy is".replace(/\bis/g,0));
 console.log("This is a Boy is".replace(/\Bis/g,0));
 
 // Part 33333333333333333333
+//思考如何匹配 12345789abcdef34534789ede
+//"12345789abcdef34534789ede".replace(/\d\d\d\d\d\d\d\d/g,"X");//不用量词的写法，非常不好
+//"12345789abcdef34534789ede".replace(/\d{8}/g,"X");
+
 //量词 注意*在这里是量词，不是充当通配符，充当通配符的是 .
 //? 出现0次或1次（最多出现1次）
 console.log("AaBbAb_AaaBbbAba".replace(/Aa?/g,0));
