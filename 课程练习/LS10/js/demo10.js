@@ -18,7 +18,17 @@ var CUCC = [];//联通
 var CTCC = [];//电信
 var Others = [];//其他号码
 //写一段代码，将对应的号码段存储到对应的数组中
-
+for(var i=0;i<numbers.length;i++){
+    if(/1(3[4-9]|47|5[0127-9]|78|8[2-47-8])\d{8}/.test(numbers[i])){
+        CMCC.push(numbers[i]);//console.log("移动");
+    }else if(/2/.test(numbers[i])){
+        CUCC.push(numbers[i]);//console.log("联通");
+    }else if(/3/.test(numbers[i])){
+        CTCC.push(numbers[i]);//console.log("电信");
+    }else{
+        Others.push(numbers[i]);//console.log("其他");
+    }
+}
 console.log("移动号码：",CMCC);
 console.log("联通号码：",CUCC);
 console.log("电信号码：",CTCC);

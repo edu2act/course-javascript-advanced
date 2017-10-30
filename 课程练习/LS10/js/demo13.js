@@ -32,7 +32,6 @@ try {
     console.log(e.message);  // 'custom message'
 }
 
-
 /////////////////
 console.log(Error.prototype);//{name: "Error", message: "", constructor: function, toString: function}
 var myError = new Error("NewMessage");

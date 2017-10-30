@@ -12,8 +12,7 @@ try{
     console.log("try_statements");
     throw "Some Error";//可以抛出异常 throw new Error("ErrorMsg");
     // var a= new Array(-1);
-    // throw new TypeError();
-    // throw new ReferenceError();
+    // throw new TypeError();// throw new ReferenceError();
 }
 catch(e){ //catch和finally至少有一个
     //catch_statements 捕获处理异常
