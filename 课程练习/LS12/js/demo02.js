@@ -1,7 +1,7 @@
 /**
  * Created by qile on 2017/8/14.
  */
-/*
+
 // Part111111111111111  函数回调
 // 案例一 同步执行的回调
 var arr1= [1,3,5,7,9];
@@ -38,9 +38,9 @@ for(var i = 0;i<5;i++){
     var task = new LTimeOperation(i);
     task.go(f2);
 }
-*/
 
-// Part22222222222222  事件触发与事件监听 在Nodejs环境中调试
+
+// Part22222222222222  事件触发与事件监听
 // 案例一 在控制台中输出window 和 document ，看看window中的on 和document中的on
 document.onclick = function () {
     console.log("document 被点击了！")
@@ -58,8 +58,8 @@ for(var i=0;i<5;i++){
 for(var i=0;i<5;i++) {
     //(function (i) {
         document.getElementById("btnId" + i).addEventListener("click", function () {
-            //console.log(i);
-            document.bgColor = "#ff"+i*2+i*2+"00";
+            document.bgColor = "#"+i*2+i*2+i*2+i*2+"00";
+            console.log("#"+i*2+i*2+i*2+i*2+"00");
         });
     //})(i);
 }

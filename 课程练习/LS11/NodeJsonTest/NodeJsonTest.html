@@ -13,11 +13,11 @@
         }
     </style>
     <script src="jquery-2.2.2.js"></script>
-
 </head>
 <body>
 <button id="btn">点击</button>
 <input type="text" id="inp">
+<label id="lab">输入1到7的整数</label>
 
 <script>
     //        type:请求方式（get,post）
@@ -26,30 +26,8 @@
     //        dataType:返回的数据类型，一般的值为--json/jsonp
     //        success:成功后的回调函数
     //        $.ajax({});
+    //   后端代码参见NodeJsonTest
     $('#btn').click(function () {
-        /*
-       $.ajax({
-           type:'get',
-//                url:'http://datainfo.duapp.com/shopdata/userinfo.php',
-           url:'127.0.1:8080',
-//                data:{status:'login',userID:$('#inp').val(),password:1234578},
-//                data:{userID:$('#inp').val()},
-           //dataType:'json',
-           success:function(data){
-               console.log(data)
-               alert("success");
-               // var ul = document.createElement('ul');
-               // document.body.appendChild(ul);
-               // for(var i=0; i<data.length; i++){
-               // 	var li = document.createElement('li');
-               // 	ul.appendChild(li);
-               // 	li.innerHTML='<a href="">'+data[i].title+'</a><span style="float:right;">'+data[i].date+'</span>';
-               // }
-           },
-           error:function(){
-               alert('error');
-           }
-       })*/
         $.ajax({
             url: 'http://localhost:8080?id='+($('#inp').val()||1),
             dataType: 'JSON',
@@ -57,28 +35,14 @@
             success: function (data) {
                 if (data) {
                     console.log(typeof data,data);
+                    document.getElementById("lab").innerText = JSON.stringify(data);
                 }
             },
             error: function (xhr) {
                 alert('error:' + JSON.stringify(xhr));
             }
         })
-        /*
-        .done(function (data) {
-            // 请求成功后要做的工作
-            alert('ajax_done',data);
-        })
-        .fail(function () {
-            // 请求失败后要做的工作
-            alert('ajax_fail');
-        })
-        .always(function () {
-            // 不管成功或失败都要做的工作
-            alert('ajax_always');
-        });
-        */
     })
-
 </script>
 </body>
 </html>

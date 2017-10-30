@@ -2,13 +2,13 @@
  * Created by qile on 2017/8/14.
  */
 // Part11111111111111111 JSON.stringfiy的用法
-// JSON.stringify 案例一
+// JSON.stringify 案例一 复合对象转换
 var o1 = {
     a:[1,2],
     b:true,
     c:[3,4,"x",{y:34,z:56}],
     d:5,
-    e:{"name":"Jack"},
+    e:{name:"Jack"},
     f:function(){console.log(12);}, //注意函数序列化问题
     h:0x12
 };
@@ -16,7 +16,7 @@ var jsonStr1 = JSON.stringify(o1);
 console.log(jsonStr1);
 console.log(o1);
 
-// JSON.stringify 案例二
+// JSON.stringify 案例二 复合数组的转换
 var a1 = [1,"x",true,{y:2,z:3}];
 var jsonStrArr1 = JSON.stringify(a1);
 console.log(jsonStrArr1);
@@ -32,6 +32,17 @@ var o2 = {
 var jsonStr2 = JSON.stringify(o2,function (key,value) {
     if(value === true){
         value = false;
+    }
+    if((value instanceof Array)&&value.length == 4){
+        value[0] = "Hi";
+    }
+    if(key === "a"){
+        console.log("find key a");
+        value = 12345;
+    }
+    if(key === "z"){
+        console.log("find key z");
+        value = "zzz";
     }
     return value;
 });
@@ -51,6 +62,9 @@ var o4 = JSON.parse(jsonStr4);
 var o5 = JSON.parse(jsonStr5,function (key,value) {
     if(typeof value === "boolean"){
         value = "ChangeToString";
+    }
+    if(key == "c"){//迭代的遍历某个希望寻找的数据属性，可用于数据信息的查找
+        console.log("c:",value);
     }
     return value;
 });

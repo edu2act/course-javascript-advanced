@@ -3,29 +3,21 @@ var http = require("http");
 var url = require("url");
 
 http.createServer(function (req, res) {
-    //console.log(req);
-
-    var getDataObj = url.parse(req.url,true).query;
-    console.log(getDataObj);
+    var getDataObj = url.parse(req.url,true).query;//parse第二参数决定了是否转成对象
+    //console.log(getDataObj);
     var arrayIndex = getDataObj.id-1;
-    console.log(typeof arrayIndex,arrayIndex);
+    //console.log(typeof arrayIndex,arrayIndex);
     fs.readFile("./NodeJsonTest.json", function readData(err, data) {
-        var test1=JSON.parse(data);
-         console.log("test1:",test1[arrayIndex]);
-
-
+        var jsonArr=JSON.parse(data);
+        //console.log("jsonArr:",jsonArr[arrayIndex]);
+        
         //res.writeHead(200, {"Content-Type": "text/plain",
         res.writeHead(200, {"Content-Type": "application/json",
             "Access-Control-Allow-Origin":"*",
             "Access-Control-Allow-Methods": "GET, POST"
         });
-        //console.log(data,data instanceof Array);
-        //console.log(data instanceof String,data instanceof Object);
-        // console.log(JSON.stringify(data.toString()),data instanceof Object);
-        //data = '{"x":2}';
-
-        res.end(JSON.stringify(test1[arrayIndex]));
-        // res.end(data);
+        
+        res.end(JSON.stringify(jsonArr[arrayIndex]));
     });
 
 }).listen(8080,"127.0.0.1");
