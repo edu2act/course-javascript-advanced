@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">点击</button>
+<input type="text" id="inp">
+<label id="lab">label</label>
+
+<script>
+    var myData = JSON.stringify({x:1,y:2});
+    var myURL = "http://127.0.0.1:8080";
+    var myCallback = function (data) {
+        //console.log(data);
+        document.getElementById("lab").innerText = data;
+    };
+
+    function myAjax(url,postData,callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState == 4 && xhr.status == 200){
+                var message=xhr.responseText;
+                callback(message);
+            }
+        };
+        xhr.open("post",url,true);//使用POST方法
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//POST需增加
+        xhr.send(postData);
+    };
+
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        myAjax(myURL,"点击按钮",myCallback);
+    };
+
+    var inputTxt = document.getElementById("inp");
+    inputTxt.onkeyup = function () {
+        myAjax(myURL,inputTxt.value,myCallback);
+    }
+
+</script>
+</body>
+</html>

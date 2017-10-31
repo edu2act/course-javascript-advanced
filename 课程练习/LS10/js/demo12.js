@@ -8,7 +8,8 @@ window.onload = function () {
             var n = parseInt(inputValue);
             var a= new Array(n);//定义一个数组 传3试试、再传-5试试
             for(var i=0;i<n;i++){a[i] = i;}
-        }catch(e){
+        }
+        catch(e){
             alert(e.name+e.message);
         }
         finally {
