@@ -18,3 +18,4 @@ var x = 23;
 let y = 34;
 console.log(window.x,window.y);//23 undefined
 
+
