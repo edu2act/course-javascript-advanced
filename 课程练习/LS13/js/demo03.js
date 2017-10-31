@@ -13,3 +13,8 @@ if(a<b){
     let userId = 234;
 }
 
+//let 定义的变量 并不像 var 那样直接作为全局对象的属性
+var x = 23;
+let y = 34;
+console.log(window.x,window.y);//23 undefined
+

@@ -21,3 +21,10 @@ if(true){
 const fee = function () {
 
 };
+
+//const指向的对象引用不可变，但其属性或元素是可变的
+const a = [];
+a.push(123,234);//可以
+a.length = 1;//可以
+a = "str";//报错，因为a是const其元素或属性可改，但其引用不能修改类似于 const指针
+//回顾 指向常量的指针 和 常量指针
