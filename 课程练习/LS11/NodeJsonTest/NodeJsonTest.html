@@ -29,7 +29,7 @@
     //   后端代码参见NodeJsonTest
     $('#btn').click(function () {
         $.ajax({
-            url: 'http://localhost:8080?id='+($('#inp').val()||1),
+            url: 'http://192.168.109.144:8080?id='+($('#inp').val()||1),
             dataType: 'JSON',
             type: 'GET',
             success: function (data) {
