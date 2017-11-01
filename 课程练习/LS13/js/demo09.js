@@ -62,6 +62,7 @@ function f2() {
     console.log('aaa');
 }
 let [x7 = f2()] = [1];
+console.log(x7);
 
 //等效于
 /*
@@ -87,6 +88,7 @@ console.log(m1,n1,m2,n2,m3,n3);
 //对于Set结构，也可以使用数组的解构赋值
 let [x8, y8, z8] = new Set(["a", "b", "c"]);
 
+//Generator案例
 function* fibs() {
     var a8 = 0;
     var b8 = 1;

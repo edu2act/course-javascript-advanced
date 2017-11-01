@@ -15,6 +15,7 @@ var { baz3 } = { foo3: "ccc", bar3: "ddd" };
 console.log(baz3);
 
 ////////////////////////////////////////////////////
+//左侧为键值对时,注意键值对赋值时的对应关系
 var { foo4: baz4 } = { foo4: 'aaa', bar4: 'bbb' };
 console.log(baz4);// "aaa"
 
@@ -35,10 +36,10 @@ var { foo5: foo5, bar5: bar5 } = { foo5: "aaa", bar5: "bbb" };
 var { foo6: baz6 } = { foo6: "aaa", bar6: "bbb" };
 console.log(baz6);// "aaa"
 //foo6 // error: foo is not defined
-//上面代码中，真正被赋值的是变量baz，而不是模式foo
+//上面代码中，真正被赋值的是变量baz6，而不是模式foo6
 
 /////////////////
-//和数组一样，解构也可以用于嵌套结构的对象。
+//和数组一样，解构也可以用于嵌套结构的对象,如果是键值对的情况，键只用于匹配，真正赋给的是对应的值
 var obj2 = {
     p: [
         'Hello',
@@ -48,6 +49,7 @@ var obj2 = {
 var { p: [x, { y }] } = obj2;
 console.log(x); // "Hello"
 console.log(y); // "World
+//思考console.log(p);是正常输出还是报错？
 
 ///
 var node = {
@@ -64,7 +66,7 @@ line // 1
 //start // error: start is undefined
 //上面代码中，只有line是变量，loc和start都是模式，不会被赋值。
 
-//嵌套赋值的例子。
+//嵌套赋值的例子，为什么加括号，如果不加括号解析器将解析为代码块，所以加括号
 let obj3 = {};
 let arr = [];
 ({ foo7: obj3.prop, bar7: arr[0] } = { foo7: 123, bar7: true });
@@ -87,7 +89,6 @@ console.log(y5); // 5
 var { message: msg = 'Something went wrong' } = {};
 console.log(msg); // "Something went wrong"
 
-//其他部分参见电子教材
 
 
 

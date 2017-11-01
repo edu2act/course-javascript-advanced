@@ -24,6 +24,7 @@ xhr.open("get", "http://127.0.0.1:8080?getInfo=MyGetInformation", true);
 //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//post需增加
 xhr.send();
 
+
 //实例二
 var txt = document.createElement("INPUT");
 txt.setAttribute("style", "width:200px");
