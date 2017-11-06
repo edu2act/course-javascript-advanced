@@ -24,7 +24,7 @@ console.log(sum(1));//1+4+5
 console.log(sum(1,0,0));//1+0+0
 
 
-// ES6 中实现函数参数默认值的方法
+// ES6 中实现函数参数默认值的方法 ,使用babble查看ES5的写法
 var sum = function(a,b=4,c=5){
     return a+b+c;
 };

@@ -110,3 +110,24 @@ console.log("移动号码：",CMCC);
 console.log("联通号码：",CUCC);
 console.log("电信号码：",CTCC);
 
+
+//////
+//1、搜狐邮箱后缀：包括sohu.com.cn、sohu.com
+//2、新浪邮箱后缀：包括sina.com.cn、sina.com、sina.cn
+//3、qq邮箱后缀：包括qq.com.cn、qq.com
+//4、其他邮箱后缀：包括满足格式的其他邮箱
+
+//使用正则表达式和数组相关的方法，将邮箱进行分类,要求分为4类，并存在4个对应的数组中
+var emails = [
+    "Ky-D1zU@sina.cn", "jzX4xq@gmail.cn", "J8XNzf7SQV@sohu.com.cn",
+    "TSmA4xX@sohu.com.cn", "yDzwr@msn.cn", "l7bSnfYDz-3OO@sina.cn",
+    "uavXW@sina.com", "w65FgY5@gmail.cn", "wY6iRUCr@126.com.cn",
+    "Gy0GKnygcG@sina.com.cn", "SoMUWIfO@qq.com", "DGOoczUOLl36Oh@163.cn",
+    "QP8ENE@gmail.com.cn", "la4-Qu7xxn@qq.com.cn", "_IKhiFMI-rL@sohu.com"
+];
+
+var sohuArray = [];
+var sinaArray = [];
+var qqArray = [];
+var otherArray = [];
+

@@ -9,8 +9,9 @@ baz // {foo: "bar"}
 // 等同于
 var baz = {foo: foo};
 
-//上面代码表明，ES6允许在对象之中，只写属性名，不写属性值。这时，属性值等于属性名所代表的变量。
-// 下面是另一个例子。
+//上面代码表明，ES6允许在对象之中，只写属性名，不写属性值。
+// 这时，属性值等于属性名所代表的变量。
+// 下面是另一个例子,返回对象的简洁表示法
 function f(x, y) {
     return {x, y};
 }
@@ -34,7 +35,7 @@ var o = {
 };
 //下面是一个实际的例子。
 var birth = '2000/01/01';
-var Person = {
+var p1 = {
     name: '张三',
 //等同于birth: birth
     birth,
@@ -47,7 +48,7 @@ function getPoint() {
     var y = 10;
     return {x, y};
 }
-getPoint()
+getPoint();
 // {x:1, y:10}
 
 
@@ -73,7 +74,8 @@ let obj = {
         return 'hi';
     }
 };
-obj.hello() // hi
+obj.hello(); // hi
+
 //注意，属性名表达式与简洁表示法，不能同时使用，会报错。
 // 报错
 var foo = 'bar';
@@ -82,10 +84,19 @@ var bar = 'abc';
 
 // 正确
 var foo = 'bar';
-var baz = { [foo]: 'abc'};
+var baz = { [foo]: 'abc'};//或var baz = { [foo]: bar};
 
 
 // Part3333333333333333333
+//Object.is它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致
+console.log(Object.is(1,"1"));//false
+console.log(Object.is(1,1));//true
+//和===的区别之处如下
+console.log(+0 === -0); //true
+console.log(NaN === NaN); // false
+console.log(Object.is(+0, -0)); // false
+console.log(Object.is(NaN, NaN)); // true
+
 // Object.assign方法用于对象的合并，将源对象（source）的所有可枚举属性，复制到目标对象（target）。
 var target = { a: 1 };
 var source1 = { b: 2 };
@@ -107,10 +118,21 @@ var obj2 = Object.assign({}, obj1);
 obj1.a.b = 2;
 obj2.a.b; // 2
 
+
+//Object.getPrototypeOf()、Object.setPrototypeOf()方法
+var obj = Object.create({x:1,y:2});
+console.log(Object.getPrototypeOf(obj));
+Object.setPrototypeOf(obj,{z:3});
+console.log(Object.getPrototypeOf(obj));
+
+//回顾ES5 中的Object.keys静态方法
 //values 和 entries 方法
 var obj = { foo: "bar", baz: 42 };
 Object.values(obj);// ["bar", 42]
 
 var obj = { foo: 'bar', baz: 42 };
-Object.entries(obj);
-// [ ["foo", "bar"], ["baz", 42] ]
+Object.entries(obj);// [ ["foo", "bar"], ["baz", 42] ]
+for(var [k,v] of Object.entries(obj)){
+    console.log(k,v);
+}
+

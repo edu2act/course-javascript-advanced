@@ -14,11 +14,12 @@ function f(...y){
 }
 f("a","b","c");//输出 ["a","b","c"]
 
-//比arguments使用更加灵活
+//比arguments使用更加灵活,比如只想看从第二个开始之后的参数
 function f(x,...y){
     console.log(x,y);
 }
 f("a","b","c","d");//输出 "a",["b","c","d"]
+//思考：f("a",["b","c","d"]);//输出 "a",[["b","c","d"]]
 f("a");//输出 "a",[]
 f();//输出 undefined,[]
 

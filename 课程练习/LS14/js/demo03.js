@@ -64,11 +64,11 @@ Math.trunc(-4.9); // -4
 Math.trunc(-0.1234); // -0
 
 //Math.sign方法用来判断一个数到底是正数、负数、还是零
-Math.sign(-5) // -1
-Math.sign(5) // +1
-Math.sign(0) // +0
-Math.sign(-0) // -0
-Math.sign(NaN) // NaN
+Math.sign(-5); // -1
+Math.sign(5); // +1
+Math.sign(0); // +0
+Math.sign(-0); // -0
+Math.sign(NaN); // NaN
 Math.sign('foo'); // NaN
 Math.sign(); // NaN
 
