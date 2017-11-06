@@ -166,14 +166,19 @@ new Array(3);// [, , ,]
 0 in [undefined, undefined, undefined] // true
 0 in [, , ,] // false
 
-// forEach方法 箭头函数参见函数扩展章节
+//单独测试下述代码
+// forEach方法
 [,'a'].forEach(function(x,i){return console.log(i);}); // 1
+
 // filter方法
 ['a',,'b'].filter(function(x){return true;}) // ['a','b']
+
 // every方法
 [,'a'].every(function(x){return x==='a'}) // true
+
 // some方法
 [,'a'].some(function(x){return x !== 'a';} ) // false
+
 // map方法
 [,'a'].map(function (x) {return 1;}) // [,1]
 

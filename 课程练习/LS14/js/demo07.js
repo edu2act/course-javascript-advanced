@@ -46,7 +46,7 @@ point.moveTo(2,2);
 console.log(point);
 //console.log(window.x,window.y);
 
-
+//思考并回顾：如何用call或apply间接调用的方法解决this指向问题？？？
 
 //ES6中 箭头函数中this是与函数定义时所在的对象绑定，而不是使用时所在的对象（避免this缺陷）
 //箭头函数导致this总是指向函数定义生效时所在的对象
