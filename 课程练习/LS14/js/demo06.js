@@ -30,8 +30,7 @@ var foo = (num1, num2) => {
 };
 //foo(2,3);
 //foo(3,2);
-
-// 等同于
+// 等同于 ES5的写法
 var foo = function (num1, num2) {
     if (num1 > num2) {
         return num1 * 2;
@@ -41,7 +40,6 @@ var foo = function (num1, num2) {
 };
 //foo(2,3);
 //foo(3,2);
-
 
 ///////////////////////////////////
 var max = function (a, b) {

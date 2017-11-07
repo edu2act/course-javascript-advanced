@@ -118,7 +118,6 @@ var obj2 = Object.assign({}, obj1);
 obj1.a.b = 2;
 obj2.a.b; // 2
 
-
 //Object.getPrototypeOf()、Object.setPrototypeOf()方法
 var obj = Object.create({x:1,y:2});
 console.log(Object.getPrototypeOf(obj));
