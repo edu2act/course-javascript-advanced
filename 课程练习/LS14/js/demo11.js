@@ -2,26 +2,26 @@
  * Created by qile on 2017/8/14.
  */
 //Part1111111111111111
-//没有Symbol时的重名案例
-var objProto = {x:1,y:2};
-var obj = Object.create(objProto);
-obj.x = 3;
-console.log(obj.hasOwnProperty("x"));
-console.log(obj.__proto__.hasOwnProperty("x"));
+//为什么要使用Symbol
+// ES5里面对象的属性名都是字符串，
+// 如果你需要使用一个别人提供的对象，你对这个对象有哪些属性也不是很清楚，
+// 但又想为这个对象新增一些属性，那么你新增的属性名就很可能和原来的属性名发送冲突，
+// 显然我们是不希望这种情况发生的。所以，我们需要确保每个属性名都是独一无二
+// 因此，ES6里就引入了Symbol，用它来产生一个独一无二的值。
 
 //定义Symbol变量，注意Symbol是基本数据类型的一种，不能用new
 //回顾下基本数据类型的特点，区分基本类型和引用类型
-let s = Symbol();
+let s = Symbol();//不能用new
 typeof s;
 // "symbol"
 
 //Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。
 var s1 = Symbol('foo');
 var s2 = Symbol('bar');
-s1 // Symbol(foo)
-s2 // Symbol(bar)
-s1.toString(); // "Symbol(foo)"
-s2.toString(); // "Symbol(bar)"
+console.log(s1); // Symbol(foo)
+console.log(s2); // Symbol(bar)
+console.log(s1.toString()); // "Symbol(foo)"
+console.log(s2.toString()); // "Symbol(bar)"
 
 
 //Part2222222222222222222
