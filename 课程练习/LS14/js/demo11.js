@@ -12,8 +12,7 @@
 //定义Symbol变量，注意Symbol是基本数据类型的一种，不能用new
 //回顾下基本数据类型的特点，区分基本类型和引用类型
 let s = Symbol();//不能用new
-typeof s;
-// "symbol"
+typeof s;// "symbol"
 
 //Symbol函数可以接受一个字符串作为参数，表示对Symbol实例的描述，主要是为了在控制台显示，或者转为字符串时，比较容易区分。
 var s1 = Symbol('foo');

@@ -20,6 +20,8 @@ Object.defineProperty(a, mySymbol, { value: 'Hello!' });
 // 以上写法都得到同样结果
 a[mySymbol] // "Hello!"
 
+
+
 //思考下述代码，是添加了几个属性，obj对象有几个属性？
 var aSymbol = Symbol("abc");
 var obj = {

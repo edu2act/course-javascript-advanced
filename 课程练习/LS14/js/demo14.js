@@ -39,7 +39,7 @@ s.size // 2
 s.has(1); // true
 s.has(2); // true
 s.has(3); // false
-s.devare(2);
+s.delete(2);
 s.has(2); // false
 
 //
