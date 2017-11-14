@@ -109,7 +109,6 @@ class B extends A {
         super.print();
     }
 }
-
 let b = new B();
 b.m();// 2
 // 上面代码中，super.print()虽然调用的是A.prototype.print()，
@@ -120,7 +119,7 @@ b.m();// 2
 // 这体现了多态性
 
 
-//如果super作为对象，用在静态方法之中，这时super将指向父类，而不是父类的原型对象。
+//如果super作为对象，用在静态方法之中，这时super将指向父类，而不是父类的prototype
 class Parent {
     static myMethod(msg) {
         console.log('static', msg);
@@ -131,10 +130,10 @@ class Parent {
 }
 class Child extends Parent {
     static myMethod(msg) {
-        super.myMethod(msg);
+        super.myMethod(msg);//super 指的是Parent类
     }
     myMethod(msg) {
-        super.myMethod(msg);
+        super.myMethod(msg);//super 指的是Parent.prototype
     }
 }
 Child.myMethod(1); // static 1

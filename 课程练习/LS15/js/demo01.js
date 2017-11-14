@@ -22,7 +22,7 @@ class Point{
         this.y = 2;
         var private_z = 3;
         this.d = function(){
-            console.log(this.z,this.y,private_z);//可以访问私有数据成员
+            console.log(this.x,this.y,private_z);//可以访问私有数据成员
         }
     }
     show(){
