@@ -5,10 +5,9 @@
 //后端代码参见参见NodeAjaxTest01.js
 //实例一
 var xhr = new XMLHttpRequest();
-if (!xhr) {
-    console.log("xhr 创建失败！！");
-}
-
+// if (!xhr) {
+//     console.log("xhr 创建失败！！");
+// }
 xhr.onreadystatechange = function () {
     //console.log(xhr.readyState,xhr.status);
     if (xhr.readyState == 4) {
@@ -19,7 +18,6 @@ xhr.onreadystatechange = function () {
         }
     }
 };
-
 xhr.open("get", "http://127.0.0.1:8080?getInfo=MyGetInformation", true);
 //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//post需增加
 xhr.send();

@@ -17,7 +17,7 @@ http.createServer(function (req, res) {
         });
         setTimeout(function () {
             res.end("你提交的数据："+postData);
-        },20000*Math.random());
+        },200*Math.random());
     });
 }).listen(8080,"127.0.0.1");
 console.log("start server!");
