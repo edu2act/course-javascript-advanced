@@ -16,13 +16,10 @@ function insert_data_to_array( array_a ,insert_index, array_b)
     }
     return array_a;
 }
-
 //ES6支持的写法
 function insert_data_to_array( array_a ,insert_index, array_b)
 {
-
     //在这里写入代码
     array_a.splice(insert_index,0,...array_b);
-
     return array_a;
 }
