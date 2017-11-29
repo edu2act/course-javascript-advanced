@@ -19,10 +19,6 @@ function BinaryTree()
 {
     this.root = null;
 }
-BinaryTree.prototype.remove_data_in_tree = function(data)
-{
-    //在这里写入代码
-};
 
 //思考下述代码///////////////////
 BinaryTree.prototype.remove_data_in_tree = function(data)
@@ -46,7 +42,6 @@ BinaryTree.prototype._remove_data_under_tree_node = function(tree_node,data)
 };
 BinaryTree.prototype._find_data_under_tree_node = function(tree_node,data)
 {
-
     for(var current_node = tree_node, last_node = null; current_node != null;) {
         if (current_node.data == data) return {last:last_node,current:current_node};
         last_node = current_node;

@@ -1,7 +1,7 @@
 /////任务二/////
 // 假设已经存在一个二叉树,将任意一个数据插入到二叉树
 // 请在insert_to_binary_tree中添加代码，函数的参数为要插入的数据，函数返回二叉树的根节点。
-// 将较大的数添加在右节点，将较小的数添加在左节点
+// 将较小的数添加在左节点,将较大的数添加在右节点
 
 function BinaryTreeNode(data, left, right)
 {
@@ -16,7 +16,6 @@ function BinaryTree()
 }
 BinaryTree.prototype.insert_data_to_tree = function(data)
 {
-    //在这里写入代码
     this.root = this._insert_data_to_tree(this.root,data);
     return this.root;
 };
@@ -29,7 +28,6 @@ BinaryTree.prototype._insert_data_to_tree = function(binary_tree_node,data)
     else if (binary_tree_node.data < data)
     {
         binary_tree_node.right = this._insert_data_to_tree(binary_tree_node.right, data);//递归调用
-
     }
     else if (binary_tree_node.data > data)
     {

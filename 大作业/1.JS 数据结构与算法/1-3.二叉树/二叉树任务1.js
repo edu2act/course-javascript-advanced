@@ -49,4 +49,43 @@ BinaryTree.prototype._postorder_traversal_tree_node = function(tree_node, tree_a
     }
 };
 
+//测试代码
+BinaryTree.prototype.insert_data_to_tree = function(data)
+{
+    //在这里写入代码
+    this.root = this._insert_data_to_tree(this.root,data);
+    return this.root;
+};
+BinaryTree.prototype._insert_data_to_tree = function(binary_tree_node,data)
+{
+    if (binary_tree_node == null)
+    {
+        return new BinaryTreeNode(data, null, null);
+    }
+    else if (binary_tree_node.data < data)
+    {
+        binary_tree_node.right = this._insert_data_to_tree(binary_tree_node.right, data);//递归调用
+
+    }
+    else if (binary_tree_node.data > data)
+    {
+        binary_tree_node.left = this._insert_data_to_tree(binary_tree_node.left, data);//递归调用
+    }
+    return binary_tree_node;
+};
+
+var bt = new BinaryTree();
+bt.insert_data_to_tree(5);
+bt.insert_data_to_tree(8);
+bt.insert_data_to_tree(3);
+bt.insert_data_to_tree(2);
+bt.insert_data_to_tree(4);
+bt.insert_data_to_tree(7);
+bt.insert_data_to_tree(6);
+bt.insert_data_to_tree(9);
+console.log(bt);
+
+
+
+
 //以下是使用非递归的方法实现的 先序遍历

@@ -32,12 +32,12 @@ HashTable.prototype._string_to_num = function(str)
 HashTable.create_hash_table = function(hash_size)
 {
     //在这里写入代码
-    var ht = new HashTable();
-    ht.table = new Array(hash_size);
+    var temp_ht = new HashTable();
+    temp_ht.table = new Array(hash_size);
     for(var i=0;i<hash_size;i++){
-        ht.table[i] = new Array();
+        temp_ht.table[i] = new Array();
     }
-    return ht;
+    return temp_ht;
 };
 var ht = HashTable.create_hash_table(5);
 ht.insert_str_from_hash("ab");
