@@ -58,7 +58,6 @@ BinaryTree.prototype._insert_data_to_tree = function(binary_tree_node,data)
     else if (binary_tree_node.data < data)
     {
         binary_tree_node.right = this._insert_data_to_tree(binary_tree_node.right, data);//递归调用
-
     }
     else if (binary_tree_node.data > data)
     {

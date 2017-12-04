@@ -8,18 +8,25 @@
 // fib(2)的返回值是 1( 因为1 = 0 + 1 )
 // fib(3)的返回值是 2( 因为2 = 1 + 1 )
 // fib(4)的返回值是 3( 因为3 = 2 + 1 )
-
 function fib(n){
-    var arr = new arr();
+    var result;
+    var arr = [];
     arr[0]=0;
     arr[1]=1;
-    if(n<2){return arr[n];}
-    fibArr(arr,2,n);
-}
-//补全下述代码
-function fibArr(array,index,num){
-    if(index!=n){
-        index++;
+    if(n==0){return 0;}
+    if(n==1){return 1;}
 
+    for(var i=1;i<n;i++){
+        //result = arr.reduce((a,b)=>{return a+b;});
+        result = arr[i]+arr[i-1];
+        arr[i+1]=result;
     }
+    return result;
 }
+console.log(fib(0));
+console.log(fib(1));
+console.log(fib(2));
+console.log(fib(3));
+console.log(fib(4));
+console.log(fib(5));
+console.log(fib(6));
