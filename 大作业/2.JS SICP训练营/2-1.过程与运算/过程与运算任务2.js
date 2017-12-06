@@ -30,3 +30,45 @@ console.log(fib(3));
 console.log(fib(4));
 console.log(fib(5));
 console.log(fib(6));
+
+//思考如何完成
+// 每一位都是前前边所有数字相加之和的一个数列
+// 0 1 对应的序列为
+// 0 1 1 2 4 8 16 32 ...
+
+// 每一位都是前前边3个数字相加之和的一个数列
+// 0 1 1 对应的序列为
+// 0 1 1 2 4 7 13 24 ...
+function fib(n){
+    if(n==0){return 0;}
+    if(n==1){return 1;}
+    if(n==2){return 1;}
+    else{
+        return fib(n-1)+fib(n-2)+fib(n-3);
+    }
+}
+console.log(fib(3));
+console.log(fib(4));
+console.log(fib(5));
+console.log(fib(6));
+
+function fib(n){
+    var add = 0;
+    var arr = [0,1,1];
+    if(n===0){return 0;}
+    if(n===1){return 1;}
+    if(n===2){return 2;}
+    for(var i=2;i<n;i++){
+        arr[i+1]=arr[i]+arr[i-1]+arr[i-2];
+    }
+    add = arr[n];
+    return add;
+}
+console.log(fib(3));
+console.log(fib(4));
+console.log(fib(5));
+console.log(fib(6));
+
+
+
+

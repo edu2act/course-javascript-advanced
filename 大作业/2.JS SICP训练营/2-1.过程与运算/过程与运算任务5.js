@@ -49,7 +49,6 @@ function pascalArray2String(arr){
     }
     return result;
 }
-
 pascal_triangle(8);
 
 
