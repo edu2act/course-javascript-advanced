@@ -8,18 +8,25 @@
 // 完成函数best_deposit_scheme()，函数返回值为：存入的钱
 function best_deposit_scheme()
 {
-
-}
-
-
-(function  main()
-{
     let i;
     let money = 0.0;
     for(i = 0; i < 5; i++)
     {
         money = (money + 1000) / (1 + 12 * 0.0063);
     }
-    console.log("%0.2f \n",money);
-    return 0;
-}());
+    //console.log("%0.2f \n",money);
+    return money;
+}
+
+
+// (function  main()
+// {
+//     let i;
+//     let money = 0.0;
+//     for(i = 0; i < 5; i++)
+//     {
+//         money = (money + 1000) / (1 + 12 * 0.0063);
+//     }
+//     console.log("%0.2f \n",money);
+//     return 0;
+// }());
