@@ -15,25 +15,6 @@
 
 function binary_search(arr_number,m)
 {
-
-}
-
-/*
-describe('practice-1-9', function () {
-    it("使用折半查找法查找整数m在数组中的位置", function () {
-        var arr_number = [2,3,5,6,7,8,9];
-        var res_5 = binary_search(arr_number,5);
-        var res_7 = binary_search(arr_number,7);
-        var res_4 = binary_search(arr_number,4);
-        expect(res_5).toBe(2);
-        expect(res_7).toBe(4);
-        expect(res_4).toBe("Not be found");
-    });
-});
- */
-
-function binary_search(arr_number,m)
-{
     var l=0,h=(arr_number.length-1),n;
     while(l<h)
     {
@@ -55,3 +36,17 @@ function binary_search(arr_number,m)
 binary_search([2,3,5,6,7,8,9],5);
 binary_search([2,3,5,6,7,8,9],7);
 binary_search([2,3,5,6,7,8,9],4);
+
+/*
+describe('practice-1-9', function () {
+    it("使用折半查找法查找整数m在数组中的位置", function () {
+        var arr_number = [2,3,5,6,7,8,9];
+        var res_5 = binary_search(arr_number,5);
+        var res_7 = binary_search(arr_number,7);
+        var res_4 = binary_search(arr_number,4);
+        expect(res_5).toBe(2);
+        expect(res_7).toBe(4);
+        expect(res_4).toBe("Not be found");
+    });
+});
+ */
