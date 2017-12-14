@@ -29,5 +29,5 @@ ArraySort.prototype._swap_data = function (swap_data,i,j) {
 var arrSort = new ArraySort([7,5,3,4,1,9,2,6,8]);
 // var arrSort = new ArraySort("753419268");
 console.log(arrSort.desc_sort);
-arrSort.insert_sort();
+arrSort.bubble_sort();
 console.log(arrSort.desc_sort);
