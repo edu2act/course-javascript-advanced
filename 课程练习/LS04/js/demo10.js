@@ -1,33 +1,25 @@
 /**
  * Created by qile on 2017/8/14.
  */
-if(true){
-    var i = 0;
+
+
+//for ... in 遍历数组
+var arr = [2,,"33"];
+for(var i in arr){
+    console.log(i,arr[i]);
 }
 
-function foo(){
-    console.log("j:",j);//undefined
-    var j = 10;
-    console.log("j:",j);//10
+//for ... in 遍历对象
+var obj = {x:10,y:20,z:"30"};
+for(var k in obj){
+    console.log(k,obj[k],typeof obj[k]);
 }
-foo();
-
-console.log("i:",i);//0
-console.log("j:",j);//报错
-
-//上边代码等价于
-var i;
-if(true){
-    i = 0;
+//
+var obj1 = {x:1};
+var obj2 = Object.create(obj1);
+obj2.y = 2;
+obj2.z = 3;
+for(var k in obj2){
+    console.log(k,obj2[k]);
 }
 
-function foo(){
-    var j;
-    console.log("j:",j);//undefined
-    j = 10;
-    console.log("j:",j);//10
-}
-foo();
-
-console.log("i:",i);//0
-console.log("j:",j);//报错

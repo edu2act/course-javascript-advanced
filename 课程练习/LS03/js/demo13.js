@@ -1,37 +1,35 @@
 /**
  * Created by qile on 2017/8/14.
  */
+//Number构造器属性（静态属性）
+Number.MAX_VALUE
+Number.MIN_VALUE
+Number.NaN
+Number.NEGATIVE_INFINITY
+Number.POSITIVE_INFINITY
 
-//下例中有几个是false？（A:0个, B:1个, C:2个, D:3个），运行一下看看
-console.log(3===3);
-console.log(3==="3");
-console.log(3=="3");
-console.log(3==new String(3));
-console.log(3===new String(3));
+//Number原型方法(Number对象继承的方法）
+// Number.prototype.toFixed();
+// Number.prototype.toPrecision();
+// Number.prototype.toString();
+// Number.prototype.toExponential();
 
-//下例中有几个是false？（A:0个, B:1个, C:2个, D:3个），运行一下看看
-var obj1 = new String("xyz");
-var obj2 = new String("xyz");
-console.log("xyz"===obj1);
-console.log(obj1 == obj2);
-console.log(obj1 === obj2);
-console.log(obj1 == new String("xyz"));
+var n1 = 12345.6789;
+console.log(n1.toFixed(2));
+console.log(n1.toPrecision(2));
+console.log(n1.toString());
+console.log(n1.toExponential(2));
 
+//
+console.log(NaN === NaN);
+console.log(isNaN("12,3"));
+console.log(Math.floor(3.8));
+console.log(Math.floor(-3.8));
+console.log(Math.ceil(3.2));
+console.log(Math.ceil(-3.2));
+console.log(Math.round(-3.2));
+console.log(Math.round(-3.5));
+console.log(Math.round(-3.8));
 
-//下例中有几个是false？（A:0个, B:1个, C:2个, D:3个），运行一下看看
-var obj1 = new String("xyz");
-var obj2 = new String("xyz");
-console.log("xyz"!=obj1);
-console.log(obj1 !== obj2);
-console.log(obj1 != obj2);
-console.log(obj1 != new String("xyz"));
-
-//注意 是引用类型转换到基本类型了？还是基本类型转换到引用类型了？
-console.log(2 == 2);
-console.log(new Number(2) == new Number(2));
-console.log(2 == new Number(2));
-
-
-
-
+//其余部分参见《深入理解JS》第11章
 

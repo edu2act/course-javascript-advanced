@@ -1,32 +1,48 @@
 /**
  * Created by qile on 2017/8/14.
  */
-// Date 方法参考链接
-// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
-//Date静态方法（Date构造器函数对象的方法）GMT 格林尼治时间
-console.log(Date.now());//以毫秒为单位返回当前时间（从1970年1月1日00:00:00开始计算）
-console.log((new Date()).getTime());
+//词法作用域 与调用形式无关 详细内容参见作用域部分
+var name = "Jack";
+function echo() {
+    console.log(name);
+}
+function foo() {
+    var name = "Bill";
+    echo();
+}
+foo();//Bill or Jack
 
-console.log(Date.parse("1970-01-01"));//dateTimeString字符串转换成毫秒
-console.log(Date.parse("1970-01-02"));
-
-console.log(Date.UTC(2017,9,1));//将给定的日期转换成毫秒,解释为UTC 协调世界时间
 
 
-//Date原型方法 getter和setter相关
-var d = new Date("1978-11-25");
-console.log(d.getFullYear(),d.getMonth(),d.getDay(),d.getDate(),d.getHours());
-console.log(d.getTimezoneOffset());
-d.setDate(11);
-console.log(d.getFullYear(),d.getMonth(),d.getDay(),d.getDate(),d.getHours());
-d.setFullYear(1999,5,3);
-console.log(d.getFullYear(),d.getMonth(),d.getDay(),d.getDate(),d.getHours());
 
-//Date原型方法 转成字符串相关
-var d = new Date(2012,3,21,15,7,23,234);
-console.log(d.toTimeString(),"___",d.toLocaleTimeString());
-console.log(d.toDateString(),"___",d.toLocaleDateString());
-console.log(d.toJSON());
+//全局变量与局部变量
+var x = "outside f1";
+var f1 = function () {
+    //var x = "inside f1";//如果没有这行，则两次输出都为outside
+    console.log(x);
+};
+f1();
+console.log(x);
 
-// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date
 
+//若函数内未加var 则相当于创建了全局变量
+var f2 = function () {
+    var y = "局部";
+    //y = "全局";
+    console.log(y);
+};
+f2();
+console.log(y);//若函数内有var此行报错，若函数内没有var则此行输出全局变量y值
+
+//ES5中无块作用域
+if(true){
+    var z = 23;
+}
+console.log(z);//正常输出
+
+if(true){
+    (function () { //IIFE start
+        var z = 23;
+    }());           //IIFE end
+}
+console.log(z);//报错

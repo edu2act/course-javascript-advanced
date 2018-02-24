@@ -1,24 +1,55 @@
 /**
- * Created by qile on 2017/10/20.
+ * Created by qile on 2017/8/14.
  */
-//贪婪模式和非贪婪模式
-"12345678".replace(/\d{3,6}/,'X');//默认为贪婪模式  X78
 
-"12345678".replace(/\d{3,6}?/,'X');//设置为非贪婪模式 在量词后加？X45678
+// 使用Chorme的 Watch窗口（追踪x，y，z）和
+// Scope窗体（观察作用域链的变化）
+// 将goToBank函数嵌套到goToStore函数中，3层的链，更好的介绍作用域链
+console.log("全局上下文-start");
+var x = "家中环境-";
+function goToStore_A(){
+    console.log("goToStore_A 上下文-start");//设置断点
+    var y = "文具店A环境-";
+    function goToBank_C(){
+        console.log("goToBank_C 上下文-start");//设置断点
+        var z = "银行C环境-";
+        console.log(x+y+z);
+        console.log("goToBank_C 上下文-end");//设置断点
+    }
+    function goToBank_D(){
+        console.log("goToBank_D 上下文-start");//设置断点
+        var z = "银行D环境-";
+        console.log(x+y+z);
+        console.log("goToBank_D 上下文-end");//设置断点
+    }
+    goToBank_C();//设置断点
+    // goToBank_D();//设置断点
+    console.log("goToStore_A 上下文-end");//设置断点
+}
 
-"12345678".replace(/\d{3,6}?/g,'X');//返回什么？
+function goToStore_B(){
+    console.log("goToStore_B 上下文-start");//设置断点
+    var y = "文具店B环境-";
+    function goToBank_C(){
+        console.log("goToBank_C 上下文-start");//设置断点
+        var z = "银行C环境-";
+        console.log(x+y+z);
+        console.log("goToBank_C 上下文-end");//设置断点
+    }
+    function goToBank_D(){
+        console.log("goToBank_D 上下文-start");//设置断点
+        var z = "银行D环境-";
+        console.log(x+y+z);
+        console.log("goToBank_D 上下文-end");//设置断点
+    }
+    goToBank_C();//设置断点
+    // goToBank_D();//设置断点
+    console.log("goToStore_B 上下文-end");//设置断点
+}
 
-//正则表达式的分组
-console.log("NameNameName_11111".replace(/Name{3}/,"X"));
-console.log("NameNameName_11111".replace(/(Name){3}/,"X"));
+goToStore_A();//设置断点
+// goToStore_B();//设置断点
+console.log("全局上下文-end");//设置断点
 
-console.log("a1b2c3d4e5".replace(/[a-z]\d{3}/,"X"));
-console.log("a1b2c3d4e5".replace(/([a-z]\d){3}/,"X"));
-console.log("a1b2c3d4e5".replace(/([a-z]\d){3,4}/,"X"));
-console.log("a1b2c3d4e5".replace(/([a-z]\d){3,4}?/,"X"));
-
-// 与分组相关的 或
-"abcdefghijk".replace(/abcde|fghijk/g,"X");
-"abcdefghijk_abcdehijk_abcfghijk".replace(/abc(de|fg)hijk/g,"X");
 
 

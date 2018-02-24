@@ -1,29 +1,32 @@
 /**
  * Created by qile on 2017/8/14.
  */
-// Part 11111
-function foo(x=5){
-    let x = 1;//报错
-    const x = 2;//报错
-    var x = 3;//正常
+//Part 111111111111111
+var obj = {
+    x:1,
+    y:2
+};
+//直接添加的属性，其所有特性默认都是true
+obj.z = 3;
+for(var k in obj){
+    console.log(k,obj[k]);
 }
-foo();
 
+//Part 2222222222222222
 
-// Part 222222
-//默认值顺序，参数一般有顺序，有默认值的参数应该是尾参数
-//否则无法使有默认值的用默认值，没有默认值的用传递的参数
-function f(x = 1,y) {
-    return [x,y];
+var obj = {
+    x:1,
+    y:2
+};
+//直接添加的属性，其所有特性默认都是true
+obj.z = 3;
+
+//通过Object.defineProperty方法添加的属性，除了手动修改，其所有特性默认都是false
+Object.defineProperty(obj,"w",{value:456,configurable:true});//writable,enumerable没有指定，所以默认为false
+for(var k in obj){
+    console.log(k,obj[k]);
 }
-f();//[1,undefined]
-f(2);//[2,undefined]
-f(,3);//报错，无法使x用1，y用3
+//console.log(obj.w);//有w，但上边for...in遍历不到
 
 
-//所以有默认值的参数在最后
-function f(x,y = 1) {
-    return [x,y];
-}
-f();//[undefined, 1]
-f(2);//[2, 1] 这样就可以x为传递的参数，y为默认的值
+//通过属性特性描述符来查看某一对象属性的特性

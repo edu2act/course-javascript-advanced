@@ -1,30 +1,30 @@
 /**
  * Created by qile on 2017/8/14.
  */
-const PI = 3.1415926;
-console.log(PI);
-// PI = 3;//给常量再赋值 报错
+var obj = {};
+obj.x = 2;//直接添加属性
+console.log(obj.x);//通过.访问属性
+obj.x = 5;//设置属性
+console.log(obj["x"]);//通过[]访问属性
+delete obj.x;//删除属性
+console.log(obj.x);
 
-//声明时必须赋值,一旦声明必须立即初始化
-//const foo;//报错
-//const foo = 123;//ok
-
-
-//const作用域同let
-if(true){
-    const MAX = 5;
-}
-//console.log(MAX);//报错
-
-
-//const 除了声明常量外，也常用来声明不变的函数
-const fee = function () {
-
+//访问属性的for循环练习
+var obj2 = {
+    id_1:2,
+    id_2:4,
+    id_3:6,
+    id_4:8,
+    id_5:10
 };
 
-//const指向的对象引用不可变，但其属性或元素（如果是数组对象的话）是可变的
-const a = [];
-a.push(123,234);//可以
-a.length = 1;//可以
-a = "str";//报错，因为a是const其元素或属性可改，但其引用不能修改类似于 const指针
-//回顾 常指针,指向常量的指针
+//思考obj3 和 obj4 内容是什么？为什么？
+var obj3 = {};
+for(var i=0;i<10;i++){
+    obj3.i = i;
+}
+
+var obj4 = {};
+for(var i=0;i<10;i++){
+    obj4[i] = i;
+}

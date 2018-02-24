@@ -1,55 +1,61 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//Part111111111111111111111111
-//遍历实例一
-var obj = {};
-var a = Symbol('a');
-var b = Symbol('b');
-obj[a] = 'Hello';
-obj[b] = 'World';
-var objectSymbols = Object.getOwnPropertySymbols(obj);
-console.log(objectSymbols);// [Symbol(a), Symbol(b)]
-
-//遍历实例二
-var obj = {};
-var foo = Symbol("foo");
-Object.defineProperty(obj, foo, {
-    value: "foo bar",
+var obj = {_x:1};
+// Object.defineProperty(obj,"y",{
+//     configurable:false,
+//     writable:false,
+//     enumerable:true,
+//     value:6
+// });
+Object.defineProperties(obj,{
+    y:{value:2,writable:true,configurable:true,enumerable:true},
+    z:{value:2,writable:true,configurable:true,enumerable:true},
+    x:{
+        get:function(){return this._x;},
+        set:function (val) {
+            this._x = val;
+        }
+    }
 });
-for (var i in obj) {
-    console.log(i); // 无输出
-}
-Object.getOwnPropertyNames(obj);// []
-Object.getOwnPropertySymbols(obj);// [Symbol(foo)]
 
 
-//Part2222222222222222222222
-var s1 = Symbol.for('foo');
-var s2 = Symbol.for('foo');
-console.log(s1 === s2); // true
+//批量添加属性并设置属性特性 book实例
+var book={};
+//调用Object.defineProperties(对象名，要添加的属性)方法，为对象一次定义多个属性(1.数据属性)(2.访问器属性)
+Object.defineProperties(book,{
+//添加的两个数据属性(_year,edition)
+    _year:{//(_year)前面的下划线表示只能通过对象方法访问的属性
+        value:2004,
+        writable:true //如果没写这一行会怎样？
+    },
+    edition:{
+        value:1,
+        writable:true
+    },
+//添加了访问器属性(year)
+    year:{
+//调用get方法读取属性
+        get:function(){
+            return this._year;
+        },
+//调用set方法写入属性
+        set:function(newValue){
+            if (newValue>2004) {
+                this._year=newValue;
+                this.edition+=newValue-2004;
+            }
+        }
+    }
+});
+//测试
+book.year=2006;
 
-//Symbol.for()与Symbol()这两种写法，都会生成新的Symbol。
-// 它们的区别是，前者会被登记在全局环境中供搜索，后者不会。
-// Symbol.for()不会每次调用就返回一个新的Symbol类型的值，而是会先检查给定的key是否已经存在，
-// 如果不存在才会新建一个值。比如，如果你调用Symbol.for("cat")30次，每次都会返回同一个Symbol值，
-// 但是调用Symbol("cat")30次，会返回30个不同的Symbol值。
 
-console.log(Symbol.for("bar") === Symbol.for("bar"));// true
-console.log(Symbol("bar") === Symbol("bar"));// false
-console.log(Symbol.for("bar") === Symbol("bar"));// false
-
-
-//Symbol.keyFor方法返回一个已登记的Symbol类型值的key。
-var s1 = Symbol.for("foo");
-console.log(Symbol.keyFor(s1)); // "foo"
-var s2 = Symbol("foo");
-console.log(Symbol.keyFor(s2)); // undefined
-
-//思考：
-var s3 = Symbol(Symbol.keyFor(s1));
-console.log(s1 === s3);
-console.log(s2 === s3);
-var s4 = Symbol.for(Symbol.keyFor(s1));
-console.log(s1 === s4);
-console.log(s2 === s4);
+//关于Object.create的第二个属性，思考x是empty自身属性还是obj2的自身属性？
+var empty = {};
+var obj2 = Object.create(empty,{
+   x:{value:1}, y:{value:2,enumerable:true}
+});
+console.log(obj2);
+console.log(obj2.hasOwnProperty("x"));

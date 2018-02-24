@@ -1,47 +1,20 @@
 /**
  * Created by qile on 2017/8/14.
  */
-////////////////////////////////
-var f = function (v) {
-    return v + 1;
-};
-f(2);//返回3
-
-//使用箭头函数，上述代码等效如下,只有一个参数和一条语句
-var f = v => v + 1; //单参数可以不用（），单语句可以不用return关键字
-//var f = (v) => {return v + 1;};
-f(2);//返回3
-
-
-///////////////////////////////
-//没有参数和有多个参数的情况下，需要使用小括号来表示参数，如果有多条语句则需要有大括号表示函数体
-var f = () => 5;
-// 等同于
-var f = function () {
-    return 5
+var objProto = {
+    z:3
 };
 
-var foo = (num1, num2) => {
-    if (num1 > num2) {
-        return num1 * 2;
-    } else {
-        return num2 * 2;
-    }
-};
-//foo(2,3);
-//foo(3,2);
-// 等同于 ES5的写法
-var foo = function (num1, num2) {
-    if (num1 > num2) {
-        return num1 * 2;
-    } else {
-        return num2 * 2;
-    }
-};
-//foo(2,3);
-//foo(3,2);
+var obj = Object.create(objProto);
+obj.x = 1;
+obj.y = 2;
 
-///////////////////////////////////
-var max = function (a, b) {
-    return a > b ? a : b;
-};
+console.log(obj.x);//1
+console.log(obj.y);//2
+console.log(obj.z);//3
+
+console.log(obj.toString);//原型链上有toString属性
+
+for(var k in obj){//通过for...in遍历所有原型链上的属性
+    console.log(k,obj[k]);//是否能遍历到toString？
+}

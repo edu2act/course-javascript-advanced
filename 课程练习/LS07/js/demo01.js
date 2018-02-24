@@ -1,36 +1,36 @@
 /**
  * Created by qile on 2017/8/14.
  */
-
-//通过字面量的方式创建 JS对象
-var obj = {
-    num:10,
-    str:"Hi",
-    show:function(){
-        return this.str;
-    }
-};
-console.log(obj.num);
-console.log(obj.str);
-console.log(obj.show());
-
-
-//通过Object工场方法创建JS对象,注：JS对象是通过原型链的方式实现的对象继承
-var newObj = Object.create(obj);
-newObj.age = 23;
-console.log(newObj.num);
-console.log(newObj.str);
-console.log(newObj.show());
-console.log(newObj.age);//自有属性
-
-//构造函数的方式创建JS对象  此处略讲，详情参照后续面向对象编程 注：JS对象是通过原型链的方式实现的对象继承
-function Person(name,age){
-    this.name = name;
-    this.age = age;
+//函数定义 函数声明方式
+function max(a,b){
+    return a>b?a:b;
 }
-Person.prototype.sayName = function(){
-    console.log("hello,i'm",this.name,this.age,"years old");
-};
+max(2,3);
 
-var person1 = new Person("Mike",21);
-person1.sayName();
+//函数定义 函数表达式方式 等号右侧可以是匿名函数也可以是非匿名函数
+var max = function (a,b){ //匿名函数
+    return a>b?a:b;
+};
+max(2,3);
+
+/*
+//略讲：非匿名函数便于调用栈追踪 测试使用匿名和非匿名函数的区别
+var foo = function max(a,b){
+    console.trace();
+    return console.log(a>b?a:b);
+};
+foo(2,3);
+
+foo = function min(a,b){
+    console.trace();
+    return console.log(a>b?b:a);
+};
+foo(2,3);
+*/
+
+//函数定义 Function构造函数方式
+var max = new Function("a","b","return a>b?a:b");
+max(2,3);
+
+//new Function 配置实例参见 NodeFunTest文件夹
+//理解 new Function

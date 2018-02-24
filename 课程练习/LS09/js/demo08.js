@@ -1,24 +1,87 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//UTC 协调世界时间 Coordinated Universal Time
-//GMT 格林尼治时间 （北京时间是正8时区） Greenwich Mean Time
-var date1 = new Date(2017,9,18,12,34,1);//注意：月0-11，日：1-31，时：0-23，分：0-59，秒：0-59，毫秒：0-999
-console.log(date1);
 
-var date2 = new Date(17,9,18,12,34,1);//若years为2位的话自动加1900
-console.log(date2);
+// Part 111111111111111111
+console.log(a);
+var a = 1;
+console.log(a);
 
-var date3 = new Date("2017-08-09");//注意日期的格式 此处的08代表8月还是9月，对比上一个创建形式
-console.log(date3);
+//上边代码等价如下 解析器眼中的代码
+var a;
+console.log(a);
+a = 1;
+console.log(a);
 
-//var date4 = new Date(0);    //1970-01-01:00:00:00
-var date4 = new Date(1000); //1970-01-01:00:00:01
-console.log(date4);//逆运算是date4.getTime();
+//思考如下代码输出什么 值类型
+console.log(a,b);//输出什么
+var b = 23;
+console.log(a,b);//输出什么
+var a = b;
+console.log(a,b);//输出什么
 
-var date5 = new Date();//new Date(Date.now());
-console.log(date5);
+//思考如下代码输出什么 引用类型
+console.log(obj1,obj2);//输出什么
+var obj1 = {x:23};
+console.log(obj1,obj2);//输出什么
+var obj2 = obj1;
+console.log(obj1,obj2);//输出什么
+obj2.x =25;
+console.log(obj1,obj2);//输出什么
 
-//补充：无效日期
-var date6 = new Date(NaN);
-console.log(date6);//Invalid Date
+
+// Part 22222222222222222
+foo();//f_2
+function foo(){
+    console.log("f_1");
+}
+function foo(){
+    console.log("f_2");
+}
+
+//上边代码等价如下 解析器眼中的代码
+function foo(){
+    console.log("f_1");
+}
+function foo(){
+    console.log("f_2");
+}
+foo();//f_2
+
+
+// Part 33333333333333333 见下一页PPT 同时有var和function的情况一
+foo();
+var foo = function(){
+    console.log("foo");
+};
+
+//思考以下代码是否会报错，写出这段代码的等价形式
+console.log(foo);//输出什么
+var foo = function(){
+    console.log("foo");
+};
+foo();//是否会报错
+
+
+
+// Part 444444444444444444
+AA();
+function AA(){
+    console.log("AA_1");
+}
+var AA = function AA(){
+    console.log("AA_2");
+};
+AA();
+
+//上边代码等价如下
+function AA(){
+    console.log("AA_1");
+}
+var AA;
+
+AA();
+AA = function AA(){
+    console.log("AA_2");
+};
+AA();

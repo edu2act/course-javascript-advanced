@@ -1,43 +1,13 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//属性特性的继承特点
-var o1 = {};
-Object.defineProperty(o1,"x",{
-    value:12,
-    //writable:true
-});//思考configurable和writable是true还是false
-o1.x = 34;
-console.log(o1.x);
+//逻辑与、或的基本理解
+console.log(2>1&&4<5);
+console.log(true&&(!2));
+console.log(false&&("2" == 2));
+console.log(false&&false);
 
-var o2 = Object.create(o1);
-o2.x = 56;
-console.log(o2.x);//输出多少？
-
-//访问器属性特性的继承特点
-var o3 = {_x:21};
-Object.defineProperty(o3,"x",{
-    get:function(){return this._x}
-});
-o3.x = 34;
-console.log(o3.x);//输出21还是34
-
-var o4 = Object.create(o3);
-Object.defineProperty(o4,"x",{
-    set:function (val) {
-        this._x = val;
-    },
-    get:function () {
-        return ++this._x;
-    }
-});
-o4.x = 56;
-console.log(o4.x);//输出多少
-
-
-//全局变量的属性特性是如何的呢？
-//{value: 23, writable: true, enumerable: true, configurable: false}
-var a = 23;
-console.log(Object.getOwnPropertyDescriptor(window,"a"));
-delete a;//等效delete window.a;
-
+console.log(2>1||4<5);
+console.log(true||(!2));
+console.log(false||("2" == 2));
+console.log(false||false);

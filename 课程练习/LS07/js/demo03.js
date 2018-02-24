@@ -1,38 +1,25 @@
 /**
  * Created by qile on 2017/8/14.
  */
-///////////Part1 原型链综述////////////
-var proObj = {
-    z:3
+//实参数大于形参数
+function test() {
+    console.log(arguments);//console.log(test.arguments);
+    console.log(Array.prototype.slice.call(arguments));
+    var s = "";
+    for (var i = 0; i < arguments.length; i++) {
+        s += arguments[i];
+    }
+    return s;
+}
+test("hello,", "world!");//"hello,world!"
+
+
+//实参数小于形参数
+var sum = function(a,b,c){
+    b = b||4;
+    c = c||5;
+    return a+b+c;
 };
-
-var obj = Object.create(proObj);
-obj.x = 1;
-obj.y = 2;
-
-console.log(obj.x);//1
-console.log(obj.y);//2
-console.log(obj.z);//3
-
-console.log("z" in obj);//true
-console.log(obj.hasOwnProperty("z"));//false
-
-///////////Part2 原型链属性操作////////////
-obj.z = 5;
-
-console.log(obj.hasOwnProperty("z"));
-console.log(obj.z);
-console.log(proObj.z);
-
-obj.z = 8;
-console.log(obj.z);
-
-delete obj.z;//true
-console.log(obj.z);
-
-delete obj.z;//true
-console.log(obj.z);//still 3
-
-//如何删除原型上的属性
-delete  obj.__proto__.z;//或者delete proObj.z;
-console.log(obj.z);//此时彻底没有z了
+console.log(sum(1,2,3));
+console.log(sum(1,2));
+console.log(sum(1));

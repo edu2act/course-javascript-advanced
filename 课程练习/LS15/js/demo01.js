@@ -1,60 +1,36 @@
 /**
- * Created by qile on 2017/11/13.
+ * Created by qile on 2017/8/14.
  */
-//ES5 中使用构造函数定义并生成新的对象 Part11111111111
-function Point(x,y){
-    this.x = x;
-    this.y = y;
-}
-Point.prototype.show = function(){
-    console.log("Point:",this.x,this.y);
+
+//通过字面量的方式创建 JS对象
+var obj = {
+    num:10,
+    str:"Hi",
+    show:function(){
+        return this.str;
+    }
 };
-var p1 = new Point(1,2);
-p1.show();
-console.log(Object.keys(p1));
-console.log(Object.keys(p1.__proto__));
+console.log(obj.num);
+console.log(obj.str);
+console.log(obj.show());
 
 
-//ES6 中的class 语法 Part2222222222222
-class Point{
-    constructor(){
-        this.x = 1;
-        this.y = 2;
-        var private_z = 3;
-        this.d = function(){
-            console.log(this.x,this.y,private_z);//可以访问私有数据成员
-        }
-    }
-    show(){
-        //console.log("show:",this.x,this.y,private_z);//报错,因为无法访问私有数据成员
-        console.log("show:",this.x,this.y);
-    }
+//通过Object工场方法创建JS对象,注：JS对象是通过原型链的方式实现的对象继承
+var newObj = Object.create(obj);
+newObj.age = 23;
+console.log(newObj.num);
+console.log(newObj.str);
+console.log(newObj.show());
+console.log(newObj.age);//自有属性
+
+//构造函数的方式创建JS对象  此处略讲，详情参照后续面向对象编程 注：JS对象是通过原型链的方式实现的对象继承
+function Person(name,age){
+    this.name = name;
+    this.age = age;
 }
-var p2 = new Point();
-console.log(Object.getOwnPropertyNames(p2));
-console.log(Object.getOwnPropertyNames(p2.__proto__));
-p2.d();
-p2.show();
+Person.prototype.sayName = function(){
+    console.log("hello,i'm",this.name,this.age,"years old");
+};
 
-//class 是语法糖 本质还是原型继承
-console.log(typeof Point);//function
-console.log(Point instanceof Function);//true
-console.log(Point === Point.prototype.constructor); // true
-console.log(p2.constructor === Point.prototype.constructor);
-
-//与ES5的区别 class类内定义的方法是不可枚举的
-console.log(Object.keys(p2));
-console.log(Object.keys(p2.__proto__));
-
-//补充：
-// 由于类的方法都定义在prototype对象上面，所以类的新方法可以添加在prototype对象上面。
-// Object.assign方法可以很方便地一次向类添加多个方法。
-class Point {
-    constructor(){
-
-    }
-}
-Object.assign(Point.prototype, {
-    foo(){},
-    fee(){}
-});
+var person1 = new Person("Mike",21);
+person1.sayName();
