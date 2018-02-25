@@ -2,9 +2,9 @@
 
 # JavaScript进阶
 
->（2017~2018 第一学期）
+>（2017~2018 第二学期）
 
-《JavaScript进阶》是计算机软件及相关专业在h5前端开发方向的专业课，它是为培养应用型人才掌握使用计算机的技能而开设的。本课程是一门有关JavaScript脚本语言的进阶课程。学习本课程的同学需具有一定的JavaScript语言基础。通过本课程的学习，学生可以进一步掌握JavaScript脚本语言（ES5）的相关知识（包括JS预解析、立即执行表达式、作用域及执行上下文、闭包、原型继承、正则表达式、异步等）。同时，也增加了ES6的相关知识（包括let与const、解构赋值、箭头函数、Promise、Generator、class等），为学生进一步学习计算机有关知识打下坚实基础。
+《JavaScript进阶》是计算机软件及相关专业在h5前端开发方向的专业基础课，它是为培养应用型人才掌握使用计算机的技能而开设的。本课程是一门有关JavaScript脚本语言的进阶课程。学习本课程的同学需具有一定的JavaScript语言基础。通过本课程的学习，学生可以进一步掌握JavaScript脚本语言（ES5）的相关知识（包括JS预解析、立即执行表达式、作用域及执行上下文、闭包、原型继承、正则表达式、异步等）。同时，也增加了ES6的相关知识（包括let与const、解构赋值、箭头函数、Promise、Generator、class等），为学生进一步学习计算机有关知识打下坚实基础。
 - [课程PPT](https://github.com/edu2act/course-javascript-advanced/tree/master/%E8%AF%BE%E7%A8%8BPPT)
 - [课程练习](https://github.com/edu2act/course-javascript-advanced/tree/master/%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0)
 - [课程大纲](https://github.com/edu2act/course-javascript-advanced/blob/master/%E6%95%99%E5%AD%A6%E5%A4%A7%E7%BA%B2.doc)
@@ -36,7 +36,7 @@
 | 第20章| JS标准内置对象-构造器（RegExp）正则表达式| 1. 正则表达式简介及正则对象<br>2. RegExp及String相关的正则方法<br>3. 正则表达式应用案例|
 | 第21章|JS标准内置对象-构造器（Error）及异常处理| 1. JS异常处理<br>2. Error对象及其子对象|
 | 第22章| JS标准内置对象-非构造器（Math）|1. Math对象属性<br>2. Math对象方法|
-| 第23章| JS标准内置对象-非构造器（JSON）|1. JSON简介<br>2. JSON对象方法<br>3.JSON案例|
+| 第23章| JS标准内置对象-非构造器（JSON）|1. JSON简介<br>2. JSON对象方法<br>3. JSON案例|
 | 第24章|JS异步与网络数据交互|1. JS异步相关概念<br>2. JS异步的几种形式<br>3. JS异步与数据交互|
 | 第25章|ES6中的let与const|1. ES5中的var及其缺陷<br>2. ES6中的let与const<br>3. let与const的重要特性|
 | 第26章|ES6中变量的解构赋值|1. 数组、对象的解构赋值<br>2. 字符串、数字的解构赋值<br>3. 函数参数的解构赋值<br>4. 解构赋值的常见应用及注意事项|
