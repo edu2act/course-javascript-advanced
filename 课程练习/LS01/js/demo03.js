@@ -1,20 +1,15 @@
 /**
- * Created by qile on 2017/9/7.
+ * Created by qile on 2017/8/14.
  */
-//复合运算符
-var a = 3;
-a+=5;
-console.log(a);
+/*
+ console.log("i'm demo ");
+ //console.error("demo error");
+ console.trace();
+ */
+// console.log("max = "+ max(2,3));
 
-//标识符规则一下哪个不合法
-// _str
-// num
-// $abc
-// 8def
 
-//保留字回顾 认识多少?????
-//arguments break continue typeof instanceof delete等等
-
-console.log(typeof NaN);//什么类型
-console.log(typeof Infinity);
-
+//(function(){
+//避免滥用全局变量
+var x = 20;
+//}());

@@ -1,55 +1,43 @@
 /**
  * Created by qile on 2017/9/7.
  */
-//JS对象
-//通过字面量创建
-var student = {
-    name:"Jack",
-    age:23,
-    sayHi:function () {
-        console.log("Hi,i'm",this.name,",i'm",this.age,"years old!");
-    }
-};
-console.log(student.name);
-console.log(student["age"]);
-console.log(student.sayHi);
-student.sayHi();
-
-//添加属性，删除属性
-student.id = 2015015001;
-console.log(student.id);
-delete  student.id;
-console.log(student.id);
-
-//查看对象是否有某个属性 in   for...in   Object.keys()
-console.log("name" in student);
-for(var k in student){
-    console.log(k,student[k]);
+//函数定义 注意分号
+function max(a,b) {
+    return a>b?a:b;
 }
-console.log(Object.keys(student));
+console.log(max(2,3));
 
-//JS对象详细内容参见 JS对象章节
-//函数嵌套 与this问题初步了解
-var obj = {
-    foo:function () {
-        console.log("foo里的this:",this);
-        function fee() {
-            //"use strict"
-            console.log("fee里的this:",this);
-        }
-        fee();
-    }
+var min = function(a,b){
+    return a<b?a:b;
 };
-obj.foo();
+console.log(min(2,3));
 
-//构造函数回顾 JS面向对象具体内容 参见后续面向对象章节
-function Person(name,age){
-    this.name = name;
-    this.age = age;
+//函数声明的提升，初步了解，详细内容见函数章节
+foo();//可以在定义前执行，解析器会将foo函数声明提升
+function foo() {
+    console.log("foo");
 }
-Person.prototype.showInfo = function () {
-    console.log("Hi,i'm",this.name,",i'm",this.age,"years old!");
-};
 
-var p1 = new Person("Mike",60);
-p1.showInfo();
+//函数参数数量问题回顾
+function f1() {
+    console.log(arguments);
+    var argArr = Array.prototype.slice.call(arguments);
+    console.log(argArr);
+}
+f1(2,3,4,"a");
+
+function f2(a,b,c,d) {
+    console.log(a,b,c,d);
+}
+f2(2,3);
+
+//函数默认值部分，参见逻辑运算符进阶章节
+
+//异常捕获参见异常捕获章节
+
+//严格模式与非严格模式（松散模式），严格模式的作用是什么
+//"use strict"
+function f3() {
+    //"use strict"
+    gVar = 23;//定义了全局变量gVar，严格模式下是不允许的
+}
