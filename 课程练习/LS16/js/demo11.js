@@ -50,6 +50,7 @@ console.log(a.publicId);
 a.getId();
 
 
+//补充：Shape 多态
 
 /*
 //测试
