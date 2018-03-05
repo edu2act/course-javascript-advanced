@@ -16,7 +16,8 @@
  document.onclick = function () {
  //console.log("x = ",x);
  alert("x = "+x);
- };
+};
+
 
 /*
 //如何避免全局污染，使用IIFE函数立即执行表达式
