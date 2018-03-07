@@ -9,6 +9,8 @@ console.log(typeof null);
 console.log(typeof undefined);
 console.log(typeof {name:"Mike",age:20});
 
+console.log(typeof function foo(){});
+
 /*
 //课外思考
 console.log(typeof Array);

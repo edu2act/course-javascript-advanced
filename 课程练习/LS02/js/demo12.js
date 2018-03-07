@@ -34,14 +34,14 @@ Number();
 String();
 Object();
 
-123.456.toFixed(1);
-toString();
-toFixed();
-toPrecision();
-toExponential();
+console.log(123.456.toFixed(1));
+console.log(123.456.toString());
+console.log(123.456.toFixed());
+console.log(123.456.toPrecision());
+console.log(123.456.toExponential());
 
-parseInt();
-parseFloat();
+//parseInt();
+//parseFloat();
 
 toString();
 valueOf();
