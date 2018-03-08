@@ -24,11 +24,11 @@ console.log(foo instanceof Object);
 console.log(foo === window.foo);
 
 //所有对象都有属性，如何查看对象的属性，ES5中查看属性相关的几种方法
-for(var k in obj){//只能遍历整个原型链上可遍历的属性
+for(var k in obj){//只能遍历整个原型链上所有可遍历的属性
     console.log(k,obj[k]);
 }
 
-console.log(Object.keys(obj));
+console.log(Object.keys(obj));//返回一个数组，包含自身所有可枚举的属性
 
 console.log("x" in obj);//能够检查整个原型连上的属性，包括不可遍历的属性
 

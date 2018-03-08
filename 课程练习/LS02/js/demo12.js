@@ -29,10 +29,10 @@ if(h){
 
 
 // Part2222222 显式类型转换
-Boolean();
-Number();
-String();
-Object();
+// Boolean();
+// Number();
+// String();
+// Object();
 
 console.log(123.456.toFixed(1));
 console.log(123.456.toString());
@@ -43,7 +43,7 @@ console.log(123.456.toExponential());
 //parseInt();
 //parseFloat();
 
-toString();
-valueOf();
+// toString();
+// valueOf();
 
 
