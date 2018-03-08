@@ -25,3 +25,39 @@ var obj_c = {x1:2,y1:3};//obj_c.x1在堆区还是栈区
 var obj_d = {x2:2,y2:3};
 
 console.log(obj_c.x1 === obj_d.x2);
+
+//经典案例
+//
+var a =123;
+function foo1(x){
+	x = 345;
+}
+foo1(a);
+console.log(a);
+
+//
+var a ={y:123};
+function foo2(x){
+	x.y = 345;
+}
+foo2(a);
+
+console.log(a.y);
+
+//
+var a ={y:123};
+function foo3(x){
+	x.y = 345;
+	x = {y:456};
+}
+foo3(a);
+console.log(a.y);
+
+//
+var a ={y:123};
+function foo4(x){
+    x = {y:456};	
+    x.y = 345;	
+}
+foo4(a);
+console.log(a.y);
