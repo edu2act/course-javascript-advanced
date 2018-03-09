@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LS01 JS用法</title>
+
+    <!--引用外部js文件，注意引用顺序与调用关系，以及全局变量/函数-->
+    <script src="js/demo14.js"></script>
+    <script src="js/demo15.js">
+        //使用src后，内部代码不在起作用
+    </script>
+
+    <!--&lt;!&ndash;html内部直接使用js，&ndash;&gt;-->
+    <!--<script>-->
+        <!--console.log("code in html");-->
+        <!--var a = "global";-->
+        <!--function test() {-->
+            <!--var a = "local";-->
+            <!--console.log("test",a);-->
+        <!--}-->
+       <!--test();-->
+    <!--</script>-->
+
+    <!--<script>-->
+<!--//        test();-->
+<!--//        console.log(a);-->
+        <!--var Person = function (name,age) {-->
+            <!--this.name = name;-->
+            <!--this.age = age;-->
+        <!--};-->
+        <!--Person.prototype.showInfo = function () {-->
+            <!--console.log("i'm",this.name," ",this.age,"years old");-->
+        <!--};-->
+        <!--var p1 = new Person("Jack",20);-->
+        <!--p1.showInfo();-->
+    <!--</script>-->
+</head>
+<body>
+
+</body>
+</html>
