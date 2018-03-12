@@ -23,6 +23,8 @@ console.log(arr instanceof Object);
 console.log(foo instanceof Object);
 console.log(foo === window.foo);
 
+//思考：isa的关系
+
 //所有对象都有属性，如何查看对象的属性，ES5中查看属性相关的几种方法
 for(var k in obj){//只能遍历整个原型链上所有可遍历的属性
     console.log(k,obj[k]);

@@ -7,6 +7,8 @@
 //Undefined 的几种情况
 var a;
 console.log(a);//undefined
+//注意：分清未定义与未声明的区别 undefined与 undeclare
+//没有加var 直接使用a是否会报错？
 
 function foo(x,y) {
     console.log(x,y);//1 undefined

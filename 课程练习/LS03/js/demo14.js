@@ -29,9 +29,9 @@ var str3 = "abcdef".slice(2,5);
 var str4 = "abcdef".slice(-2);
 var str5 = "abcdef".slice(2,-2);
 
-var str6 = "abcdef".split("c");//返回数组
-var str7 = "abcdef".split("c",1);
-var str8 = "abcdef".split("c",2);
+var arr6 = "abcdef".split("c");//返回数组
+var arr7 = "abcdef".split("c",1);
+var arr8 = "abcdef".split("c",2);
 
 var str9 = "abcdef".charAt(2);
 var str10 = "abcdef".charCodeAt(3);

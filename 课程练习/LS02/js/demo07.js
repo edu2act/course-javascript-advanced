@@ -21,6 +21,7 @@ var str = "abc_def_ghi_jkl_mn";
 // str.slice(2,5);
 // str.slice(-2);
 // str.slice(2,-2);
+// 更多内容参见下一章节
 
 // str.bold();
 // str.link();
