@@ -47,7 +47,7 @@ var arr = [1,2,3,4,5];
 var o = {x:1,y:2};
 a>b;
 
-// 存在二义性的语句
+// 存在二义性的语句，要避免有二义性的语句
 var max = function (x,y) {
     return x>y?x:y;
 };
@@ -55,3 +55,23 @@ var max = function (x,y) {
 {
     foo:max(2,3)
 }
+
+// 存在二义性的语句 补充一
+var max = function (x,y) {
+    return x>y?x:y;
+};
+var x = {
+    foo:max(2,3)
+}
+
+// 存在二义性的语句 补充二
+var max = function (x,y) {
+    return x>y?x:y;
+};
+{
+    console.log(123);
+    console.log(456);
+    foo:max(2,3)
+}
+
+

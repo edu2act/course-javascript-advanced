@@ -1,8 +1,7 @@
 /**
  * Created by qile on 2017/8/14.
  */
-//严格模式下禁止删除不可改变的属性和未定义的变量
-
+//严格模式下禁止删除不可改变的属性的变量
 var str = "abc";
 var strDescriptor = Object.getOwnPropertyDescriptor(window,"str");
 console.log(strDescriptor);
@@ -22,6 +21,7 @@ function  strictFunc() {
 }
 strictFunc();//报错
 
+//严格模式下禁止删除未定义的变量
 delete foo;
 delete window.foo;
 'use strict';
@@ -42,12 +42,13 @@ function f(a, a, b) {
 f(2,3,4);//严格模式下报错
 */
 
-//严格模式下的arguments，变与不变，顺便使用下console.assert
+//严格模式下的arguments，变与不变
 function f(a){
     "use strict";
     a = 42;
     return [a, arguments[0]];
 }
 var pair = f(17);
-console.assert(pair[0] === 42);//console.log(pair[0]);
-console.assert(pair[1] === 17);//console.log(pair[1]);
+
+console.log(pair[0]);//console.assert(pair[0] === 42);
+console.log(pair[1]);//console.assert(pair[1] === 17);

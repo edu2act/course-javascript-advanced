@@ -25,7 +25,17 @@ if(a>b){
     console.log("a < b");
 }
 
+//扩展知识在chrome中测试下述代码： var a,b;  与 var a=b;   谁是局部变量，谁是全局变量？
+function foo(){
+	var a=b=3;
+}
+foo();
+console.log("b:",b);//是否报错？输出几？为什么？
+console.log("a:",a);//是否报错？
+
+
 //循环语句
 for(var i = 0;i<5;i++){
     console.log("in for ",i);
 }
+console.log("out for ",i);

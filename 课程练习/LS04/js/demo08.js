@@ -49,7 +49,7 @@ switch (j){
 
 // 在switch语句中使用表达式，如下
 var i = 65;
-switch(true){
+switch(true){ //思考若是改为 switch(new Boolean(true)){ 会怎样
     case i>=60:
         alert('及格');
         break;
