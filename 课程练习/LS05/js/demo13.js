@@ -31,6 +31,12 @@ console.log(2 == 2);
 console.log(new Number(2) == new Number(2));
 console.log(2 == new Number(2));
 
+//存在二义性的代码，与预期的结果不一致
+var obj1 = {x:2,y:[1],z:false};
+var obj2 = {x:2,y:[1],z:new Boolean(false)};
+//var obj2 = {x:2,y:[1],z:Boolean(new Boolean(false))};
+console.log(obj1.z == obj2.z);
+
 
 
 
