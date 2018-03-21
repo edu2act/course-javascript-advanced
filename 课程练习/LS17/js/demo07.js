@@ -41,3 +41,23 @@ function Point(x,y) {
 var p = new Point(2,3);
 p.moveXY(1,1);
 console.log(p);//输出为Point{x:3,y:4}，移动了(1,1)
+
+
+//思考：下述代码
+var obj = {
+    name:"obj",
+    x:23,
+    test:function(){
+        console.log(this.x,this);
+    }
+};
+var fun1 = function () {
+    return function fun2() {
+        return this.x;//若改为 return this;
+    }
+};
+obj.fun3 = fun1;
+obj.fun4 = fun1();
+console.log(obj.fun3());//输出什么
+console.log(obj.fun3()());//输出什么
+console.log(obj.fun4());//输出什么

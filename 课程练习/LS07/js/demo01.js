@@ -32,5 +32,4 @@ foo(2,3);
 var max = new Function("a","b","return a>b?a:b");
 max(2,3);
 
-//new Function 配置实例参见 NodeFunTest文件夹
 //理解 new Function
