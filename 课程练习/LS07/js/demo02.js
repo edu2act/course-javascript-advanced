@@ -3,12 +3,19 @@
  */
 //Part 11111111111111111111
 //普通函数直接调用
-function test() {
+function test1() {
     console.log("this is",this);
 }
-test();//window
+test1();//window
 
-
+//思考嵌套的情况下
+function test2() {
+    function test3(){
+        console.log("this is",this);
+    }
+    test3();
+}
+test2();//window
 
 
 
@@ -28,6 +35,10 @@ var sayHi = function () {
 };
 obj.sayHi = sayHi;//添加给对象添加方法
 obj.sayHi();
+//思考：若直接调用sayHi();
+//var name = "全局";
+//sayHi();
+
 
 /*
 //思考如下代码 详情参见高阶函数章节
@@ -47,7 +58,7 @@ console.log(obj.fun4());//输出什么
 
 
 //Part 22222222222222222
-//间接调用 实例一
+//间接调用 实例一 间接调用的对象要和原对象之间，在数据结构上有对应的相似处，以便不影响调用效果
 objA = {name:"AA"};
 objB = {name:"BB"};
 objA.foo = function(){
@@ -86,8 +97,6 @@ function test() {
     console.log(Array.prototype.slice.call(arguments));
 }
 test(1,2,3,"4",5);
-
-
 
 
 //构造函数

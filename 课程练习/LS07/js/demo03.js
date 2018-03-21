@@ -3,7 +3,11 @@
  */
 //实参数大于形参数
 function test() {
-    console.log(arguments);//console.log(test.arguments);
+    console.log(arguments);//console.log(test.arguments==arguments,arguments);
+    // console.log(arguments.length);
+	// console.log(typeof arguments);
+	// console.log(arguments instanceof Array);
+	// console.log(arguments instanceof Object);
     console.log(Array.prototype.slice.call(arguments));
     var s = "";
     for (var i = 0; i < arguments.length; i++) {
