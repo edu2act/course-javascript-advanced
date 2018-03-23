@@ -29,6 +29,31 @@ var obj = {
 };
 obj.test();//调用对象的方法23
 
+//
+var x = 45;
+var test = function(){
+	console.log("输出：",this.x);
+}
+var obj = {
+    x:23
+};
+obj.test = test;
+obj.test();//
+test();//
+
+//
+var x = 45;
+var obj = {
+    x:23,
+    test:function(){
+		function foo(){
+			console.log(this.x);
+		}
+		foo();
+    }
+};
+obj.test();
+
 //给obj动态添加方法
 var sayHi = function () {
     console.log("Hi，i'm",this.name);
@@ -89,7 +114,7 @@ var me = {
 bird.fly(5,6);
 fish.swim.call(me,3,4);
 bird.fly.call(me,7,8);
-//swim(1,2);与swim.call(null,1,2);相同
+//swim.call(null,1,2);
 
 
 //很多方法都可以通过间接调用的方式来调用，比如很多原型的方法

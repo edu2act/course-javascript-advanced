@@ -159,6 +159,25 @@ swim.apply(null,[13,14]);//同swim(13,14)
 
 
 
+//关于绑定
+//下述代码输出结果为（     ）
+	var x = 45;
+var obj = {
+    x:23,
+    test:function(){
+		function foo(){
+			console.log(this.x);
+		}
+		foo.bind(this)();//var fee = foo.bind(this); fee();
+		foo();
+    }
+};
+obj.test();
+//A.23  45
+//B.23  23
+//C.45  45
+//D.45  23
+
 
 //函数对象方法之 bind 硬绑定 例一
 // function.bind(thisArg[,arg1[,arg2[,argN]]])
