@@ -50,14 +50,12 @@ function testOuter() {
 testOuter();//call from the function testOuter
 
 
-//如果函数是从 JavaScript 程序的顶层调用的，则caller包含null。
-//如果在字符串上下文中使用 caller 属性，则其结果和 functionName.toString 相同，也就是说，将显示函数的反编译文本
-//函数对象属性之caller 获取调用当前函数的函数。例二
+//例二
 var obj = {
     foo1:function(){
         console.log(this.foo1.caller);
     },
-    foo2:function abc(){ //写函数名与不写函数名的区别
+    foo2:function abc(){
         this.foo1();
     }
 };
@@ -66,8 +64,10 @@ obj.foo2();
 
 
 
-//函数对象属性之callee 返回正被执行的 Function 对象，即指定的 Function 对象的正文
-//callee 属性是 arguments 对象的一个成员，该属性仅当相关函数正在执行时才可用。通常这个属性被用来递归调用匿名函数
+//函数对象属性之callee 返回正被执行的 Function 对象，
+//即指定的 Function 对象的正文
+//callee 属性是 arguments 对象的一个成员
+//该属性仅当相关函数正在执行时才可用。通常这个属性被用来递归调用匿名函数
 var func = function(n){
     if (n <= 0)
         return 1;
@@ -84,22 +84,6 @@ console.log(func(4));
     else
         return n * arguments.callee(n - 1);
 }(4));
-
-
-//函数对象属性之 constructor 获取创建某个对象的构造函数。可以用来判断对象是哪一类
-var x = new String("Hello");
-if (x.constructor == String){
-    console.log("Object is a String.");
-}
-
-function MyObj() {
-    this.number = 1;
-}
-var y = new MyObj();
-if (y.constructor == MyObj){
-    console.log("Object constructor is MyObj.");
-}
-
 
 
 //函数对象属性之 prototype
@@ -119,6 +103,24 @@ console.log(li.sex);//M
 
 Man.prototype.isStrong = true;
 console.log(li.isStrong);//true
+
+
+//其他相关的属性
+/*
+//函数对象属性之 constructor 获取创建某个对象的构造函数。可以用来判断对象是哪一类
+var x = new String("Hello");
+if (x.constructor == String){
+    console.log("Object is a String.");
+}
+
+function MyObj() {
+    this.number = 1;
+}
+var y = new MyObj();
+if (y.constructor == MyObj){
+    console.log("Object constructor is MyObj.");
+}
+*/
 
 
 
@@ -147,7 +149,7 @@ swim.call(me,3,4);
 bird.fly(5,6);
 bird.fly.call(me,7,8);
 bird.fly.apply(me,[7,8]);
-//swim(1,2);与swim.call(null,1,2);相同同
+swim.call(null,1,2);
 
 
 //函数对象方法之 apply
@@ -155,13 +157,13 @@ bird.fly.apply(me,[7,8]);
 //与call方法不同的地方是，apply的第二个参数类型必须是Array
 swim.apply(me,[9,10]);
 bird.fly.apply(me,[11,12]);
-swim.apply(null,[13,14]);//同swim(13,14)
+swim.apply(null,[13,14]);
 
 
 
 //关于绑定
 //下述代码输出结果为（     ）
-	var x = 45;
+var x = 45;
 var obj = {
     x:23,
     test:function(){
