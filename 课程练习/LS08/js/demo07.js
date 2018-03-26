@@ -112,10 +112,10 @@ document.addEventListener("click", function(){
 
 
 // Part 22222222222222222 函数作为返回值输出
+var x=12;
 var obj = {
-    name:"obj",
-    x:23,
-    test:function(){
+    x:34,
+    fun2:function(){
         console.log(this.x,this);
     }
 };
@@ -126,6 +126,6 @@ var fun1 = function () {
 };
 obj.fun3 = fun1;
 obj.fun4 = fun1();
-console.log(obj.fun3());//输出什么
-console.log(obj.fun3()());//输出什么
-console.log(obj.fun4());//输出什么
+console.log("输出：",obj.fun3());//输出什么
+console.log("输出：",obj.fun3()());//输出什么
+console.log("输出：",obj.fun4());//输出什么
