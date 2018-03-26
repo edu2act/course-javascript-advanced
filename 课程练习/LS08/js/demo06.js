@@ -5,9 +5,10 @@
 //函数对象属性之arguments 实参集合（类似数组的一个对象）
 var foo = function (a,b){
     console.log(arguments);//类似数组的一个对象
+    //arguments 是Symbol类型，独一无二的，具体参见后续ES6部分
+    console.log(arguments === test.arguments);
 
-    console.log(foo.arguments.length);
-    // console.log(arguments.length);
+    console.log(arguments.length);
     var args = Array.prototype.splice.call(arguments,0);
     console.log(args);
 };
@@ -61,7 +62,6 @@ var obj = {
 };
 obj.foo1();
 obj.foo2();
-
 
 
 //函数对象属性之callee 返回正被执行的 Function 对象，
@@ -161,7 +161,7 @@ swim.apply(null,[13,14]);
 
 
 
-//关于绑定
+//关于绑定 例一
 //下述代码输出结果为（     ）
 var x = 45;
 var obj = {
@@ -181,7 +181,7 @@ obj.test();
 //D.45  23
 
 
-//函数对象方法之 bind 硬绑定 例一
+//函数对象方法之 bind 硬绑定 例二
 // function.bind(thisArg[,arg1[,arg2[,argN]]])
 // 在绑定功能中，this对象解析为传入的对象。
 // 返回一个与 function 函数相同的新函数，只不过函数中的this对象和参数不同。
@@ -204,7 +204,7 @@ var result = boundCheckNumericRange (12);//相当于range.boundCheckNumericRange
 console.log(result);//true
 
 
-//bind 参数的问题 例二
+//bind 参数的问题 例三
 // 该绑定函数将 bind 方法中指定的参数用作第一个参数和第二个参数。
 // 在调用该绑定函数时，指定的任何参数将用作第三个、第四个参数（依此类推）
 // Define the original function with four parameters.

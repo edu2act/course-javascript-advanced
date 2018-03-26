@@ -8,9 +8,30 @@
 function add(x, y, f) {
     return f(x) + f(y);
 }
-add(2,3,function(x){return x+1;});//
+add(2,3,function(z){return z*z;});
 add(2,-3,Math.abs);//
 add(2,3,Math.sqrt);//2的开平方加3的开平方
+
+//练习使用高阶函数实现下述公式，要求函数复用
+//z = 2*(x+1)-3*y*y;
+//c = 2*a*a-3*(b-1);
+//k = 2*(i+1)-3(j-1);
+
+function foo(x,y,c1,c2){
+	return 2*c1(x)-3*c2(y);
+}
+function f1(x){
+	return x+1;
+}
+function f2(x){
+	return x-1;
+}
+function f3(x){
+	return x*x;
+}
+foo(1,1,f1,f3);//1
+foo(1,1,f3,f2);//2
+foo(1,1,f1,f2);//4
 
 //实例一  高阶函数一般应用 02
 var word_2 = "do another thing.";
@@ -23,13 +44,13 @@ var function_2=function(){console.log(this.word_2)};
 function_1(function_2);
 
 
+// 下述实例本章仅供参考，详细内容在Array章节具体介绍
 // 实例二 数组相关的高阶函数 map reduce filter sort详情参见数组章节
 function pow(x) {
     return x * x;
 }
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 arr.map(pow); // [1, 4, 9, 16, 25, 36, 49, 64, 81]
-
 
 //将数组所有元素改为数字类型
 var result = ["1", "2", "3"].map(function(val) {
@@ -72,7 +93,7 @@ var timeOutId = setTimeout( function () {
 },1000);
 
 //假如这里有耗时的代码
-clearTimeout(timeOutId);
+//clearTimeout(timeOutId);
 
 //间隔回调实例
 var timeInterval = setInterval(function () {
