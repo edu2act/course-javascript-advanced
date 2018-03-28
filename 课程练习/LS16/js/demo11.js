@@ -50,6 +50,22 @@ console.log(a.publicId);
 a.getId();
 
 
+//思考哪些是true，哪些是false
+function Person(name){
+	this.name = name;
+}
+Person.prototype.getName = function(){}
+// Person.prototype = { //测试如果更改了Person.prototype输出又会变成什么?
+// 	getName:function(){}
+// }
+var p = new Person("jack");
+console.log(p.__proto__ === Person.prototype);//true or false?
+console.log(p.__proto__ === p.constructor.prototype);//true or false?
+console.log(Object.prototype === p.constructor.prototype);//true or false?
+console.log(({getName:function(){}}).__proto__ === p.constructor.prototype);//true or false?
+
+
+
 //补充：Shape 多态
 
 /*
