@@ -3,7 +3,6 @@
  */
 
 // 调用栈 Call Stack
-// 对于通俗理解 调用栈类比于学生定位手表  foo <===> goToStore，  bar <===> goToBank
 console.log("全局上下文-start");
 var x = 1;
 function foo(){
