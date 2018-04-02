@@ -37,3 +37,12 @@ function foo() {
     fee();
 }
 foo();//Bill or Jack
+
+
+//通过new Function实例化的函数对象，不一定遵从静态词法作用域
+var scope = "g";
+function foo(){
+	var scope = "l";
+	return new Function("console.log(scope);")
+}
+foo()();
