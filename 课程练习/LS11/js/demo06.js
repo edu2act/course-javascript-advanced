@@ -11,6 +11,16 @@
     console.log("the min is",x<y?x:y);
 })(2,3);
 
+//注意：IIFE是表达式，要注意使用分号结尾，否则可能出现错误
+(function() {
+    console.log("111");
+})();//没有分号的话会报错
+(function () {
+    console.log("222");
+})()
+
+
+
 // 其他形式的IIFE 与运算符结合的写法
 var i = function(){
     return 10;

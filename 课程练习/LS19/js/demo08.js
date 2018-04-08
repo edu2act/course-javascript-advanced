@@ -22,3 +22,16 @@ console.log(date5);
 //补充：无效日期
 var date6 = new Date(NaN);
 console.log(date6);//Invalid Date
+
+//有无new的区别
+var d1 = new Date();
+var d2 = Date();
+console.log(d1,typeof d1);//object
+console.log(d2,typeof d2);//string
+
+//补充思考
+var n1 = new Number("123");
+var n2 = Number("123");
+console.log(n1,typeof n1);
+console.log(n2,typeof n2);
+

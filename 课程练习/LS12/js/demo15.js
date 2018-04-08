@@ -85,4 +85,20 @@ console.log(object.getNameFunc()());
 f(100);
 g();
 
+//注意闭包与不经意的变量共享
+function f(){
+    var result = [];
+    for (var i = 0; i < 3; i++) {
+        //(function(){
+            var pos = i;
+            var func = function(){
+                return pos;//若是return i;的话最终输出是几？
+            }
+            result.push(func);
+            //console.log(i,pos);
+        //}());
+    }
+    return result;
+}
+console.log(f()[1]());// 输出 1？ 2？ 3？（没和没有IIFE时，返回i和pos时的区别）
 

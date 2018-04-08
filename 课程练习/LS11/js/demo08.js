@@ -49,3 +49,19 @@ function f(){
 var tmp = f();
 tmp[3]();//输出为3，tmp[0]()...tmp[9]()都为是期望的结果
 
+
+//局部变量的案例
+function f(){
+    var getNumFuncs = [];//函数数组
+    var j;
+    for(var i=0;i<10;i++){
+        j = i;
+        getNumFuncs[i] = function(){
+            return j;//如果return i;的话输出几？
+        };
+    }
+    return getNumFuncs;//设置断点，查看变量共享问题
+}
+var tmp = f();
+tmp[3]();//tmp[0]()...tmp[9]()都为几？
+

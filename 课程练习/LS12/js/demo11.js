@@ -2,6 +2,7 @@
  * Created by qile on 2017/8/14.
  */
 /*
+// 例一
 function foo() {
     var i = 0;
     function bar() {
@@ -13,7 +14,7 @@ foo();
 foo();
 */
 
-// 例一
+// 例二
 function foo() {
     var i = 0;
     function bar() {
@@ -26,8 +27,24 @@ var b = foo();
 a();//1
 a();//2
 b();//1
+
 /*
-// 例二
+// 例三
+function createInc(startValue){
+	return function(step){
+		startValue+=step;
+		return startValue;
+	}
+}
+var inc = createInc(5);
+console.log(inc(1));//输出多少？
+console.log(inc(2));//输出多少？
+inc = createInc(5);
+console.log(inc(1));//输出多少？
+*/
+
+/*
+// 例四
 var scope = "global scope";
 function checkScope() {
     var scope = "local scope";
