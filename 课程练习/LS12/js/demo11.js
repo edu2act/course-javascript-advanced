@@ -1,35 +1,37 @@
 /**
  * Created by qile on 2017/8/14.
  */
-/*
-// 例一
-function foo() {
-    var i = 0;
-    function bar() {
-        console.log(++i);
-    }
-    return bar();
+
+//闭包引入案例(思考下述两个案例的区别,那个x始终未被释放)
+function f1(){
+	var x = 1;
+	function f2(){
+		return x++;
+	}
+	return f2();
 }
-foo();
-foo();
+var f3 = f1();
+//f1中的x变量是否被释放
+console.log(f3);//输出？
+console.log(f3);//输出？
+
+/*
+function f1(){
+	var x = 1;
+	function f2(){
+		return x++;
+	}
+	return f2;
+}
+var f3 = f1();
+//f1中的x变量是否被释放
+console.log(f3());//输出？
+console.log(f3());//输出？
 */
 
-// 例二
-function foo() {
-    var i = 0;
-    function bar() {
-        console.log(++i);
-    }
-    return bar;
-}
-var a = foo();
-var b = foo();
-a();//1
-a();//2
-b();//1
 
 /*
-// 例三
+// 例一
 function createInc(startValue){
 	return function(step){
 		startValue+=step;
@@ -43,16 +45,45 @@ inc = createInc(5);
 console.log(inc(1));//输出多少？
 */
 
-/*
-// 例四
-var scope = "global scope";
-function checkScope() {
-    var scope = "local scope";
-    function f() {
-        return scope;
-    }
-    return f;
+// 例二
+function createInc(startValue){
+	return function(step){
+		startValue+=step;
+		return startValue;
+	}
 }
-checkScope()();//输出什么
+var inc = createInc(5);
+console.log(inc(1));//输出多少？
+console.log(inc(2));//输出多少？
+var inc2 = createInc(5);
+console.log(inc(1));//输出多少？
+console.log(inc2(1));//输出多少？
+
+/*
+// 例三
+function foo() {
+    var i = 0;
+    function bar() {
+        console.log(++i);
+    }
+    return bar();
+}
+foo();
+foo();
 */
+
+// 例四
+function foo() {
+    var i = 0;
+    function bar() {
+        console.log(++i);
+    }
+    return bar;
+}
+var a = foo();
+var b = foo();
+a();//1
+a();//2
+b();//1
+
 //查看JavaScript权威指南（第6版）184页中的描述
