@@ -7,7 +7,7 @@ var tabs = document.getElementsByClassName('tabs')[0].children;
 var contents = document.getElementsByClassName('show')[0];
 
 for(var i=0;i<tabs.length;i++) {
-    (function (i) { 	//IIFE start
+
         tabs[i].onclick=function(){
             for (var j = 0; j < tabs.length; j++) {
                 tabs[j].className = '';
@@ -15,7 +15,7 @@ for(var i=0;i<tabs.length;i++) {
             this.className = "active";
             contents.innerHTML = "导航" + i + "内容";
         };
-    }(i));			//IIFE end
+
 }
 
 

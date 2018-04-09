@@ -14,7 +14,7 @@ function f(){
     return getNumFuncs;//设置断点，查看变量共享问题
 }
 var tmp = f();
-tmp[3]();//tmp[0]()...tmp[9]()都为10
+tmp[3]();//tmp[0]()...tmp[9]()都为几3还是10？
 */
 
 /*
@@ -31,7 +31,7 @@ function f(){
     return getNumFuncs;//设置断点，查看变量共享问题
 }
 var tmp = f();
-tmp[3]();//tmp[0]()...tmp[9]()都为10
+tmp[3]();//tmp[0]()...tmp[9]()都为3还是10
 */
 
 
@@ -63,5 +63,5 @@ function f(){
     return getNumFuncs;//设置断点，查看变量共享问题
 }
 var tmp = f();
-tmp[3]();//tmp[0]()...tmp[9]()都为几？
+tmp[3]();//tmp[0]()...tmp[9]()都为几，,3？9？10？
 
