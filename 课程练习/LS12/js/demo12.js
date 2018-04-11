@@ -4,7 +4,7 @@
 //Part 11111111111111//////////////////
 var tmp = 100;//注意：词法作用域
 function foo(x) {
-    var tmp = 3;//注意：词法作用域
+    var tmp = 3;//注意：词法作用域，思考：若屏蔽此行，会输出什么？foo之外的tmp是否为闭包的一部分？
     return function (y) {
         console.log(x + y + (++tmp));
     }
