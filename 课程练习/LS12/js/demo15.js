@@ -13,14 +13,15 @@ function fn() {
 var f = fn();
 f();
 
-//////////定时与节点 闭包应用案例 0.5秒后执行，由于闭包所以objID此时还存在
+//////////定时与节点 闭包应用案例 2秒后执行，由于闭包所以objID此时还存在
+//虽然有时没有直接用，但闭包无时无刻不存在
 function closureExample(objID, text, timedelay) {
     setTimeout(function() {
         //document.getElementById(objID).innerHTML = text;
         console.log(objID,text);
     }, timedelay);
 }
-closureExample("myDiv","Closure is Create", 500);
+closureExample("myDiv","Closure is Create", 2000);
 
 //////////闭包 应用案例
 var db = (function() {
@@ -33,7 +34,7 @@ var db = (function() {
         else { return data[key] = val } // set
     };
 // 我们可以调用这个匿名方法
-// 返回这个内部函数，它是一个闭包
+// 返回这个内部函数，它形成了一个闭包
 })();
 
 db('x'); // 返回 undefined
@@ -44,33 +45,6 @@ db('x'); // 返回 1
 
 
 //////////////其他实例///////
-// 实例一
-var name = "The Window";
-var object = {
-    name : "My Object",
-    getNameFunc : function(){
-        return function(){
-            return this.name;
-        };
-    }
-};
-console.log(object.getNameFunc()());
-
-// 实例二
-var name = "The Window";
-var object = {
-    name : "My Object",
-    getNameFunc : function(){
-        var that = this;
-        return function(){
-            return that.name;
-        };
-    }
-};
-console.log(object.getNameFunc()());
-
-
-// 实例三
 (function () {
     var m = 0;
     function getM(){

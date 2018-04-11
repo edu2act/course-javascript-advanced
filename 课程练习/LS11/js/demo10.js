@@ -21,3 +21,17 @@ for (var i = 0; i < 5; i++) {
         }, 1000*i);
     })(i);
 }
+
+//补充
+//Part 2222222222222222
+//函数作为参数(高阶函数的一种）、静态词法作用域、IIFE
+var max = 10;
+var fn = function (x) {
+    if(x > max){
+        console.log(x);
+    }
+};
+(function (f) {
+    var max = 100;
+    f(15);
+})(fn);

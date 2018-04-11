@@ -7,12 +7,12 @@ window.onload = function () {
     var btns = document.getElementsByClassName("btn");
     function closureExample(objID) {
         var ol = document.getElementById(objID);
-        //var li = document.createElement("li");//这样只会有一个li
+        // var li = document.createElement("li");//闭包，单例模式
+        // ol.appendChild(li);//闭包，单例模式
         return function () {
             var li = document.createElement("li");
-            li.innerHTML = "xxxxx";
             ol.appendChild(li);
-            //console.log(new Date());
+            li.innerHTML = "列表内容";
         };
     }
     var foo = closureExample("orderList");
