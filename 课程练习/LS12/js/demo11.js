@@ -11,7 +11,7 @@ function f1(){
 	return f2();
 }
 var f3 = f1();
-//f1中的x变量是否被释放
+//观察f1中的x变量
 console.log(f3);//输出？
 console.log(f3);//输出？
 
@@ -24,7 +24,7 @@ function f1(){
 	return f2;
 }
 var f3 = f1();
-//f1中的x变量是否被释放
+//观察f1中的x变量
 console.log(f3());//输出？
 console.log(f3());//输出？
 */
