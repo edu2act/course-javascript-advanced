@@ -11,8 +11,8 @@ o1.x = 34;
 console.log(o1.x);
 
 var o2 = Object.create(o1);
-o2.x = 56;
-console.log(o2.x);//输出多少？
+o2.x = 56;//是在o2上添加了新属性x，还是修改了o1的x属性，还是前两者都不是？
+console.log(o2.x);//输出多少？若o1的x的writable特性为true又会如何？
 
 //访问器属性特性的继承特点
 var o3 = {_x:21};

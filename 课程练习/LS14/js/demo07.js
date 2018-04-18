@@ -11,3 +11,6 @@ Object.defineProperty(obj,"x",{enumerable:false});
 for(var k in obj){
     console.log(k,obj[k]);
 }
+
+//思考：如果只更改writable特性的话，enumerable特性是否被修改
+

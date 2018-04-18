@@ -18,7 +18,7 @@ console.log(Object.keys(o3));//是否包含可枚举属性的键？
 console.log(Object.getOwnPropertyNames(o3));//是否包含可枚举属性的键？
 
 console.log(o3.hasOwnProperty("x"));
-console.log(o3.propertyIsEnumerable("a"));
+console.log(o3.propertyIsEnumerable("x"));
 
 for(var k in o3){ //遍历不到x属性
     console.log(k,o3[k]);

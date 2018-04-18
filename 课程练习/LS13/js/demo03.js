@@ -28,6 +28,17 @@ console.log(o.x);//1
 o.x = 2;
 console.log(o.x,o._x);//输出多少？
 
+///
+var o = {
+    _x:1.0,
+    get x(){
+        return this._x;
+    }
+};
+console.log(o.x);
+o.x = 2;
+console.log(o.x);//1还是2？
+
 // 访问器属性 实例三
 var p1 = {
     _name:"Jack",
