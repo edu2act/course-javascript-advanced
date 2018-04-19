@@ -4,7 +4,7 @@
 // 要求掌握下述方法的使用
 // Object.keys() 返回所有自有（非继承）可枚举属性的键
 // Object.getOwnPropertyNames()返回所有自有（非继承）键，包括不可枚举
-// Object.prototype.hasOwnProperty() 判断自身是否有该属性，不包括可枚举的属性
+// Object.prototype.hasOwnProperty() 判断自身是否有该属性，包括不可枚举的属性
 // Object.prototype.propertyIsEnumerable() 判断自身是否有该属性并检测该属性是否可枚举
 // in  检测一个对象是否有某个属性，包括继承的属性，包括不可枚举的属性
 // for...in 遍历一个对象的属性，包括继承的属性，但不包括不可枚举的属性
