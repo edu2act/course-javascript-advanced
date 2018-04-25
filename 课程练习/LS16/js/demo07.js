@@ -42,6 +42,8 @@ var p = new Point(2,3);
 p.moveXY(1,1);
 console.log(p);//输出为Point{x:3,y:4}，移动了(1,1)
 
+//思考：试着通过call/apply方法和bind两种方法解决上边的问题
+
 
 //思考：下述代码
 var obj = {

@@ -24,6 +24,7 @@ console.log(point);
 
 
 // Part2 方法中函数嵌套 this缺陷 解决办法
+// 解决方案一：软绑定
 var point = {
     x:0,
     y:0,
@@ -45,7 +46,7 @@ point.moveTo(2,2);
 console.log(point);
 //console.log(window.x,window.y);
 
-//通过call和apply来解决
+//解决方案二：通过call和apply来解决
 var point = {
     x:0,y:0,
     moveTo:function (x,y) {
@@ -60,3 +61,20 @@ var point = {
     }
 };
 point.moveTo(2,2);console.log(point);//2,0
+
+//解决方案三：通过bind来解决
+var point = {
+    x:0,y:0,
+    moveTo:function (x,y) {
+        function moveToX() {
+            this.x = x;//this绑定到了哪里？
+        }
+        function moveToY() {
+            this.y = y;//this绑定到了哪里？
+        }
+        moveToX.bind(point)();
+        moveToY.bind(point)();
+    }
+};
+point.moveTo(2,2);
+console.log(point);
