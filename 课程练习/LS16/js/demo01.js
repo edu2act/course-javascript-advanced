@@ -6,8 +6,7 @@ function thisTest(){
 }
 thisTest();
 
-
-var a = 10;b = "Hi";
+var a = 10,b = "Hi";
 function thisTest2(){
     this.a = 20;
     delete this.b;
@@ -15,7 +14,7 @@ function thisTest2(){
 }
 thisTest2();
 console.log(a,c);
-
+console.log(b);//依然能输出b，为什么，查看window对象b属性的属性特性
 
 /*
  var point = {
