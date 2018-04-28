@@ -14,34 +14,18 @@ var instance1 = new BaseClass();
 instance1.f2();//This is a prototype method
 
 
-//思考下述案例 静态方法
-var BaseClass = new Function();
-var Class2 = BaseClass;
-BaseClass.f1 = function(){
-    console.log(" BaseClass ' s static method");
-};
-Class2.f2 = function(){
-    console.log(" Class2 ' s static method");
-};
-BaseClass.f1();//BaseClass ' s static method
-BaseClass.f2();//Class2 ' s static method
-Class2.f1();//BaseClass ' s static method
-Class2.f2();//Class2 ' s static method
-console.log(BaseClass === Class2);
-
-
-//思考下述案例 原型方法 和 实例方法
+//思考下述案例 实例方法 原型方法
 var BaseClass = function() {};
 BaseClass.prototype.method1 = function(){
-    console.log("1 This is a instance method ");
+    console.log("1 This is a method in Base.prototype");
 };
 var instance1 = new BaseClass();
-instance1.method1();//This is a instance method
+instance1.method1();
 
 instance1.method1 = function(){
-    console.log("2 This is a instance method too ");
+    console.log("2 This is a method in instance1");
 };
-instance1.method1();//This is a instance method too 覆盖了原型的方法
+instance1.method1();//访问的哪一个method1？
 
 
 // 思考下述实例

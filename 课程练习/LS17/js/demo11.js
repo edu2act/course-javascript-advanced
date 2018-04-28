@@ -31,7 +31,7 @@ var Father = function(age){
 Father.prototype = new Person('Beijin');
 console.log(Person.prototype.constructor); //function person()
 console.log(Father.prototype.constructor); //function person()
-Father.prototype.constructor = Father;     //修正
+Father.prototype.constructor = Father;     //修正constructor指向
 console.log(Father.prototype.constructor); //function father()
 var one = new Father(25);
 

@@ -26,6 +26,10 @@ console.log(s2.name);
 s2.__proto__.__proto__.age = 99;
 console.log(s2.age);
 
+// console.log(s1);
+// console.log(s1.__proto__);
+// console.log(s1.__proto__.__proto__);
+
 //如何给每个student对象单独添加自身属性name和age，内存是否浪费
 s1.name = "Bill";
 s1.age = 22;
