@@ -8,6 +8,15 @@ var arr2 = new Array(5);//思考var arr2 = new Array("5");
 console.log(arr2);
 for(var i=0;i<arr2.length;i++){arr2[i] = i;}
 
+//思考下述案例
+var arr22 = [];
+for(var i=0;i<5;i++){
+	document.onclick = function(){
+		arr22[i] = i;
+	}
+}
+//思考：点击document之后，arr22数组有几个元素，每个元素的值分别是什么？
+
 var arr3 = new Array(1,2,3,4);//多个参数
 console.log(arr1,arr2,arr3);
 
@@ -43,7 +52,10 @@ function idLog(x){
 }
 idLog(123);
 
+
+//下述案例，参见后续部分
 //使用map和reduce来实现，数组求平均值和标准差
+
 //不用map和reduce的写法
 var data = [1,1,3,5,5];
 var total = 0;
