@@ -20,10 +20,6 @@ var regExp = /a.b/gi;//注意*和.的区别 ，参见在线分析工具 https://
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 
-var regExp = /\d/;
-var str = "123\n456";
-console.log(str.replace(regExp,"X"));//只换了一行
-
 //test初步了解
 var regExp = /a/i;
 console.log(regExp.test("ab"));
