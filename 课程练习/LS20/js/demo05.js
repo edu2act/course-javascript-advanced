@@ -21,4 +21,9 @@ console.log("a1b2c3d4e5".replace(/([a-z]\d){3,4}?/,"X"));
 "abcdefghijk".replace(/abcde|fghijk/g,"X");
 "abcdefghijk_abcdehijk_abcfghijk".replace(/abc(de|fg)hijk/g,"X");
 
+//练习：
+//将"xxabccxxdexx"替换为"yyabccxxdeyy"
+
+//"xx11xx".replace(/(\bxx)|(xx\b)/g,"mm");
+
 

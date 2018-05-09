@@ -30,6 +30,8 @@ console.log("moo".match(/\Boo\B/));//null
 "noonday".replace(/\Boo/,"xx");//"nxxnday"
 "noonday".search(/\Boo/);//1
 
+//练习将"aaa"替换为"axa"
+
 //
 "possibly yesterday".replace(/y\B./,"aaa");//"possibly aaasterday"
 "possibly yesterday".replace(/y\B/,"aaa");//"possibly aaaesterday"
@@ -38,9 +40,6 @@ console.log("moo".match(/\Boo\B/));//null
 
 //  \D匹配一个非数字等价于[^0-9]  例如， /\D/ 或者 /[^0-9]/ 匹配"B2 is the suite number."中的'B'
 
-//  \s匹配一个空白字符 例如, /\s\w*/ 匹配"foo bar."中的' bar'
-
-//  \S匹配一个非空白字符 例如, /\S\w*/ 匹配"foo bar."中的' foo'
 
 /*
 \w
@@ -60,21 +59,15 @@ console.log("moo".match(/\Boo\B/));//null
 例如, /\W/ 或者 /[^A-Za-z0-9_]/ 匹配 "50%." 中的 '%'。
  */
 
-//
-console.log(/ruby/.test("ruby"));//true
-console.log(/[abc]/.test("a"));//true
-console.log(/[abc]/.test("b"));//true
-console.log(/[abc]/.test("c"));//true
-console.log("a fAt bat ,a faT cat".match(/[bcf]at/gi));//["fAt", "bat", "faT", "cat"]
+//  \s匹配一个空白字符 例如, /\s\w*/ 匹配"foo bar."中的' bar'
 
-//
-var testString = "Ada Lovelace And Charles Babbage designed the first computer " +
-    "aNd the software AnD that would have run on it.";
+//  \S匹配一个非空白字符 例如, /\S\w*/ 匹配"foo bar."中的'foo'
 
-var expression = /and/gi;
-// var expression = /and/i;
-// var expression = /and/;
-var andCount = testString.match(expression).length;
+//\d \D \w \W \s \S 案例
+"sdafsa sdfea2s".replace(/a\ds/g,"*");
+"sdafsa sdfea2s".replace(/a\Ds/g,"*");
+"sdafsa sdfea2s".replace(/a\ws/g,"*");
+"sdafsa sdfea2s".replace(/a\Ws/g,"*");
 
 //
 var str = "test22314234244dgfqeqe232qe13ed";

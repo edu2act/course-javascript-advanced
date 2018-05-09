@@ -12,7 +12,7 @@
 console.log(/^(ab)$/.test("(ab)"));
 console.log(/^\(ab\)$/.test("(ab)"));
 
-//前瞻，了解即可 判断后边是否满足断言
+//正则前瞻，了解即可 判断后边是否满足断言
 console.log("a23*4vv".replace(/\w(?=\d)/g,"X"));//XX3*4vv 正项前瞻
 console.log("a23*4v8".replace(/\w(?=\d)/g,"X"));//XX3*4X8
 console.log("a23*4v8".replace(/\w(?!\d)/g,"X"));//a2X*XvX 负项前瞻

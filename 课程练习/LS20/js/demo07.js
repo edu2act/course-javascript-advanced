@@ -31,3 +31,7 @@ while (returnArray3 = reg3.exec(str)){
     console.log(reg3.lastIndex,returnArray3);
 }
 */
+
+//RegExp静态属性
+console.log(RegExp.$_);
+console.log(RegExp.lastMatch);

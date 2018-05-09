@@ -131,3 +131,5 @@ var sinaArray = [];
 var qqArray = [];
 var otherArray = [];
 
+//其他案例参见链接
+https://segmentfault.com/p/1210000011083522

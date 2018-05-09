@@ -68,7 +68,8 @@ console.log("AaBbAb_AaaBbbAba".replace(/Aa{2}/g,0));
 console.log("AaBbAb_AaaBbbAba".replace(/Aa{1,2}/g,0));
 
 //{n,} 出现至少n次
-console.log("AaBbAb_AaaBbbAbaAaaaaaaAaaAaaa".replace(/Aa{2,4}/g,0));
+console.log("AaBbAb_AaaBbbAbaAaaaaaaAaaAaaa".replace(/Aa{2,}/g,0));
+//console.log("AaBbAb_AaaBbbAbaAaaaaaaAaaAaaa".replace(/Aa{2,4}/g,0));
 
 //注意：0到n次的写法{0,n}而不是{,n}
 

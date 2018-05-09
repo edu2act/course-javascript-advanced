@@ -12,11 +12,11 @@ var regExp = /ab/gi;
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 
-var regExp = /a*b/gi; //注意*和.的区别 ，参见在线分析工具 https://regexper.com
+var regExp = /a*b/gi; //注意*和.的区别 ，参见在线分析工具 https://regexper.com或https://jex.im/regulex
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 
-var regExp = /a.b/gi;//注意*和.的区别 ，参见在线分析工具 https://regexper.com
+var regExp = /a.b/gi;//注意*和.的区别 ，参见在线分析工具 https://regexper.com或https://jex.im/regulex
 var matchResult = "xxAbcaaBbxyz".match(regExp);
 console.log(matchResult);
 

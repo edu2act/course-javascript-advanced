@@ -20,7 +20,8 @@ while (regExp.test("aaa")){
 */
 
 
-//Part222 RegExp.prototype.exec 方法 可以获得更为详细的信息，返回一个有属性的数组，属性index表示匹配到的位置
+//Part222 RegExp.prototype.exec 方法 可以获得更为详细的信息，返回一个有属性的数组，
+//属性index表示匹配到的位置
 //对于非全局模式下返回第一个匹配的和所有的分组项，正则对象的lastIndex不起作用
 var execExp = /\d{1,2}(\d)(\d)/;
 var retExp = execExp.exec("12s342dsfsf233s");
