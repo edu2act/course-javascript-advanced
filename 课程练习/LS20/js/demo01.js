@@ -31,8 +31,4 @@ console.log("a fAt bat ,a faT cat".match(reg2));//["fAt", "bat", "faT", "cat"]
 console.log("a fAt bat ,a faT cat".match(reg3));//["fAt", "bat", "faT", "cat"]
 
 //正则工具
-http://www.iteye.com/news/29859
-
-
-
-
+//http://www.iteye.com/news/29859

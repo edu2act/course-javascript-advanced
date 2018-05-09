@@ -37,30 +37,24 @@ console.log("moo".match(/\Boo\B/));//null
 "possibly yesterday".replace(/y\B/,"aaa");//"possibly aaaesterday"
 
 //  \d匹配一个数字等价于[0-9]  例如， /\d/ 或者 /[0-9]/ 匹配"B2 is the suite number."中的'2'
-
 //  \D匹配一个非数字等价于[^0-9]  例如， /\D/ 或者 /[^0-9]/ 匹配"B2 is the suite number."中的'B'
 
 
 /*
 \w
 匹配一个单字字符（字母、数字或者下划线）。
-
 等价于[A-Za-z0-9_]。
-
 例如, /\w/ 匹配 "apple," 中的 'a'，"$5.28,"中的 '5' 和 "3D." 中的 '3'。
 */
 
 /*
 \W
 匹配一个非单字字符。
-
 等价于[^A-Za-z0-9_]。
-
 例如, /\W/ 或者 /[^A-Za-z0-9_]/ 匹配 "50%." 中的 '%'。
  */
 
 //  \s匹配一个空白字符 例如, /\s\w*/ 匹配"foo bar."中的' bar'
-
 //  \S匹配一个非空白字符 例如, /\S\w*/ 匹配"foo bar."中的'foo'
 
 //\d \D \w \W \s \S 案例
