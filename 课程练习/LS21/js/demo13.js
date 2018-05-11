@@ -10,8 +10,8 @@ try {
 }
 
 ////基于Error的子类，可以创建自定义错误对象，并添加若干自有属性
-function MyError(message) {
-    this.name = 'MyError';
+function MyError(name,message) {
+    this.name = name||'MyError';
     this.message = message || 'Default Message';
 }
 MyError.prototype.__proto__ = Error.prototype;
@@ -35,5 +35,4 @@ try {
 /////////////////
 console.log(Error.prototype);//{name: "Error", message: "", constructor: function, toString: function}
 var myError = new Error("NewMessage");
-console.log(myError.name,myError.message,myError);
-console.log(myError.hasOwnProperty("name"),myError.hasOwnProperty("message"));
+console.log(myError.name,myError.message);

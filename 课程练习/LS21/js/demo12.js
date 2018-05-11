@@ -11,6 +11,8 @@ window.onload = function () {
         }
         catch(e){
             alert(e.name+e.message);
+            console.log("n:",n);
+            a = [];
         }
         finally {
             document.getElementById("labelID").innerHTML = a+"_"+(a instanceof Array)

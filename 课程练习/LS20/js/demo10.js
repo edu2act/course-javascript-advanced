@@ -21,9 +21,9 @@ var Others = [];//其他号码
 for(var i=0;i<numbers.length;i++){
     if(/1(3[4-9]|47|5[0127-9]|78|8[2-47-8])\d{8}/.test(numbers[i])){
         CMCC.push(numbers[i]);//console.log("移动");
-    }else if(/2/.test(numbers[i])){
+    }else if(/2/.test(numbers[i])){ // 补全代码
         CUCC.push(numbers[i]);//console.log("联通");
-    }else if(/3/.test(numbers[i])){
+    }else if(/3/.test(numbers[i])){ // 补全代码
         CTCC.push(numbers[i]);//console.log("电信");
     }else{
         Others.push(numbers[i]);//console.log("其他");
@@ -131,5 +131,18 @@ var sinaArray = [];
 var qqArray = [];
 var otherArray = [];
 
+//练习
+//完成下述任务，其中1、2、3需要有调试成功的截图
+//1.给定这样一个连字符串，var s1 = "dgfhfgh254bhku289fgdhdy675gfh";
+//写一个function提取上述字符串中的字符最终输出：[254,289,675]
+
+//2.给定这样一个连字符串，var s2 = "get-element-by-id";
+//写一个function转换为驼峰命名法形式的字符串输出：getElementById
+
+//3.写出正则表达式，从一个字符串中提取链接地址。
+//如var s3 = "测试<a href = http://www.baidu.com/>笔试</a> <a href = http://www.edu2act.cn/>笔试</a>正则";
+//写一个function从s3中提取出网址，输出数组：["www.baidu.com","www.edu2act.cn"]
+
 //其他案例参见链接
-https://segmentfault.com/p/1210000011083522
+//https://segmentfault.com/p/1210000011083522
+

@@ -16,7 +16,7 @@ try{
 }
 catch(e){ //catch和finally至少有一个
     //catch_statements 捕获处理异常
-    console.log("catch_statements",e);
+    console.warn("catch_statements",e);
 }
 finally{ //catch和finally至少有一个
     //finally_statements 最终处理
@@ -33,62 +33,45 @@ finally子句无论是否有异常抛出或着是否被捕获它总是执行。
  */
 try {
     try{
-        throw new Error("ErrorMessage11");
+        throw "ErrorMessage11";
     }
     // catch (e){
     //     //throw "ErrorMessage22"; //抛出异常后将直接跳出catch，catch内后续代码不再执行
-    //     console.log("inside catch",e.message);
+    //     console.log("inside catch",e);
     //     //throw "ErrorMessage22";
     // }
     finally {
-        console.log("finally 111")
+        console.log("finally 111");
     }
 }
 catch (e) {
-    console.log("outside catch",e.message);
+    console.log("outside catch",e);
 }
 finally {
     console.log("finally 222");
 }
 
 
-//输入月份异常案例 注意可以在外层进行捕获异常错误
-function UserException(message) {
-    this.message = message;
-    this.name = "UserException";
-}
-function getMonthName(mo) {
-    mo = mo-1; // 调整月份数字到数组索引 (1=Jan, 12=Dec)
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
-        "Aug", "Sep", "Oct", "Nov", "Dec"];
-    if (months[mo] !== undefined) {
-        return months[mo];
-    } else {
-        throw new UserException("InvalidMonthNo");
-    }
-}
-try {
-    // statements to try
-    var myMonth = 15; // 15 超出边界并引发异常
-    var monthName = getMonthName(myMonth);
-} catch (e) {
-    var monthName = "unknown";
-    console.log(e.message, e.name); // 传递异常对象到错误处理
-}
+//关于console
+console.log("logInfo");
+console.warn("warnInfo");
+console.error("errorInfo");
+console.assert(3>2,"有问题的话会输出这句话11111");
+console.assert(2==="2","有问题的话会输出这句话22222");
 
 
 //Part 22222222222222 嵌套的 try-blocks
 //1
 try {
     try {
-        throw new Error("oops");
+        throw "oops";
     }
     finally {
         console.log("finally");
     }
 }
 catch (ex) {
-    console.error("outer", ex.message);
+    console.error("outer", ex);
 }
 // Output:
 // "finally"
@@ -97,17 +80,17 @@ catch (ex) {
 //2
 try {
     try {
-        throw new Error("oops");
+        throw "oops";
     }
     catch (ex) {
-        console.error("inner", ex.message);
+        console.error("inner", ex);
     }
     finally {
         console.log("finally");
     }
 }
 catch (ex) {
-    console.error("outer", ex.message);
+    console.error("outer", ex);
 }
 // Output:
 // "inner" "oops"
@@ -116,10 +99,10 @@ catch (ex) {
 //3
 try {
     try {
-        throw new Error("oops");
+        throw "oops";
     }
     catch (ex) {
-        console.error("inner", ex.message);
+        console.error("inner", ex);
         throw ex;
     }
     finally {
@@ -127,7 +110,7 @@ try {
     }
 }
 catch (ex) {
-    console.error("outer", ex.message);
+    console.error("outer", ex);
 }
 // Output:
 // "inner" "oops"
@@ -137,10 +120,10 @@ catch (ex) {
 //4
 try {
     try {
-        throw new Error("oops");
+        throw "oops";
     }
     catch (ex) {
-        console.warn("inner", ex.message);
+        console.warn("inner", ex);
         throw ex;
     }
     finally {
@@ -148,7 +131,7 @@ try {
     }
 }
 catch (ex) {
-    console.warn("outer", ex.message);
+    console.warn("outer", ex);
 }
 // Output:
 // "inner" "oops"
