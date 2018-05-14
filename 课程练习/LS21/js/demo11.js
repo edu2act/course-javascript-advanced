@@ -136,3 +136,33 @@ catch (ex) {
 // Output:
 // "inner" "oops"
 // "finally"
+
+//Part33333333333333
+//思考下述两段代码的区别，思考两者调用栈CallStack的不同
+try{
+	function abc(x,cb){
+		console.log(x);
+		cb();
+    }
+	abc("xx",function(){
+		var arr = new Array(-1);
+	});
+}
+catch(e){
+	console.log(e);
+}
+
+//JS的异步
+//思考这种情况是否能捕获到异常，回调函数捕获异常的问题
+try{
+	function abc(x,cb){
+		console.log(x);
+		cb();
+    }
+}
+catch(e){
+	console.log(e);
+}
+abc("xx",function(){
+    var arr = new Array(-1);
+});
