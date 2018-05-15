@@ -37,9 +37,9 @@ finally {
 }
 
 //自定义错误类
-function UserError(message){
+function UserError(message,name){
     this.message = message || '默认信息';
-    this.name = 'UserError';
+    this.name = name || 'UserError';
 }
 UserError.prototype.__proto__ = Error.prototype;
 // UserError.prototype = new Error();
@@ -82,6 +82,7 @@ function UserException(message) {
     this.message = message;
     this.name = "UserException";
 }
+UserException.prototype.__proto__ = Error.prototype;
 function getMonthName(mo) {
     mo = mo-1; // 调整月份数字到数组索引 (1=Jan, 12=Dec)
     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
@@ -94,7 +95,7 @@ function getMonthName(mo) {
 }
 try {
     // statements to try
-    var myMonth = 15; // 15 超出边界并引发异常
+    var myMonth = 15; // 15 超出边界并引发异常 试试改成8
     var monthName = getMonthName(myMonth);
 } catch (e) {
     var monthName = "unknown";
