@@ -17,7 +17,7 @@ console.log(jsonStr1);
 console.log(o1);
 
 // JSON.stringify 案例二 复合数组的转换
-var a1 = [1,"x",true,{y:2,z:3}];
+var a1 = [1,"x",true,{y:2,z:3}];//对比 ["1","x","true",{y:"2",z:3}]
 var jsonStrArr1 = JSON.stringify(a1);
 console.log(jsonStrArr1);
 console.log(a1);
