@@ -1,8 +1,8 @@
 /**
  * Created by qile on 2017/8/14.
  */
-// Part11111111111111111 JSON.stringfiy的用法
-// JSON.stringify 案例一 复合对象转换
+// Part11111111111111111 JSON.stringfiy的基本用法
+// JSON.stringify 案例一 复合对象转换为字符串
 var o1 = {
     a:[1,2],
     b:true,
@@ -16,41 +16,63 @@ var jsonStr1 = JSON.stringify(o1);
 console.log(jsonStr1);
 console.log(o1);
 
-// JSON.stringify 案例二 复合数组的转换
+// JSON.stringify 案例二 复合数组转换为字符串
 var a1 = [1,"x",true,{y:2,z:3}];//对比 ["1","x","true",{y:"2",z:3}]
 var jsonStrArr1 = JSON.stringify(a1);
 console.log(jsonStrArr1);
 console.log(a1);
 
-// JSON.stringify 案例三 replacer参数的用法
-var o2 = {
-    a:[1,2],
-    b:true,
-    c:[3,4,"x",{y:34,z:56}],
-};
-//replacer 节点转换函数，在值被转为字符串之前转换树节点的值
-var jsonStr2 = JSON.stringify(o2,function (key,value) {
-    if(value === true){
-        value = false;
+
+JSON.stringify({});                        // '{}'
+JSON.stringify(true);                      // 'true'
+JSON.stringify("foo");                     // '"foo"'
+JSON.stringify([1, "false", false]);       // '[1,"false",false]'
+JSON.stringify({ x: 5 });                  // '{"x":5}'
+
+JSON.stringify({x: 5, y: 6});              
+// "{"x":5,"y":6}"
+
+JSON.stringify([new Number(1), new String("false"), new Boolean(false)]); 
+// '[1,"false",false]'
+
+JSON.stringify({x: undefined, y: Object, z: Symbol("")}); 
+// '{}'
+
+JSON.stringify([undefined, Object, Symbol("")]);          
+// '[null,null,null]' 
+
+// 不可枚举的属性默认会被忽略：
+JSON.stringify( 
+    Object.create(
+        null, 
+        { 
+            x: { value: 'x', enumerable: false }, 
+            y: { value: 'y', enumerable: true } 
+        }
+    )
+);
+// "{"y":"y"}"
+
+//下述部分参见ES6 Symbol章节
+/*
+JSON.stringify({[Symbol("foo")]: "foo"});                 
+// '{}'
+JSON.stringify({[Symbol.for("foo")]: "foo"}, [Symbol.for("foo")]);
+// '{}'
+JSON.stringify(
+    {[Symbol.for("foo")]: "foo"}, 
+    function (k, v) {
+        if (typeof k === "symbol"){
+            return "a symbol";
+        }
     }
-    if((value instanceof Array)&&value.length == 4){
-        value[0] = "Hi";
-    }
-    if(key === "a"){
-        console.log("find key a");
-        value = 12345;
-    }
-    if(key === "z"){
-        console.log("find key z");
-        value = "zzz";
-    }
-    return value;
-});
-console.log(jsonStr2);
-console.log(o2);
+);
+// undefined
+*/
 
 
-// Part2222222222222222 JSON.parse的用法
+
+// Part2222222222222222 JSON.parse的基本用法
 // JSON.parse的用法 案例一
 var jsonStr3 = '{"a":[1,2],"b":true,"c":[3,4,"x",{"y":34,"z":56}],"d":5,"e":{"name":"Jack"}}';
 var jsonStr4 = '[1,"x",true,{"y":2,"z":3}]';
@@ -72,16 +94,11 @@ console.log(o3);
 console.log(o4);
 console.log(o5);
 
-// JSON.parse的用法 了解reviver 遍历顺序 案例二
-var o6 = JSON.parse('{"p": 5}', function (k, v) {
-    if(k === '') return v;     // 如果到了最顶层，则直接返回属性值，
-    return v * 2;              // 否则将属性值变为原来的 2 倍。
-});                            // { p: 10 }
-console.log(o6);
+//其他案例
+JSON.parse('{}');              // {}
+JSON.parse('true');            // true
+JSON.parse('"foo"');           // "foo"
+JSON.parse('[1, 5, "false"]'); // [1, 5, "false"]
+JSON.parse('null');            // null
+JSON.parse('1');               //  1
 
-var o7 = JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}', function (k, v) {
-    console.log(k); // 输出当前的属性名，从而得知遍历顺序是从内向外的，
-                    // 最后一个属性名会是个空字符串。
-    return v;       // 返回原始属性值，相当于没有传递 reviver 参数。
-});
-console.log(o7);
