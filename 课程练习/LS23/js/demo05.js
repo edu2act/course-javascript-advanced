@@ -44,3 +44,19 @@ var o8 = JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}',
         return v;       // 返回原始属性值，相当于没有传递 reviver 参数。
     });
 console.log(o8);
+
+
+function replacer(key, value) {
+    if (typeof (value) === "string") {
+        return value;
+    }
+    else { return undefined };
+}
+var foo = {
+    name: "json",
+    age: 13,
+    a: "lkd"
+}
+var json5 = JSON.stringify(foo, replacer);
+console.log(json5);//输出undefined
+//replacer和parse迭代的顺序正好相反，是从最顶层开始，最后到最内部
