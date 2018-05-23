@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件流-阻止冒泡-阻止默认响应</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="demo05.js"></script>
+</head>
+
+<body>
+    <!--  -->
+    <!-- <div id="div1">
+    </div>
+    <div id="div2">
+    </div> -->
+
+    <!-- 思考下述情况响应的顺序，事件在节点间是如何传递 -->
+    <div id="div1">
+        <div id="div2">
+            <div id="div3">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
