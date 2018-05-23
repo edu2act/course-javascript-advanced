@@ -15,7 +15,6 @@ function div1click() {
     //console.log("this:", this);
 }
 
-
 /*
 //思考下述输出顺序，理解事件流
 window.onclick = function () {
