@@ -12,7 +12,10 @@ window.onload = function (e) {
     },false);//改成true会怎样
 
     div2.addEventListener("click",function (e) {
-        console.log("div2 click--yellow");
+        console.log("div2 click--yellow");//
+        //e.target.hidden = true;//和this.hidden = true;有什么区别？为什么？
+        //this.hidden = true;
+        
         //e.stopPropagation();
     },true);//改成true会怎样
 

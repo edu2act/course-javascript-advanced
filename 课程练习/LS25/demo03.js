@@ -46,6 +46,7 @@ window.onload = function (e) {
     // console.log(div2.__proto__.__proto__.__proto__.__proto__);
     // console.log(div2.__proto__.__proto__.__proto__.__proto__);
     // console.log(div2.__proto__.__proto__.__proto__.__proto__.__proto__);
+    //EventTarget 是一个由可以接收事件的对象实现的接口，并且可以为它们创建侦听器
     
 }
 */
@@ -91,3 +92,4 @@ document.body.__proto__.hasOwnProperty("addEventListener");//false
 "addEventListener" in document;//true
 document.body.__proto__.__proto__.__proto__.__proto__.__proto__.hasOwnProperty("addEventListener");//true
 */
+

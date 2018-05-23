@@ -16,11 +16,11 @@ window.onload = function (e) {
         // console.log(this, "-----", e.target.id);
 
         // 测试2
-        console.log(e);
-        console.log(e.__proto__);
-        console.log(e.__proto__.__proto__);
-        console.log(e.__proto__.__proto__.__proto__);
-        console.log(e.__proto__.__proto__.__proto__.__proto__);
+        // console.log(e);
+        // console.log(e.__proto__);
+        // console.log(e.__proto__.__proto__);
+        // console.log(e.__proto__.__proto__.__proto__);
+        // console.log(e.__proto__.__proto__.__proto__.__proto__);
 
         // 测试3
         // for(var k in e){
@@ -44,31 +44,3 @@ window.onload = function (e) {
     // document.dispatchEvent(new Event("xx"));
 }
 
-
-
-
-
-/*
-window.onload = function () {
-    console.log("window onload!");
-    //修改onclick
-    document.getElementById("div").onclick = function (e) {
-        console.log("xx",e);
-    };
-    document.getElementById("inp").onclick = function (e) {
-        console.log("yy",e);
-    };
-
-    //添加事件监听
-    // var myFun = function (e) {
-    //     console.log("myFun",e);
-    // };
-    // document.getElementById("div").addEventListener("click",myFun,false);
-    // document.getElementById("inp").addEventListener("click",myFun,false);
-    // //document.getElementById("div").removeEventListener("click",myFun);
-
-    //
-    //addEventListener();//可以为元素分配多个处理函数（而非覆盖）
-
-}
-*/
