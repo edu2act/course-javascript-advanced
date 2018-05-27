@@ -18,7 +18,7 @@ var newArray2 = arr2.filter(function (a) {//产生新数组，新数组的元素
 });
 console.log("newArray2:",newArray2);
 
-// 案例二 异步执行的回调
+// 案例二 异步执行的回调(通过定时器模拟)
 var LTimeOperation = function(taskID){
     var id = taskID;
     //思考什么时候将方法定义在构造函数内，什么时候定义在构造函数的prototype属性上
@@ -43,12 +43,12 @@ for(var i = 0;i<5;i++){
 // Part22222222222222  事件触发与事件监听
 // 案例一 在控制台中输出window 和 document ，看看window中的on 和document中的on
 document.onclick = function () {
-    console.log("document 被点击了！")
+    console.log("document 被点击了！");
 };
 
 // 案例二
 for(var i=0;i<5;i++){
-    var btn=document.createElement("BUTTON");
+    var btn=document.createElement("button");
     btn.setAttribute("id","btnId"+i);
     btn.setAttribute("style","width:200px");
     btn.setAttribute("style","height:20px");

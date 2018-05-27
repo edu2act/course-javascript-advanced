@@ -2,7 +2,7 @@
  * Created by qile on 2017/8/14.
  */
 //发布订阅 实例/////////////////////
-// 案例 一
+
 var Subject = function(){
     var _observer = [];
     this.attach = function(observer){
@@ -36,8 +36,8 @@ setTimeout(function(){
     var c = new Observer('c');
     sub.detach();
     sub.attach(c);
-    c.update('world!');
+    sub.notify('world');
     //sub.print();
-});
+},5000);
 
 //Promise 参见ES6部分///////////////////////
