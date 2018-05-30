@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        window.onload = function(){
+            var inputElement = document.createElement("input");
+            inputElement.setAttribute("style", "width:200px");
+            inputElement.setAttribute("style", "height:20px");
+            document.body.appendChild(inputElement);
+    
+            document.body.appendChild(document.createElement("br"));
+    
+            var label = document.createElement("label");
+            label.setAttribute("style", "width:200px");
+            label.setAttribute("style", "height:20px");
+            document.body.appendChild(label);
+    
+            inputElement.onkeyup = function () {
+                //思考创建了多少个xhr对象，每个对象都是单独请求的么，如果将下一行提到函数外会如何
+                //对应读写DOM操作，有什么区别
+                var xhr = new XMLHttpRequest();
+                if (!xhr) {
+                    console.log("xhr 创建失败！！");
+                }
+                xhr.onreadystatechange = function () {
+                    //console.log(xhr.readyState,xhr.status);
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var message = xhr.responseText;
+                        //console.log(message);
+                        label.innerText = message;
+                    }
+                };
+                xhr.open("get", "http://127.0.0.1:8080?getInfo=" + inputElement.value, true);
+                //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");//post需增加
+                xhr.send();
+            };
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>

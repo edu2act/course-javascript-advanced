@@ -15,7 +15,7 @@ window.onload = function (e) {
 }
 */
 
-/*
+
 //测试3 DOM2级事件处理
 window.onload = function (e) {
     var div1 = document.getElementById("div1");
@@ -29,13 +29,13 @@ window.onload = function (e) {
         console.log("xx");
     });//思考：是覆盖还是两个语句都会输出？
 
-    div2.addEventListener("click",eventHandler);
+    //div2.addEventListener("click",eventHandler);
     //div2.addEventListener("click",eventHandler,false);
     //div2.removeEventListener("click",eventHandler);//取消事件响应处理
 
     //自定义事件、事件分发、事件监听
-    div2.addEventListener("MyEvent",function(){console.log("处理自定义事件")});
-    div2.dispatchEvent(new Event("MyEvent"));
+    // div2.addEventListener("MyEvent",function(){console.log("处理自定义事件")});
+    // div2.dispatchEvent(new Event("MyEvent"));
 
     //思考DOM节点对象的继承关系
     
@@ -49,9 +49,9 @@ window.onload = function (e) {
     //EventTarget 是一个由可以接收事件的对象实现的接口，并且可以为它们创建侦听器
     
 }
-*/
 
 
+/*
 //自定义事件（创建、分发、捕获的综合案例）
 window.onload = function (e) {
     var div1 = document.getElementById("div1");
@@ -82,6 +82,7 @@ window.onload = function (e) {
     //第3个参数默认是false使用的是冒泡方式，若改为true的话则为捕获方式
 }
 
+*/
 /*
 //DOM0级事件响应 定义在哪里？
 document.body.__proto__.hasOwnProperty("onclick");//false

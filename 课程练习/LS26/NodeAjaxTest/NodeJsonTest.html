@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON-Node-测试</title>
+    <!-- <style>
+        ul, li {
+            list-style: none;
+        }
+        ul {
+            width: 800px;
+            margin: 0 auto;
+        }
+    </style> -->
+    <script src="jquery-2.2.2.js"></script>
+</head>
+<body>
+<button id="btn">点击</button>
+<input type="text" id="inp">
+<label id="lab">输入1到7的整数</label>
+
+<script>
+    //        type:请求方式（get,post）
+    //        url:接口地址
+    //        data:传入的参数
+    //        dataType:返回的数据类型，一般的值为--json/jsonp
+    //        success:成功后的回调函数
+    //        $.ajax({});
+    //   后端代码参见NodeJsonTest
+    $('#btn').click(function () {
+        $.ajax({
+            url: 'http://localhost:8080?id='+($('#inp').val()||1),
+            dataType: 'JSON',
+            type: 'GET',
+            success: function (data) {
+                if (data) {
+                    console.log(typeof data,data);
+                    document.getElementById("lab").innerText = JSON.stringify(data);
+                }
+            },
+            error: function (xhr) {
+                alert('error:' + JSON.stringify(xhr));
+            }
+        })
+    })
+</script>
+</body>
+</html>
