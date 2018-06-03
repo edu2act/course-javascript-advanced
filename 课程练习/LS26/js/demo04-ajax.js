@@ -5,9 +5,6 @@
 //后端代码参见参见NodeAjaxTest01.js
 //实例一
 var xhr = new XMLHttpRequest();
-// if (!xhr) {
-//     console.log("xhr 创建失败！！");
-// }
 xhr.onreadystatechange = function () {
     //console.log(xhr.readyState,xhr.status);
     if (xhr.readyState == 4) {
