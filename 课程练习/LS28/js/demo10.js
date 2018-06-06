@@ -48,7 +48,7 @@ var obj2 = {
 };
 var { p: [x, { y }] } = obj2;
 console.log(x); // "Hello"
-console.log(y); // "World
+console.log(y); // "World //若上边改为var { p: [x, { y:z }] } = obj2;还能输出y么？
 //思考console.log(p);是正常输出还是报错？
 
 ///

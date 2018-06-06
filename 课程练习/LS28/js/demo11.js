@@ -2,7 +2,7 @@
  * Created by qile on 2017/8/14.
  */
 //字符串也可以解构赋值
-const [a, b, c, d, e] = 'hello';
+const [a, b, c, d, e] = 'hello';//相当于将'hello'转成了["h","e","l","l","o"]后解构
 console.log(a); // "h"
 console.log(b); // "e"
 console.log(c); // "l"

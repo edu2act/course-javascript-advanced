@@ -9,7 +9,7 @@
 typeof b;//报错 ReferenceError 需要使用前定义
 let b;//若没有此行，上一行是否会报错
 
-var tem = 123;
+var tmp = 123;
 if(true){
     tmp = "abc";
     let tmp;//思考如果改为var是否会报错，如果let tmp在上一行之前如何？
