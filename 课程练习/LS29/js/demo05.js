@@ -131,7 +131,7 @@ Object.values(obj);// ["bar", 42]
 
 var obj = { foo: 'bar', baz: 42 };
 Object.entries(obj);// [ ["foo", "bar"], ["baz", 42] ]
-for(var [k,v] of Object.entries(obj)){
+for(var [k,v] of Object.entries(obj)){ //解构赋值
     console.log(k,v);
 }
 

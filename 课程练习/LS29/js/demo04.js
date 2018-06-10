@@ -18,7 +18,9 @@ let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
 //
 // arguments对象 案例
 function foo() {
-    var args = Array.from(arguments);
+    // var args = Array.prototype.slice.call(arguments);
+    var args = Array.from(arguments);//
+    console.log(args);
 // ...
 }
 
@@ -133,11 +135,14 @@ for (let elem of ['a', 'b'].values()) {
 }
 // 'a'
 // 'b'
-for (let [index, elem] of ['a', 'b'].entries()) {
+for (let [index, elem] of ['a', 'b'].entries()) { //[index,elem] 解构赋值
     console.log(index, elem);
 }
 // 0 "a"
 // 1 "b"
+
+/*
+//下述内容参见迭代器章节
 //如果不使用for...of循环，可以手动调用遍历器对象的next方法，进行遍历。iterator参见后续章节
 let letter = ['a', 'b', 'c'];
 let entries = letter.entries();
@@ -155,7 +160,7 @@ console.log(entries.next().value); // [2, 'c']
 [1, 2, 3].includes(3, 3); // false
 [1, 2, 3].includes(3, -1); // true
 //没有该方法之前，我们通常使用数组的indexOf方法，检查是否包含某个值
-
+*/
 
 //Array空位数组（稀疏数组）
 //forEach(), filter(), every() 和some()都会跳过空位。
@@ -167,6 +172,7 @@ new Array(3);// [, , ,]
 0 in [, , ,] // false
 
 //单独测试下述代码
+/*
 // forEach方法
 [,'a'].forEach(function(x,i){return console.log(i);}); // 1
 
@@ -181,4 +187,4 @@ new Array(3);// [, , ,]
 
 // map方法
 [,'a'].map(function (x) {return 1;}) // [,1]
-
+*/

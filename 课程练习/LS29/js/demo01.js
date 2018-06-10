@@ -23,7 +23,7 @@ s.includes('o'); // true
 var s = 'Hello world!';
 s.startsWith('world', 6); // true
 s.endsWith('Hello', 5); // true
-s.includes('Hello', 6); // fal
+s.includes('Hello', 6); // false
 
 //repeat方法返回一个新字符串，表示将原字符串重复n次。
 'x'.repeat(3); // "xxx"
