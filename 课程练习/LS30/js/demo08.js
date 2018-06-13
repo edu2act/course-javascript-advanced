@@ -32,3 +32,15 @@ console.log(sum(1,2,3));//1+2+3
 console.log(sum(1,2));//1+2+5
 console.log(sum(1));//1+4+5
 console.log(sum(1,0,0));//1+0+0
+
+//默认值案例
+function fetch(url, { body = '', method = 'GET', headers = {} } = {}) {
+    console.log(url);
+    console.log(body);
+    console.log(method);
+    console.log(headers);
+}
+
+fetch('http://example.com')
+
+//回顾解构赋值传参时，默认参数案例

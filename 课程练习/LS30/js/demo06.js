@@ -45,3 +45,14 @@ var foo = function (num1, num2) {
 var max = function (a, b) {
     return a > b ? a : b;
 };
+
+//箭头函数可以与变量解构结合使用
+const full = ({ first, last }) => last + ' ' + first;
+full({first:"Ming",last:"Li"});
+
+// 等同于
+function full({ first, last }) {
+  return last + ' ' + first;
+}
+full({first:"Ming",last:"Li"});
+

@@ -147,7 +147,7 @@ class A {}
 class B extends A {
     constructor() {
         super();
-        console.log(super); // 报错 二义性
+        //console.log(super); // 报错 二义性
     }
 }
 // 上面代码中，console.log(super)当中的super，无法看出是作为函数使用，还是作为对象使用，

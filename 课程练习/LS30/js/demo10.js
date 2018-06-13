@@ -14,6 +14,15 @@ function f(...y){
 }
 f("a","b","c");//输出 ["a","b","c"]
 
+function add(...values) {
+    let sum = 0;
+    for (var val of values) {
+      sum += val;
+    }
+    return sum;
+  }
+  add(2, 5, 3) // 10
+
 //比arguments使用更加灵活,比如只想看从第二个开始之后的参数
 function f(x,...y){
     console.log(x,y);
