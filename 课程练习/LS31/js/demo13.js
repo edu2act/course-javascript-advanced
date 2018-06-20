@@ -39,7 +39,6 @@ console.log(Symbol.for("bar") === Symbol.for("bar"));// true
 console.log(Symbol("bar") === Symbol("bar"));// false
 console.log(Symbol.for("bar") === Symbol("bar"));// false
 
-
 //Symbol.keyFor方法返回一个已登记的Symbol类型值的key。
 var s1 = Symbol.for("foo");
 console.log(Symbol.keyFor(s1)); // "foo"

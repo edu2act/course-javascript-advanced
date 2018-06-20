@@ -57,16 +57,16 @@ console.log(obj[myS2],obj["xx"]);
 // 如果不用[]的话相当于使用s对应的字符串定义属性
 let s = Symbol();
 let obj = {
-    [s]: function (arg) {}
+    [s]: function (arg) {console.log("xx");}
 };
 obj[s](123);
 // 上面代码中，如果s不放在方括号中，该属性的键名就是字符串s，而不是s所代表的那个Symbol值。
 
 // 采用增强的对象写法，上面代码的obj对象可以写得更简洁一些
 let obj = {
-    [s](arg) { }
+    [s](arg) {console.log("xx");}
 };
-//上述代码写方法可以，思考下述写法是否会报错，为什么？
+
 // 回顾ES6对象属性的表达式定义方法和ES6对象的简洁表示法，对于属性和方法定义的简洁表示法
 //还有一点需要注意，Symbol值作为属性名时，该属性还是公开属性，不是私有属性
 
