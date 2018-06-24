@@ -14,6 +14,41 @@ p1.show();
 console.log(Object.keys(p1));
 console.log(Object.keys(p1.__proto__));
 
+// ES5 中的继承与多态
+function Point(x,y){
+    this.x = x;
+    this.y = y;
+}
+function Point2D(x,y){
+    Point.call(this,x,y);
+    //this.show = function(){console.log("Point2D:",this.x,this.y);}
+}
+Point2D.prototype.__proto__ = Point.prototype;
+function Point3D(x,y,z){
+    Point.call(this,x,y);
+    this.z = z;
+    //this.show = function(){console.log("Point3D:",this.x,this.y,this.z);}
+}
+Point3D.prototype.__proto__ = Point.prototype;
+
+Point.prototype.show = function(){
+    switch (this.constructor) {
+        case Point2D:
+            console.log("Point2D:",this.x,this.y);
+            break;
+        case Point3D:
+            console.log("Point3D:",this.x,this.y,this.z);
+            break;
+        default:
+            break;
+    }
+};
+
+var p2 = new Point2D(1,2);
+var p3 = new Point3D(3,4,5);
+p2.show();
+p3.show();
+
 
 //ES6 中的class 语法 Part2222222222222
 class Point{

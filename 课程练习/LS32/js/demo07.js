@@ -14,7 +14,8 @@ class B extends A {
 }
 // 上面代码中，子类B的构造函数之中的super()，代表调用父类的构造函数。
 // 这是必须的，否则 JavaScript 引擎会报错。
-// 注意，super虽然代表了父类A的构造函数，但是返回的是子类B的实例，即super内部的this指的是B类的实例，
+// 注意，super虽然代表了父类A的构造函数，但是返回的是子类B的实例，
+// 即super内部的this指的是B类的实例，
 // 因此super()在这里相当于A.prototype.constructor.call(this)，参见下述例子
 class A {
     constructor() {
