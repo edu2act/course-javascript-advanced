@@ -155,6 +155,9 @@ class B extends A {
 // 所以 JavaScript 引擎解析代码的时候就会报错。
 // 这时，如果能清晰地表明super的数据类型，就不会报错。
 
+
+
+//以下内容为补充内容：
 class A {}
 class B extends A {
     constructor() {
@@ -167,7 +170,6 @@ let b = new B();
 // 上面代码中，super.valueOf()表明super是一个对象，因此就不会报错。
 // 同时，由于super使得this指向B，所以super.valueOf()返回的是一个B的实例。
 
-
 //最后，由于对象总是继承其他对象的，所以可以在任意一个对象中，使用super关键字。
 var obj = {
     toString() {
@@ -177,8 +179,6 @@ var obj = {
 obj.toString(); // MyObject: [object Object]
 
 
-
-//补充：
 //需要注意的是，子类继承父类时，new.target会返回子类。
 class Rectangle {
     constructor(length, width) {

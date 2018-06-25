@@ -36,7 +36,7 @@ class Foo {
 }
 Foo.prop = 1;
 
-// 新写法
+// 新提案的写法 ES6暂不支持
 class Foo {
     static prop = 1;
 }
