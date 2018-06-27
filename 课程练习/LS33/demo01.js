@@ -19,6 +19,7 @@ var myFirstPromise = new Promise(function(resolve, reject){
     setTimeout(function(){
         resolve("成功!"); // 思考：如果改为 reject("失败");
     }, 2500);
+    //简写的方式  setTimeout(resolve,2500,"成功!");//等效于上面3行
     console.log("step2");
 });
 
@@ -64,3 +65,15 @@ timeout(1000).then(
 (err)=>{ //思考：此行是否会被调用
     console.log(err);
 });
+
+//补充案例
+// var p = new Promise((a,b)=>{
+new Promise((a,b)=>{
+	setTimeout(a,1000,"x");//setTimeout(b,1000,"x");
+}).then(
+	(v)=>{console.log("v1:",v)},
+	(e)=>{console.log("e1:",e)}
+).then(
+	(v)=>{console.log("v2:",v)},
+	(e)=>{console.log("e2:",e)}
+)

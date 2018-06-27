@@ -35,4 +35,9 @@ console.log('original === cast ? ' + (original === cast));
 
 ////Promise静态方法 Promise.reject
 //Promise.reject()
+var p = Promise.reject("reject reason");
+p.then(
+	(v)=>{console.log("v:",v)},
+	(e)=>{console.log("e:",e)}
+)
 

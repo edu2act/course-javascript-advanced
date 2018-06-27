@@ -4,8 +4,8 @@ const p1 = new Promise((resolve, reject) => {
 }).then(result => result);
 
 const p2 = new Promise((resolve, reject) => {
-	reject("error!");
-	//throw new Error('err');
+	resolve('world');//若都是resolve，则返回所有Promise对象成功时的传值
+	//reject("error!");//若有reject，则返回reject传的值
 }).then(result => result);
 
 Promise.all([p1, p2]) //数组里若不是Promise对象的话，会调用resolve转成Promise对象

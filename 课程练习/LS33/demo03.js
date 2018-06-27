@@ -21,7 +21,7 @@ var p2 = new Promise((resolve,reject)=>{
 	console.log(333);
 });
 p2
-.then(()=>{console.log('444') })
+.then(()=>{console.log('444');})
 .then(()=>{console.log("555");})
 .catch((err)=>{console.log("666",err); }
 )

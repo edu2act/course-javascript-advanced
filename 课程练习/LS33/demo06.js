@@ -1,7 +1,4 @@
-
-
-
-//执行的顺序
+//执行的顺序 案例一
 var promise = new Promise(function (resolve, reject) {
   console.log('111');
   resolve();
@@ -11,7 +8,7 @@ promise.then(function () {
 });
 console.log('333');
 
-//
+//执行的顺序 案例二
 new Promise((resolve, reject) => {
   resolve(1);
   console.log(2);
@@ -23,7 +20,7 @@ function loadImageAsync(url) {
   return new Promise(function (resolve, reject) {
     const image = new Image(url);
     image.onload = function () {
-	  image.width = image.height = 100;
+      image.width = image.height = 100;
       resolve(image);
     };
     image.onerror = function () {
@@ -33,17 +30,17 @@ function loadImageAsync(url) {
   });
 }
 loadImageAsync("https://www.baidu.com/img/bd_logo1.png").then(
-  (value)=>{
+  (value) => {
     console.log("YES");
-	document.body.appendChild(value);
+    document.body.appendChild(value);
   }
 ).catch(
-  (error)=>{
+  (error) => {
     console.log("NO");
   }
 )
 
-//ajax请求案例
+//ajax请求案例//////////////
 const getJSON = function (url) {
   const promise = new Promise(function (resolve, reject) {
     const handler = function () {
@@ -59,22 +56,25 @@ const getJSON = function (url) {
     const client = new XMLHttpRequest();
     client.open("GET", url);
     client.onreadystatechange = handler;
-    client.responseType = "json";
+    // client.responseType = "json";
     client.setRequestHeader("Accept", "application/json");
     client.send();
 
   });
-
   return promise;
 };
 
-getJSON("/posts.json").then(function (json) {
+// 域名检测需要解决跨域问题
+//getJSON("http://panda.www.net.cn/cgi-bin/check.cgi?area_domain=qq.com").then(function (json) {
+
+getJSON("https://api.github.com/").then(function (json) {
   console.log('Contents: ' + json);
 }, function (error) {
   console.error('出错了', error);
 });
 
 
+/////////////////////////////////////
 //promise对象作为参数的情况
 var p1 = new Promise(function (resolve, reject) {
   // ...
@@ -107,67 +107,37 @@ var p2 = new Promise(function (resolve, reject) {
 // 又过了 2 秒，p1变为rejected，导致触发catch方法指定的回调函数
 
 
-
-
-////////
-////
-var p = new Promise((resolve, reject) => {
-  setTimeout(resolve, 2000, "hi");
-});
-p.then((v) => { console.log(v) });
-
-////
-var p = new Promise((resolve, reject) => {
-  setTimeout(resolve, 2000, "hi");
-});
-var x = p.then((v) => { console.log(v) });
-console.log(x instanceof Promise);
-
-////
-var p = new Promise((resolve, reject) => {
-  setTimeout(resolve, 2000, "hi");
-});
-var x = p.then((v) => { console.log("x:", v) });
-console.log(x instanceof Promise);
-var y = x.then((v) => { console.log("y:", v) });
-console.log(y instanceof Promise);
-
-////
-var p = new Promise((resolve, reject) => {
-  setTimeout(resolve, 2000, "hi");
-});
-p.then((v) => {
-  console.log("x:", v);
-  return new Promise((resolve, reject) => {
-    setTimeout(resolve, 2000, v + ":xx");
-  })
-}).then(v => console.log(v), e => console.log(e));
-
-
 //
 //Promise实例的异步方法和then()中返回promise有什么区别？
-// p1异步方法中返回p2
-/*
+
+// 1111111111
+//Promise对象作为resolve或reject函数的参数时的情况
+//p2的状态取决于p1，如果p1为pending，p2将等待p1状态的改变，p1的状态一旦改变，
+//p2将会立即执行自己对应的回调
 let p1 = new Promise ( (resolve, reject) => {
-    resolve(p2)
-} )
-let p2 = new Promise ( ... )
-
-// then()中返回promise
-let p3 = new Promise ( (resolve, reject) => {
-    resolve()
-} )
-let p4 = new Promise ( ... )
-p3.then(
-    () => return p4
+    setTimeout(resolve,2000);
+}).then(
+	()=>{console.log("11")},
+	()=>{console.log("22")}
 )
-*/
-//p1异步方法中返回p2
-//p1的状态取决于p2，如果p2为pending，p1将等待p2状态的改变，p2的状态一旦改变，
-//p1将会立即执行自己对应的回调，即then()中的方法针对的依然是p1
-//then()中返回promise
+let p2 = new Promise ((resolve, reject) => {
+    resolve(p1)
+}).then(
+	()=>{console.log("33")},
+	()=>{console.log("44")}
+)
 
+// 2222222222
+// then()中返回promise的情况
 //由于then()本身就会返回一个新的promise，
 //所以后一个then()针对的永远是一个新的promise，
 //但是像上面代码中我们自己手动返回p4，
 //那么我们就可以在返回的promise中再次通过 resolve() 和 reject() 来改变状态
+let p3 = new Promise ( (resolve, reject) => {
+  resolve("111");
+} )
+let p4 = new Promise ((resolve, reject) => {
+resolve("222");
+})
+p3.then((value_1) => {console.log(value_1);return p4;})
+.then((value_2) => {console.log(value_2);});
