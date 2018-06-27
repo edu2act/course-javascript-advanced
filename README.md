@@ -44,4 +44,5 @@
 | 第28章|ES6对函数的扩展|1. ES6 新增的箭头函数<br>2. ES6 对函数参数默认值的扩展<br>3. ES6 中的Rest与Spread操作符|
 | 第29章|ES6新增的数据类型和数据结构|1. 新增数据类型（Symbol）<br>2. 新增数据结构（Set）<br>3. 新增数据结构（Map）|
 | 第30章|ES6中的Class|1. ES6 Class基本语法<br>2. ES6 Class静态方法、静态属性<br>3. ES6 Class的继承|
+| 第31章|ES6中的Promise|1. Promise概念及语法<br>2. Promise原型方法、静态方法<br>3. Promise综合案例|
 
