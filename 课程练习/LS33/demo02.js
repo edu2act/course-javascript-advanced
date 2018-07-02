@@ -47,17 +47,15 @@ p.then(function(v1){
 },function(e1){
 	console.log("55",e1);
 	return new Promise((resolved,rejected)=>{
-		// rejected("55");
-		setTimeout(() => {
-			rejected("55");
-		}, 2000,);
+		setTimeout(rejected, 2000,"66");
 	});
 })
 .then(function(v2){
-	console.log("66",v2);
+	console.log("77",v2);
 },function(e2){
-	console.log("77",e2);
+	console.log("88",e2);
 })
+console.log("99");
 
 
 //补充案例
