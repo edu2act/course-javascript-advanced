@@ -22,7 +22,7 @@ var p = new Promise(function(resolved,rejected){
 });
 p.then(function(v1){
 	console.log("44",v1);
-},function(e1){
+},function(e1){//若没有rejected响应，则rejected向下传递。若有则后续then为resolved状态
 	console.log("55",e1);
 })
 .then(function(v2){
