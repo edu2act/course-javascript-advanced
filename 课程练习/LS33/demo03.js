@@ -40,9 +40,6 @@ p2
 .catch((err)=>{console.log("666",err); })
 .finally(()=>{console.log("finally")})
 
-
-
-
 //////其他案例///////
 //catch
 var p = new Promise((resolve,reject)=>{

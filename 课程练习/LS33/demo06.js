@@ -64,7 +64,7 @@ const getJSON = function (url) {
   return promise;
 };
 
-// 域名检测需要解决跨域问题
+// 域名检测需要解决跨域问题，具体参见跨域解决方案（如jsonp等）
 //getJSON("http://panda.www.net.cn/cgi-bin/check.cgi?area_domain=qq.com").then(function (json) {
 
 getJSON("https://api.github.com/").then(function (json) {
@@ -106,10 +106,8 @@ var p2 = new Promise(function (resolve, reject) {
 
 // 又过了 2 秒，p1变为rejected，导致触发catch方法指定的回调函数
 
-
 //
 //Promise实例的异步方法和then()中返回promise有什么区别？
-
 // 1111111111
 //Promise对象作为resolve或reject函数的参数时的情况
 //p2的状态取决于p1，如果p1为pending，p2将等待p1状态的改变，p1的状态一旦改变，
@@ -129,8 +127,8 @@ let p2 = new Promise ((resolve, reject) => {
 
 // 2222222222
 // then()中返回promise的情况
-//由于then()本身就会返回一个新的promise，
-//所以后一个then()针对的永远是一个新的promise，
+//由于then()本身就会返回一个promise，
+//所以后一个then()针对的永远是一个promise，
 //但是像上面代码中我们自己手动返回p4，
 //那么我们就可以在返回的promise中再次通过 resolve() 和 reject() 来改变状态
 let p3 = new Promise ( (resolve, reject) => {
