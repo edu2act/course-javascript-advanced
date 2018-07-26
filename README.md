@@ -5,10 +5,10 @@
 >（2017~2018 第二学期）
 
 《JavaScript进阶》是计算机软件及相关专业在h5前端开发方向的专业基础课，它是为培养应用型人才掌握使用计算机的技能而开设的。本课程是一门有关JavaScript脚本语言的进阶课程。学习本课程的同学需具有一定的JavaScript语言基础。通过本课程的学习，学生可以进一步掌握JavaScript脚本语言（ES5）的相关知识（包括JS预解析、立即执行表达式、作用域及执行上下文、闭包、原型继承、正则表达式、异步等）。同时，也增加了ES6的相关知识（包括let与const、解构赋值、箭头函数、Promise、Generator、class等），为学生进一步学习计算机有关知识打下坚实基础。
-- [课程PPT](https://github.com/edu2act/course-javascript-advanced/tree/master/%E8%AF%BE%E7%A8%8BPPT)
-- [课程练习](https://github.com/edu2act/course-javascript-advanced/tree/master/%E8%AF%BE%E7%A8%8B%E7%BB%83%E4%B9%A0)
-- [课程大纲](https://github.com/edu2act/course-javascript-advanced/blob/master/%E6%95%99%E5%AD%A6%E5%A4%A7%E7%BA%B2.doc)
-- [进度计划](https://github.com/edu2act/course-javascript-advanced/blob/master/%E8%BF%9B%E5%BA%A6%E8%AE%A1%E5%88%92.doc)
+- [课程PPT](https://github.com/edu2act/course-javascript-advanced/tree/master/materials/slides)
+- [课程练习](https://github.com/edu2act/course-javascript-advanced/tree/master/lessons)
+- [课程大纲](https://github.com/edu2act/course-javascript-advanced/blob/master/materials/outline.doc)
+- [进度计划](https://github.com/edu2act/course-javascript-advanced/blob/master/materials/schedule.doc)
 
 ## 课程内容
 
